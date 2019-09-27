@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Today View Controller-->
+        <scene sceneID="cwh-vc-ff4">
+            <objects>
+                <viewController id="M4Y-Lb-cyx" customClass="TodayViewController" customModule="TakeTimeToday" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" simulatedAppContext="notificationCenter" id="S3S-Oj-5AN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aDU-Sy-6EF">
+                                <rect key="frame" x="15" y="15" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="00F-je-cuU"/>
+                                    <constraint firstAttribute="height" constant="25" id="GYa-wg-mWf"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="育儿_widget.png"/>
+                                <connections>
+                                    <action selector="didPressMilk:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="OVa-hq-JlV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8jd-E8-VnX">
+                                <rect key="frame" x="15" y="55" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="Alo-B1-hDw"/>
+                                    <constraint firstAttribute="height" constant="25" id="MRI-bU-2Tu"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="水杯_widget.png"/>
+                                <connections>
+                                    <action selector="didPressWater:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="mH6-0t-W2B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQh-YQ-Bc0">
+                                <rect key="frame" x="175" y="15" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="873-hB-wFW"/>
+                                    <constraint firstAttribute="height" constant="25" id="DDg-8K-FDW"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="尿布_widget.png"/>
+                                <connections>
+                                    <action selector="didPressDiaper:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="JPL-jg-Cl5"/>
+                                </connections>
+                            </button>
+                            <button hidden="YES" opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w2w-wr-xX4">
+                                <rect key="frame" x="0.0" y="96" width="320" height="44"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Ibm-Ax-P50"/>
+                                </constraints>
+                                <state key="normal" title="open app">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressOpenApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="gNy-8b-Cyl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrZ-42-4zJ">
+                                <rect key="frame" x="45" y="57" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZd-cR-daG">
+                                <rect key="frame" x="45" y="17" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HV-Tz-tQF">
+                                <rect key="frame" x="205" y="57" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Gw-PR-feo">
+                                <rect key="frame" x="205" y="17" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFW-Ba-BOT">
+                                <rect key="frame" x="175" y="55" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="3Bt-Sb-YQd"/>
+                                    <constraint firstAttribute="height" constant="25" id="H9Y-qh-CkK"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="洗澡_widget.png"/>
+                                <connections>
+                                    <action selector="didPressShower:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="e0F-Ho-iCb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="8jd-E8-VnX" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="15" id="41C-mN-iNy"/>
+                            <constraint firstItem="SZd-cR-daG" firstAttribute="leading" secondItem="aDU-Sy-6EF" secondAttribute="trailing" constant="5" id="8VG-bu-zCu"/>
+                            <constraint firstItem="aDU-Sy-6EF" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="15" id="92O-ze-jja"/>
+                            <constraint firstItem="xrZ-42-4zJ" firstAttribute="centerY" secondItem="8jd-E8-VnX" secondAttribute="centerY" id="CDj-Te-VdO"/>
+                            <constraint firstItem="tFW-Ba-BOT" firstAttribute="top" secondItem="kQh-YQ-Bc0" secondAttribute="bottom" constant="15" id="GBK-ff-Y8H"/>
+                            <constraint firstItem="0HV-Tz-tQF" firstAttribute="leading" secondItem="tFW-Ba-BOT" secondAttribute="trailing" constant="5" id="Qt7-WP-HcI"/>
+                            <constraint firstItem="7Gw-PR-feo" firstAttribute="leading" secondItem="kQh-YQ-Bc0" secondAttribute="trailing" constant="5" id="SET-ak-jso"/>
+                            <constraint firstItem="kQh-YQ-Bc0" firstAttribute="top" secondItem="S3S-Oj-5AN" secondAttribute="top" constant="15" id="TLO-xy-czA"/>
+                            <constraint firstItem="tFW-Ba-BOT" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="centerX" constant="15" id="U7y-u4-o7H"/>
+                            <constraint firstItem="SZd-cR-daG" firstAttribute="centerY" secondItem="aDU-Sy-6EF" secondAttribute="centerY" id="dcF-EB-gFd"/>
+                            <constraint firstItem="8jd-E8-VnX" firstAttribute="top" secondItem="aDU-Sy-6EF" secondAttribute="bottom" constant="15" id="eZs-0e-Mlc"/>
+                            <constraint firstItem="7Gw-PR-feo" firstAttribute="centerY" secondItem="kQh-YQ-Bc0" secondAttribute="centerY" id="kUo-vN-j9K"/>
+                            <constraint firstItem="w2w-wr-xX4" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" id="obg-Vv-KaW"/>
+                            <constraint firstAttribute="trailing" secondItem="w2w-wr-xX4" secondAttribute="trailing" id="rc0-sJ-pPK"/>
+                            <constraint firstItem="aDU-Sy-6EF" firstAttribute="leading" secondItem="ssy-KU-ocm" secondAttribute="leading" constant="15" id="ue4-EF-I9v"/>
+                            <constraint firstItem="tFW-Ba-BOT" firstAttribute="leading" secondItem="kQh-YQ-Bc0" secondAttribute="leading" id="vQQ-WK-8bL"/>
+                            <constraint firstItem="0HV-Tz-tQF" firstAttribute="centerY" secondItem="tFW-Ba-BOT" secondAttribute="centerY" id="wuD-my-U99"/>
+                            <constraint firstItem="xrZ-42-4zJ" firstAttribute="leading" secondItem="8jd-E8-VnX" secondAttribute="trailing" constant="5" id="xOz-BV-NhO"/>
+                            <constraint firstAttribute="bottom" secondItem="w2w-wr-xX4" secondAttribute="bottom" id="z3Z-IV-rQA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ssy-KU-ocm"/>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="140"/>
+                    <connections>
+                        <outlet property="btnPushApp" destination="w2w-wr-xX4" id="dn5-PY-p9h"/>
+                        <outlet property="lblDiapre" destination="7Gw-PR-feo" id="lqw-4t-dam"/>
+                        <outlet property="lblMilk" destination="SZd-cR-daG" id="cN0-nS-eP1"/>
+                        <outlet property="lblShower" destination="0HV-Tz-tQF" id="hqD-SP-Nzo"/>
+                        <outlet property="lblWater" destination="xrZ-42-4zJ" id="THu-Be-rnZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="尿布_widget.png" width="43" height="40"/>
+        <image name="水杯_widget.png" width="40" height="40"/>
+        <image name="洗澡_widget.png" width="40" height="40"/>
+        <image name="育儿_widget.png" width="40" height="40"/>
+    </resources>
+</document>

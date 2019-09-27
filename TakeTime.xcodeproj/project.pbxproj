@@ -1,0 +1,615 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		020FF9162339BBB80046A1DD /* TakeTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 020FF9142339BBB70046A1DD /* TakeTime.xcdatamodeld */; };
+		020FF91A233B93E50046A1DD /* TakeTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 020FF9142339BBB70046A1DD /* TakeTime.xcdatamodeld */; };
+		020FF91B233B96BA0046A1DD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6E3732335DA3700B70277 /* CoreDataManager.swift */; };
+		020FF91E233B96CD0046A1DD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB3233710F50063A2F8 /* MainViewModel.swift */; };
+		020FF927233BB3240046A1DD /* EventModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020FF925233BB3240046A1DD /* EventModel+CoreDataClass.swift */; };
+		020FF928233BB3240046A1DD /* EventModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020FF925233BB3240046A1DD /* EventModel+CoreDataClass.swift */; };
+		020FF929233BB3240046A1DD /* EventModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020FF926233BB3240046A1DD /* EventModel+CoreDataProperties.swift */; };
+		020FF92A233BB3240046A1DD /* EventModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020FF926233BB3240046A1DD /* EventModel+CoreDataProperties.swift */; };
+		020FF92B233BC0FE0046A1DD /* TimeFomatChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB123368D890063A2F8 /* TimeFomatChange.swift */; };
+		022073B123375DEC00C967E2 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022073B023375DEC00C967E2 /* EventTableViewController.swift */; };
+		022073B92337CD3A00C967E2 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022073B82337CD3A00C967E2 /* NotificationCenter.framework */; };
+		022073BC2337CD3A00C967E2 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022073BB2337CD3A00C967E2 /* TodayViewController.swift */; };
+		022073BF2337CD3A00C967E2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 022073BD2337CD3A00C967E2 /* MainInterface.storyboard */; };
+		022073C32337CD3A00C967E2 /* TakeTimeToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 022073B62337CD3A00C967E2 /* TakeTimeToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		022073CB23389E6B00C967E2 /* 尿布_widget.png in Resources */ = {isa = PBXBuildFile; fileRef = 022073CA23389E6B00C967E2 /* 尿布_widget.png */; };
+		022073CD23389E7600C967E2 /* 水杯_widget.png in Resources */ = {isa = PBXBuildFile; fileRef = 022073CC23389E7500C967E2 /* 水杯_widget.png */; };
+		022073CF23389E7C00C967E2 /* 洗澡_widget.png in Resources */ = {isa = PBXBuildFile; fileRef = 022073CE23389E7C00C967E2 /* 洗澡_widget.png */; };
+		022073D123389E8300C967E2 /* 育儿_widget.png in Resources */ = {isa = PBXBuildFile; fileRef = 022073D023389E8300C967E2 /* 育儿_widget.png */; };
+		02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */; };
+		02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB123368D890063A2F8 /* TimeFomatChange.swift */; };
+		02228CB4233710F50063A2F8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB3233710F50063A2F8 /* MainViewModel.swift */; };
+		02A6E355233545FB00B70277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6E354233545FB00B70277 /* AppDelegate.swift */; };
+		02A6E357233545FB00B70277 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6E356233545FB00B70277 /* MainViewController.swift */; };
+		02A6E35A233545FB00B70277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E358233545FB00B70277 /* Main.storyboard */; };
+		02A6E35F233545FB00B70277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E35E233545FB00B70277 /* Assets.xcassets */; };
+		02A6E362233545FB00B70277 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E360233545FB00B70277 /* LaunchScreen.storyboard */; };
+		02A6E3742335DA3700B70277 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6E3732335DA3700B70277 /* CoreDataManager.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		022073C12337CD3A00C967E2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 02A6E349233545FA00B70277 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 022073B52337CD3A00C967E2;
+			remoteInfo = TakeTimeToday;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		022073C72337CD3A00C967E2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				022073C32337CD3A00C967E2 /* TakeTimeToday.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		020FF9152339BBB80046A1DD /* TakeTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TakeTime.xcdatamodel; sourceTree = "<group>"; };
+		020FF925233BB3240046A1DD /* EventModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		020FF926233BB3240046A1DD /* EventModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		022073B023375DEC00C967E2 /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		022073B62337CD3A00C967E2 /* TakeTimeToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TakeTimeToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		022073B82337CD3A00C967E2 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		022073BB2337CD3A00C967E2 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		022073BE2337CD3A00C967E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		022073C02337CD3A00C967E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		022073C823387A5A00C967E2 /* TakeTimeToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TakeTimeToday.entitlements; sourceTree = "<group>"; };
+		022073C923387FC100C967E2 /* TakeTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TakeTime.entitlements; sourceTree = "<group>"; };
+		022073CA23389E6B00C967E2 /* 尿布_widget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "尿布_widget.png"; path = "TakeTime/Assets.xcassets/尿布_blue.imageset/尿布_widget.png"; sourceTree = SOURCE_ROOT; };
+		022073CC23389E7500C967E2 /* 水杯_widget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "水杯_widget.png"; path = "TakeTime/Assets.xcassets/水杯_blue.imageset/水杯_widget.png"; sourceTree = SOURCE_ROOT; };
+		022073CE23389E7C00C967E2 /* 洗澡_widget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "洗澡_widget.png"; path = "TakeTime/Assets.xcassets/洗澡_blue.imageset/洗澡_widget.png"; sourceTree = SOURCE_ROOT; };
+		022073D023389E8300C967E2 /* 育儿_widget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "育儿_widget.png"; path = "TakeTime/Assets.xcassets/育儿_blue.imageset/育儿_widget.png"; sourceTree = SOURCE_ROOT; };
+		02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineGCDTimer.swift; sourceTree = "<group>"; };
+		02228CB123368D890063A2F8 /* TimeFomatChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFomatChange.swift; sourceTree = "<group>"; };
+		02228CB3233710F50063A2F8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		02A6E351233545FB00B70277 /* TakeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		02A6E354233545FB00B70277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		02A6E356233545FB00B70277 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		02A6E359233545FB00B70277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		02A6E35E233545FB00B70277 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		02A6E361233545FB00B70277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		02A6E363233545FB00B70277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02A6E3732335DA3700B70277 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		022073B32337CD3A00C967E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				022073B92337CD3A00C967E2 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02A6E34E233545FB00B70277 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		022073B72337CD3A00C967E2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				022073B82337CD3A00C967E2 /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		022073BA2337CD3A00C967E2 /* TakeTimeToday */ = {
+			isa = PBXGroup;
+			children = (
+				022073CA23389E6B00C967E2 /* 尿布_widget.png */,
+				022073CC23389E7500C967E2 /* 水杯_widget.png */,
+				022073CE23389E7C00C967E2 /* 洗澡_widget.png */,
+				022073D023389E8300C967E2 /* 育儿_widget.png */,
+				022073C823387A5A00C967E2 /* TakeTimeToday.entitlements */,
+				022073BB2337CD3A00C967E2 /* TodayViewController.swift */,
+				022073BD2337CD3A00C967E2 /* MainInterface.storyboard */,
+				022073C02337CD3A00C967E2 /* Info.plist */,
+			);
+			path = TakeTimeToday;
+			sourceTree = "<group>";
+		};
+		02A6E348233545FA00B70277 = {
+			isa = PBXGroup;
+			children = (
+				02A6E3722335A49600B70277 /* CoreData */,
+				02A6E353233545FB00B70277 /* TakeTime */,
+				022073BA2337CD3A00C967E2 /* TakeTimeToday */,
+				022073B72337CD3A00C967E2 /* Frameworks */,
+				02A6E352233545FB00B70277 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		02A6E352233545FB00B70277 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				02A6E351233545FB00B70277 /* TakeTime.app */,
+				022073B62337CD3A00C967E2 /* TakeTimeToday.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		02A6E353233545FB00B70277 /* TakeTime */ = {
+			isa = PBXGroup;
+			children = (
+				022073C923387FC100C967E2 /* TakeTime.entitlements */,
+				02A6E354233545FB00B70277 /* AppDelegate.swift */,
+				02A6E356233545FB00B70277 /* MainViewController.swift */,
+				022073B023375DEC00C967E2 /* EventTableViewController.swift */,
+				02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */,
+				02228CB123368D890063A2F8 /* TimeFomatChange.swift */,
+				02A6E358233545FB00B70277 /* Main.storyboard */,
+				02A6E35E233545FB00B70277 /* Assets.xcassets */,
+				02A6E360233545FB00B70277 /* LaunchScreen.storyboard */,
+				02A6E363233545FB00B70277 /* Info.plist */,
+			);
+			path = TakeTime;
+			sourceTree = "<group>";
+		};
+		02A6E3722335A49600B70277 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				020FF925233BB3240046A1DD /* EventModel+CoreDataClass.swift */,
+				020FF926233BB3240046A1DD /* EventModel+CoreDataProperties.swift */,
+				020FF9142339BBB70046A1DD /* TakeTime.xcdatamodeld */,
+				02A6E3732335DA3700B70277 /* CoreDataManager.swift */,
+				02228CB3233710F50063A2F8 /* MainViewModel.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		022073B52337CD3A00C967E2 /* TakeTimeToday */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 022073C42337CD3A00C967E2 /* Build configuration list for PBXNativeTarget "TakeTimeToday" */;
+			buildPhases = (
+				022073B22337CD3A00C967E2 /* Sources */,
+				022073B32337CD3A00C967E2 /* Frameworks */,
+				022073B42337CD3A00C967E2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TakeTimeToday;
+			productName = TakeTimeToday;
+			productReference = 022073B62337CD3A00C967E2 /* TakeTimeToday.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		02A6E350233545FB00B70277 /* TakeTime */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 02A6E366233545FB00B70277 /* Build configuration list for PBXNativeTarget "TakeTime" */;
+			buildPhases = (
+				02A6E34D233545FB00B70277 /* Sources */,
+				02A6E34E233545FB00B70277 /* Frameworks */,
+				02A6E34F233545FB00B70277 /* Resources */,
+				022073C72337CD3A00C967E2 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				022073C22337CD3A00C967E2 /* PBXTargetDependency */,
+			);
+			name = TakeTime;
+			productName = TakeTime;
+			productReference = 02A6E351233545FB00B70277 /* TakeTime.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		02A6E349233545FA00B70277 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				DefaultBuildSystemTypeForWorkspace = Original;
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = "刘恒";
+				TargetAttributes = {
+					022073B52337CD3A00C967E2 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					02A6E350233545FB00B70277 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 02A6E34C233545FA00B70277 /* Build configuration list for PBXProject "TakeTime" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 02A6E348233545FA00B70277;
+			productRefGroup = 02A6E352233545FB00B70277 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				02A6E350233545FB00B70277 /* TakeTime */,
+				022073B52337CD3A00C967E2 /* TakeTimeToday */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		022073B42337CD3A00C967E2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				022073D123389E8300C967E2 /* 育儿_widget.png in Resources */,
+				022073BF2337CD3A00C967E2 /* MainInterface.storyboard in Resources */,
+				022073CD23389E7600C967E2 /* 水杯_widget.png in Resources */,
+				022073CB23389E6B00C967E2 /* 尿布_widget.png in Resources */,
+				022073CF23389E7C00C967E2 /* 洗澡_widget.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02A6E34F233545FB00B70277 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02A6E362233545FB00B70277 /* LaunchScreen.storyboard in Resources */,
+				02A6E35F233545FB00B70277 /* Assets.xcassets in Resources */,
+				02A6E35A233545FB00B70277 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		022073B22337CD3A00C967E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				020FF91B233B96BA0046A1DD /* CoreDataManager.swift in Sources */,
+				020FF91A233B93E50046A1DD /* TakeTime.xcdatamodeld in Sources */,
+				022073BC2337CD3A00C967E2 /* TodayViewController.swift in Sources */,
+				020FF92B233BC0FE0046A1DD /* TimeFomatChange.swift in Sources */,
+				020FF928233BB3240046A1DD /* EventModel+CoreDataClass.swift in Sources */,
+				020FF92A233BB3240046A1DD /* EventModel+CoreDataProperties.swift in Sources */,
+				020FF91E233B96CD0046A1DD /* MainViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		02A6E34D233545FB00B70277 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				02A6E3742335DA3700B70277 /* CoreDataManager.swift in Sources */,
+				020FF927233BB3240046A1DD /* EventModel+CoreDataClass.swift in Sources */,
+				02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */,
+				02A6E357233545FB00B70277 /* MainViewController.swift in Sources */,
+				022073B123375DEC00C967E2 /* EventTableViewController.swift in Sources */,
+				02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */,
+				020FF929233BB3240046A1DD /* EventModel+CoreDataProperties.swift in Sources */,
+				020FF9162339BBB80046A1DD /* TakeTime.xcdatamodeld in Sources */,
+				02A6E355233545FB00B70277 /* AppDelegate.swift in Sources */,
+				02228CB4233710F50063A2F8 /* MainViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		022073C22337CD3A00C967E2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 022073B52337CD3A00C967E2 /* TakeTimeToday */;
+			targetProxy = 022073C12337CD3A00C967E2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		022073BD2337CD3A00C967E2 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				022073BE2337CD3A00C967E2 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		02A6E358233545FB00B70277 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02A6E359233545FB00B70277 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		02A6E360233545FB00B70277 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				02A6E361233545FB00B70277 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		022073C52337CD3A00C967E2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TakeTimeToday/TakeTimeToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4K46345F2F;
+				INFOPLIST_FILE = TakeTimeToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dada.TakeTimes.TakeTimeToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "dadaTakeTimeToday-dis";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		022073C62337CD3A00C967E2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TakeTimeToday/TakeTimeToday.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4K46345F2F;
+				INFOPLIST_FILE = TakeTimeToday/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dada.TakeTimes.TakeTimeToday;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "dadaTakeTimeToday-dis";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		02A6E364233545FB00B70277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		02A6E365233545FB00B70277 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		02A6E367233545FB00B70277 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TakeTime/TakeTime.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4K46345F2F;
+				INFOPLIST_FILE = TakeTime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dada.TakeTimes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "bdTakeTimes-dis";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		02A6E368233545FB00B70277 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TakeTime/TakeTime.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 4K46345F2F;
+				INFOPLIST_FILE = TakeTime/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dada.TakeTimes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "bdTakeTimes-dis";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		022073C42337CD3A00C967E2 /* Build configuration list for PBXNativeTarget "TakeTimeToday" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				022073C52337CD3A00C967E2 /* Debug */,
+				022073C62337CD3A00C967E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02A6E34C233545FA00B70277 /* Build configuration list for PBXProject "TakeTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02A6E364233545FB00B70277 /* Debug */,
+				02A6E365233545FB00B70277 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		02A6E366233545FB00B70277 /* Build configuration list for PBXNativeTarget "TakeTime" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				02A6E367233545FB00B70277 /* Debug */,
+				02A6E368233545FB00B70277 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		020FF9142339BBB70046A1DD /* TakeTime.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				020FF9152339BBB80046A1DD /* TakeTime.xcdatamodel */,
+			);
+			currentVersion = 020FF9152339BBB80046A1DD /* TakeTime.xcdatamodel */;
+			path = TakeTime.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 02A6E349233545FA00B70277 /* Project object */;
+}
