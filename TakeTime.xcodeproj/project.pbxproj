@@ -28,6 +28,10 @@
 		02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */; };
 		02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB123368D890063A2F8 /* TimeFomatChange.swift */; };
 		02228CB4233710F50063A2F8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB3233710F50063A2F8 /* MainViewModel.swift */; };
+		02325FA1233F6A800044A000 /* MainBmobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02325FA0233F6A800044A000 /* MainBmobViewModel.swift */; };
+		02325FA4233F6B810044A000 /* MainBmobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02325FA3233F6B810044A000 /* MainBmobModel.swift */; };
+		02325FA5233F7E2F0044A000 /* MainBmobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02325FA0233F6A800044A000 /* MainBmobViewModel.swift */; };
+		02325FA6233F7E320044A000 /* MainBmobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02325FA3233F6B810044A000 /* MainBmobModel.swift */; };
 		02A6E355233545FB00B70277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6E354233545FB00B70277 /* AppDelegate.swift */; };
 		02A6E357233545FB00B70277 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6E356233545FB00B70277 /* MainViewController.swift */; };
 		02A6E35A233545FB00B70277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E358233545FB00B70277 /* Main.storyboard */; };
@@ -81,6 +85,10 @@
 		02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineGCDTimer.swift; sourceTree = "<group>"; };
 		02228CB123368D890063A2F8 /* TimeFomatChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFomatChange.swift; sourceTree = "<group>"; };
 		02228CB3233710F50063A2F8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		02325F95233F4D860044A000 /* TakeTime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTime-Bridging-Header.h"; sourceTree = "<group>"; };
+		02325F99233F4F650044A000 /* TakeTimeToday-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTimeToday-Bridging-Header.h"; sourceTree = "<group>"; };
+		02325FA0233F6A800044A000 /* MainBmobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBmobViewModel.swift; sourceTree = "<group>"; };
+		02325FA3233F6B810044A000 /* MainBmobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBmobModel.swift; sourceTree = "<group>"; };
 		02A6E351233545FB00B70277 /* TakeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A6E354233545FB00B70277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02A6E356233545FB00B70277 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -139,16 +147,28 @@
 				022073BB2337CD3A00C967E2 /* TodayViewController.swift */,
 				022073BD2337CD3A00C967E2 /* MainInterface.storyboard */,
 				022073C02337CD3A00C967E2 /* Info.plist */,
+				02325F99233F4F650044A000 /* TakeTimeToday-Bridging-Header.h */,
 			);
 			path = TakeTimeToday;
+			sourceTree = "<group>";
+		};
+		02325FA2233F6B650044A000 /* Bmob */ = {
+			isa = PBXGroup;
+			children = (
+				02325FA0233F6A800044A000 /* MainBmobViewModel.swift */,
+				02325FA3233F6B810044A000 /* MainBmobModel.swift */,
+			);
+			path = Bmob;
 			sourceTree = "<group>";
 		};
 		02A6E348233545FA00B70277 = {
 			isa = PBXGroup;
 			children = (
-				02A6E3722335A49600B70277 /* CoreData */,
+				02325FA2233F6B650044A000 /* Bmob */,
 				02A6E353233545FB00B70277 /* TakeTime */,
 				022073BA2337CD3A00C967E2 /* TakeTimeToday */,
+				02325F95233F4D860044A000 /* TakeTime-Bridging-Header.h */,
+				02A6E3722335A49600B70277 /* CoreData */,
 				022073B72337CD3A00C967E2 /* Frameworks */,
 				02A6E352233545FB00B70277 /* Products */,
 				740F377A856DD3E4E17B8B22 /* Pods */,
@@ -201,7 +221,6 @@
 				23C5C6DC53B296087693AD16 /* Pods-TakeTimeToday.debug.xcconfig */,
 				A74187EB1E66BC7762CEB6AA /* Pods-TakeTimeToday.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -259,6 +278,7 @@
 				TargetAttributes = {
 					022073B52337CD3A00C967E2 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -267,6 +287,7 @@
 					};
 					02A6E350233545FB00B70277 = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -374,8 +395,10 @@
 				020FF91B233B96BA0046A1DD /* CoreDataManager.swift in Sources */,
 				020FF91A233B93E50046A1DD /* TakeTime.xcdatamodeld in Sources */,
 				022073BC2337CD3A00C967E2 /* TodayViewController.swift in Sources */,
+				02325FA1233F6A800044A000 /* MainBmobViewModel.swift in Sources */,
 				020FF92B233BC0FE0046A1DD /* TimeFomatChange.swift in Sources */,
 				020FF928233BB3240046A1DD /* EventModel+CoreDataClass.swift in Sources */,
+				02325FA4233F6B810044A000 /* MainBmobModel.swift in Sources */,
 				020FF92A233BB3240046A1DD /* EventModel+CoreDataProperties.swift in Sources */,
 				020FF91E233B96CD0046A1DD /* MainViewModel.swift in Sources */,
 			);
@@ -385,8 +408,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02325FA6233F7E320044A000 /* MainBmobModel.swift in Sources */,
 				02A6E3742335DA3700B70277 /* CoreDataManager.swift in Sources */,
 				020FF927233BB3240046A1DD /* EventModel+CoreDataClass.swift in Sources */,
+				02325FA5233F7E2F0044A000 /* MainBmobViewModel.swift in Sources */,
 				02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */,
 				02A6E357233545FB00B70277 /* MainViewController.swift in Sources */,
 				022073B123375DEC00C967E2 /* EventTableViewController.swift in Sources */,
@@ -440,6 +465,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 23C5C6DC53B296087693AD16 /* Pods-TakeTimeToday.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TakeTimeToday/TakeTimeToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -454,6 +480,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "dadaTakeTimeToday-dis";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TakeTimeToday/TakeTimeToday-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -463,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A74187EB1E66BC7762CEB6AA /* Pods-TakeTimeToday.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TakeTimeToday/TakeTimeToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -477,6 +506,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "dadaTakeTimeToday-dis";
 				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "TakeTimeToday/TakeTimeToday-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -604,6 +634,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TakeTime/TakeTime.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -616,6 +647,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dada.TakeTimes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "bdTakeTimes-dis";
+				SWIFT_OBJC_BRIDGING_HEADER = "TakeTime-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -627,6 +660,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TakeTime/TakeTime.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
@@ -639,6 +673,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dada.TakeTimes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "bdTakeTimes-dis";
+				SWIFT_OBJC_BRIDGING_HEADER = "TakeTime-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

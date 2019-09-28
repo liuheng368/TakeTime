@@ -34,6 +34,18 @@ class MainViewModel: NSObject {
         event.eventDate = eventData as NSDate
         event.eventType = Int16(eventType.rawValue)
         CoreDataShare.save()
+        
+        let gamescore:BmobObject = BmobObject(className: "eventModel")
+        gamescore.setObject(eventData, forKey: "eventTime")
+        gamescore.setObject(eventType.rawValue, forKey: "eventType")
+        gamescore.setObject(eventType[], forKey: "eventTypeDes")
+        gamescore.saveInBackground { (b, error) in
+            if let err = error{
+                print("error is \(err.localizedDescription)")
+            }else{
+                print("success")
+            }
+        }
     }
     
 }

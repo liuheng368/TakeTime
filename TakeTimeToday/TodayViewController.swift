@@ -23,29 +23,42 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Bmob.register(withAppKey: "7fff928c9d56660ade724f31565f57ec")
         vcInit()
     }
     
     fileprivate func vcInit() {
-        if let dia = MainViewModel.fetchEnent(.Diaper).last{
-            timerTitleInit(.Diaper, dia.eventDate! as Date)
-        }else{
-            timerTitleInit(.Diaper, Date())
+        MainBmobViewModel.fetchEnent(.Milk) {[weak self] (arrModel) in
+            guard let `self` = self else{return}
+            if arrModel.count <= 0 {
+                self.timerTitleInit(.Milk, Date())
+            }else{
+                self.timerTitleInit(.Milk, arrModel.last?.eventDate ?? Date())
+            }
         }
-        if let mi = MainViewModel.fetchEnent(.Milk).last{
-            timerTitleInit(.Milk, mi.eventDate! as Date)
-        }else{
-            timerTitleInit(.Milk, Date())
+        MainBmobViewModel.fetchEnent(.Water) {[weak self] (arrModel) in
+            guard let `self` = self else{return}
+            if arrModel.count <= 0 {
+                self.timerTitleInit(.Water, Date())
+            }else{
+                self.timerTitleInit(.Water, arrModel.last?.eventDate ?? Date())
+            }
         }
-        if let sh = MainViewModel.fetchEnent(.Shower).last{
-            timerTitleInit(.Shower, sh.eventDate! as Date)
-        }else{
-            timerTitleInit(.Shower, Date())
+        MainBmobViewModel.fetchEnent(.Diaper) {[weak self] (arrModel) in
+            guard let `self` = self else{return}
+            if arrModel.count <= 0 {
+                self.timerTitleInit(.Diaper, Date())
+            }else{
+                self.timerTitleInit(.Diaper, arrModel.last?.eventDate ?? Date())
+            }
         }
-        if let wa = MainViewModel.fetchEnent(.Water).last{
-            timerTitleInit(.Water, wa.eventDate! as Date)
-        }else{
-            timerTitleInit(.Water, Date())
+        MainBmobViewModel.fetchEnent(.Shower) {[weak self] (arrModel) in
+            guard let `self` = self else{return}
+            if arrModel.count <= 0 {
+                self.timerTitleInit(.Shower, Date())
+            }else{
+                self.timerTitleInit(.Shower, arrModel.last?.eventDate ?? Date())
+            }
         }
     }
     
@@ -80,23 +93,31 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     @IBAction func didPressDiaper(_ sender: Any) {
-        MainViewModel.add(.Diaper, Date())
-        timerTitleInit(.Diaper, Date())
+        MainBmobViewModel.add(Date(), .Diaper, success: {[weak self] (model) in
+            guard let `self` = self else{return}
+            self.timerTitleInit(.Diaper, model.eventDate)
+        })
     }
     
     @IBAction func didPressMilk(_ sender: Any) {
-        MainViewModel.add(.Milk, Date())
-        timerTitleInit(.Milk, Date())
+        MainBmobViewModel.add(Date(), .Milk, success: {[weak self] (model) in
+            guard let `self` = self else{return}
+            self.timerTitleInit(.Milk, model.eventDate)
+        })
     }
     
     @IBAction func didPressShower(_ sender: Any) {
-        MainViewModel.add(.Shower, Date())
-        timerTitleInit(.Shower, Date())
+        MainBmobViewModel.add(Date(), .Shower, success: {[weak self] (model) in
+            guard let `self` = self else{return}
+            self.timerTitleInit(.Shower, model.eventDate)
+        })
     }
     
     @IBAction func didPressWater(_ sender: Any) {
-        MainViewModel.add(.Water, Date())
-        timerTitleInit(.Water, Date())
+        MainBmobViewModel.add(Date(), .Water, success: {[weak self] (model) in
+            guard let `self` = self else{return}
+            self.timerTitleInit(.Water, model.eventDate)
+        })
     }
     
     @IBAction func didPressOpenApp(_ sender: Any) {

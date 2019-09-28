@@ -29,13 +29,17 @@ class EventTableViewController: UITableViewController {
     }
     
     private func dataInit() {
-        let arr = MainViewModel.fetchEnent(vcType!).compactMap{ dateFor.string(from: $0.eventDate! as Date) }
-        arr.forEach { (str) in
-            if !arrDate.contains(str) {
-                arrDate.append(str)
+        
+        MainBmobViewModel.fetchEnent(vcType!) {[weak self] (arrModel) in
+            guard let `self` = self else{return}
+            let arr = arrModel.compactMap{ self.dateFor.string(from: $0.eventDate) }
+            arr.forEach { (str) in
+                if !self.arrDate.contains(str) {
+                    self.arrDate.append(str)
+                }
             }
+            self.tableView.reloadData()
         }
-        tableView.reloadData()
     }
 
     @objc func popToViewController() {

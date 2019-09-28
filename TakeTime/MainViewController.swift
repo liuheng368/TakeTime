@@ -8,6 +8,20 @@
 
 import UIKit
 
+extension MainViewController: BmobEventDelegate{
+    func bmobEventDidConnect(_ event: BmobEvent!) {
+        print("bmobEventDidConnect")
+    }
+    
+    func bmobEventCanStartListen(_ event: BmobEvent!) {
+        event.listenTableChange(BmobActionTypeUpdateTable, tableName: "eventModel")
+    }
+    
+    func bmobEvent(_ event: BmobEvent!, didReceiveMessage message: String!) {
+        vcInit()
+    }
+}
+
 extension MainViewController: UIPickerViewDataSource,UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 3
@@ -61,29 +75,41 @@ extension MainViewController: UIPickerViewDataSource,UIPickerViewDelegate {
 
 extension MainViewController {
     fileprivate func vcInit() {
-        if let dia = MainViewModel.fetchEnent(.Diaper).last{
-            timerTitleInit(.Diaper, dia.eventDate! as Date)
-            vcTimePass.diapre = 0
-        }else{
-            timerTitleInit(.Diaper, Date())
+        MainBmobViewModel.fetchEnent(.Milk) {[weak self] (arrModel) in
+            guard let `self` = self else{return}
+            if arrModel.count <= 0 {
+                self.timerTitleInit(.Milk, Date())
+            }else{
+                self.timerTitleInit(.Milk, arrModel.last?.eventDate ?? Date())
+                self.vcTimePass.milk = 0
+            }
         }
-        if let mi = MainViewModel.fetchEnent(.Milk).last{
-            timerTitleInit(.Milk, mi.eventDate! as Date)
-            vcTimePass.milk = 0
-        }else{
-            timerTitleInit(.Milk, Date())
+        MainBmobViewModel.fetchEnent(.Water) {[weak self] (arrModel) in
+            guard let `self` = self else{return}
+            if arrModel.count <= 0 {
+                self.timerTitleInit(.Water, Date())
+            }else{
+                self.timerTitleInit(.Water, arrModel.last?.eventDate ?? Date())
+                self.vcTimePass.water = 0
+            }
         }
-        if let sh = MainViewModel.fetchEnent(.Shower).last{
-            timerTitleInit(.Shower, sh.eventDate! as Date)
-            vcTimePass.shower = 0
-        }else{
-            timerTitleInit(.Shower, Date())
+        MainBmobViewModel.fetchEnent(.Diaper) {[weak self] (arrModel) in
+            guard let `self` = self else{return}
+            if arrModel.count <= 0 {
+                self.timerTitleInit(.Diaper, Date())
+            }else{
+                self.timerTitleInit(.Diaper, arrModel.last?.eventDate ?? Date())
+                self.vcTimePass.diapre = 0
+            }
         }
-        if let wa = MainViewModel.fetchEnent(.Water).last{
-            timerTitleInit(.Water, wa.eventDate! as Date)
-            vcTimePass.water = 0
-        }else{
-            timerTitleInit(.Water, Date())
+        MainBmobViewModel.fetchEnent(.Shower) {[weak self] (arrModel) in
+            guard let `self` = self else{return}
+            if arrModel.count <= 0 {
+                self.timerTitleInit(.Shower, Date())
+            }else{
+                self.timerTitleInit(.Shower, arrModel.last?.eventDate ?? Date())
+                self.vcTimePass.shower = 0
+            }
         }
         MineGCDTimer.start {[weak self] _ in
             guard let `self` = self else{return}
@@ -169,6 +195,7 @@ class MainViewController: UIViewController {
     lazy var calendar:Calendar = {
         return Calendar.current
     }()
+    private var eventList:BmobEvent = BmobEvent.default()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -181,6 +208,12 @@ class MainViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector:#selector(becomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         //注册进入后台的通知
         NotificationCenter.default.addObserver(self, selector:#selector(becomeDeath), name: UIApplication.willResignActiveNotification, object: nil)
+        listEvent()
+    }
+    
+    private func listEvent() {
+        eventList.delegate = self
+        eventList.start()
     }
     
     @objc  func becomeActive(noti:Notification){
@@ -193,27 +226,35 @@ class MainViewController: UIViewController {
     
     //MARK: Point Event
     @IBAction func didPressWater(_ sender: Any) {
-        MainViewModel.add(.Water, Date())
-        vcTimePass.water = 0
-        timerTitleInit(.Water, Date())
+        MainBmobViewModel.add(Date(), .Water, success: {[weak self] (model) in
+            guard let `self` = self else{return}
+            self.vcTimePass.water = 0
+            self.timerTitleInit(.Water, model.eventDate)
+        })
     }
     
     @IBAction func didPressMilk(_ sender: Any) {
-        MainViewModel.add(.Milk, Date())
-        vcTimePass.milk = 0
-        timerTitleInit(.Milk, Date())
+        MainBmobViewModel.add(Date(), .Milk, success: {[weak self] (model) in
+            guard let `self` = self else{return}
+            self.vcTimePass.milk = 0
+            self.timerTitleInit(.Milk, model.eventDate)
+        })
     }
     
     @IBAction func didPressDiaper(_ sender: Any) {
-        MainViewModel.add(.Diaper, Date())
-        vcTimePass.diapre = 0
-        timerTitleInit(.Diaper, Date())
+        MainBmobViewModel.add(Date(), .Diaper, success: {[weak self] (model) in
+            guard let `self` = self else{return}
+            self.vcTimePass.diapre = 0
+            self.timerTitleInit(.Diaper, model.eventDate)
+        })
     }
     
     @IBAction func didPressShower(_ sender: Any) {
-        MainViewModel.add(.Shower, Date())
-        vcTimePass.shower = 0
-        timerTitleInit(.Shower, Date())
+        MainBmobViewModel.add(Date(), .Shower, success: {[weak self] (model) in
+            guard let `self` = self else{return}
+            self.vcTimePass.shower = 0
+            self.timerTitleInit(.Shower, model.eventDate)
+        })
     }
     
     //MARK: Look For List
@@ -267,27 +308,35 @@ class MainViewController: UIViewController {
 
         switch pickSelectData.type {
         case 0:
-            MainViewModel.add(.Milk, date)
-            vcTimePass.milk = 0
-            timerTitleInit(.Milk, date)
+            MainBmobViewModel.add(date, .Milk, success: {[weak self] (model) in
+                guard let `self` = self else{return}
+                self.vcTimePass.milk = 0
+                self.timerTitleInit(.Milk, model.eventDate)
+            })
         case 1:
-            MainViewModel.add(.Water, date)
-            vcTimePass.water = 0
-            timerTitleInit(.Water, date)
+            MainBmobViewModel.add(date, .Water, success: {[weak self] (model) in
+                guard let `self` = self else{return}
+                self.vcTimePass.water = 0
+                self.timerTitleInit(.Water, model.eventDate)
+            })
         case 2:
-            MainViewModel.add(.Diaper, date)
-            vcTimePass.diapre = 0
-            timerTitleInit(.Diaper, date)
+            MainBmobViewModel.add(date, .Diaper, success: {[weak self] (model) in
+                guard let `self` = self else{return}
+                self.vcTimePass.milk = 0
+                self.timerTitleInit(.Milk, model.eventDate)
+            })
         case 3:
-            MainViewModel.add(.Shower, date)
-            vcTimePass.shower = 0
-            timerTitleInit(.Shower, date)
+            MainBmobViewModel.add(date, .Shower, success: {[weak self] (model) in
+                guard let `self` = self else{return}
+                self.vcTimePass.milk = 0
+                self.timerTitleInit(.Milk, model.eventDate)
+            })
         default:break
         }
     }
     
-    
     deinit {
+        eventList.stop()
         NotificationCenter.default.removeObserver(self)
     }
 }

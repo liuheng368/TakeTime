@@ -19,6 +19,14 @@ class TimeFomatChange {
     
     /// 将秒时间戳转为string
     /// 单位秒
+    class func getIntFormatDate(_ iDate:Int, strFormat : String = "yyyy-MM-dd HH:mm") -> Date{
+        let dateFor = DateFormatter()
+        dateFor.dateFormat = strFormat
+        return Date(timeIntervalSince1970: TimeInterval(iDate))
+    }
+    
+    /// 将秒时间戳转为string
+    /// 单位秒
     class func getDateTimeFormat(_ allTime:Int) -> String{
         var hours = 0
         var minutes = 0
