@@ -14,10 +14,12 @@ extension MainViewController: BmobEventDelegate{
     }
     
     func bmobEventCanStartListen(_ event: BmobEvent!) {
-        event.listenTableChange(BmobActionTypeUpdateTable, tableName: "eventModel")
+        
+        self.eventList.listenTableChange(BmobActionTypeUpdateTable, tableName: "eventModel")
     }
     
     func bmobEvent(_ event: BmobEvent!, didReceiveMessage message: String!) {
+        print(message!)
         vcInit()
     }
 }
@@ -337,6 +339,7 @@ class MainViewController: UIViewController {
     
     deinit {
         eventList.stop()
+        eventList.cancelListenTableChange(BmobActionTypeUpdateTable, tableName: "eventModel")
         NotificationCenter.default.removeObserver(self)
     }
 }
