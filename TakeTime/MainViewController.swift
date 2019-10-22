@@ -80,7 +80,7 @@ extension MainViewController {
             if arrModel.count <= 0 {
                 self.timerTitleInit(.Milk, Date())
             }else{
-                self.timerTitleInit(.Milk, arrModel.last?.eventDate ?? Date())
+                self.timerTitleInit(.Milk, arrModel.first?.eventDate ?? Date())
                 self.vcTimePass.milk = 0
             }
         }
@@ -89,7 +89,7 @@ extension MainViewController {
             if arrModel.count <= 0 {
                 self.timerTitleInit(.Water, Date())
             }else{
-                self.timerTitleInit(.Water, arrModel.last?.eventDate ?? Date())
+                self.timerTitleInit(.Water, arrModel.first?.eventDate ?? Date())
                 self.vcTimePass.water = 0
             }
         }
@@ -98,7 +98,7 @@ extension MainViewController {
             if arrModel.count <= 0 {
                 self.timerTitleInit(.Diaper, Date())
             }else{
-                self.timerTitleInit(.Diaper, arrModel.last?.eventDate ?? Date())
+                self.timerTitleInit(.Diaper, arrModel.first?.eventDate ?? Date())
                 self.vcTimePass.diapre = 0
             }
         }
@@ -107,7 +107,7 @@ extension MainViewController {
             if arrModel.count <= 0 {
                 self.timerTitleInit(.Shower, Date())
             }else{
-                self.timerTitleInit(.Shower, arrModel.last?.eventDate ?? Date())
+                self.timerTitleInit(.Shower, arrModel.first?.eventDate ?? Date())
                 self.vcTimePass.shower = 0
             }
         }
@@ -311,25 +311,25 @@ class MainViewController: UIViewController {
             MainBmobViewModel.add(date, .Milk, success: {[weak self] (model) in
                 guard let `self` = self else{return}
                 self.vcTimePass.milk = 0
-                self.timerTitleInit(.Milk, model.eventDate)
+                self.vcInit()
             })
         case 1:
             MainBmobViewModel.add(date, .Water, success: {[weak self] (model) in
                 guard let `self` = self else{return}
                 self.vcTimePass.water = 0
-                self.timerTitleInit(.Water, model.eventDate)
+                self.vcInit()
             })
         case 2:
             MainBmobViewModel.add(date, .Diaper, success: {[weak self] (model) in
                 guard let `self` = self else{return}
                 self.vcTimePass.milk = 0
-                self.timerTitleInit(.Milk, model.eventDate)
+                self.vcInit()
             })
         case 3:
             MainBmobViewModel.add(date, .Shower, success: {[weak self] (model) in
                 guard let `self` = self else{return}
                 self.vcTimePass.milk = 0
-                self.timerTitleInit(.Milk, model.eventDate)
+                self.vcInit()
             })
         default:break
         }

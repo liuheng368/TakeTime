@@ -33,7 +33,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             if arrModel.count <= 0 {
                 self.timerTitleInit(.Milk, Date())
             }else{
-                self.timerTitleInit(.Milk, arrModel.last?.eventDate ?? Date())
+                self.timerTitleInit(.Milk, arrModel.first?.eventDate ?? Date())
             }
         }
         MainBmobViewModel.fetchEnent(.Water) {[weak self] (arrModel) in
@@ -41,7 +41,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             if arrModel.count <= 0 {
                 self.timerTitleInit(.Water, Date())
             }else{
-                self.timerTitleInit(.Water, arrModel.last?.eventDate ?? Date())
+                self.timerTitleInit(.Water, arrModel.first?.eventDate ?? Date())
             }
         }
         MainBmobViewModel.fetchEnent(.Diaper) {[weak self] (arrModel) in
@@ -49,7 +49,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             if arrModel.count <= 0 {
                 self.timerTitleInit(.Diaper, Date())
             }else{
-                self.timerTitleInit(.Diaper, arrModel.last?.eventDate ?? Date())
+                self.timerTitleInit(.Diaper, arrModel.first?.eventDate ?? Date())
             }
         }
         MainBmobViewModel.fetchEnent(.Shower) {[weak self] (arrModel) in
@@ -57,7 +57,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             if arrModel.count <= 0 {
                 self.timerTitleInit(.Shower, Date())
             }else{
-                self.timerTitleInit(.Shower, arrModel.last?.eventDate ?? Date())
+                self.timerTitleInit(.Shower, arrModel.first?.eventDate ?? Date())
             }
         }
     }

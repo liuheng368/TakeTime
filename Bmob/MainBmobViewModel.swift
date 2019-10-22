@@ -12,6 +12,7 @@ class MainBmobViewModel: NSObject {
     class func fetchEnent(_ type: EventType,success:@escaping ([MainBmobModel])->Void) {
         let query:BmobQuery = BmobQuery(className: "eventModel")
         query.whereKey("eventType", equalTo: type.rawValue)
+        query.order(byDescending: "eventTime")
         query.findObjectsInBackground { (array, error) in
             if let arr = array {
                 var arrModel : [MainBmobModel] = []
@@ -24,6 +25,7 @@ class MainBmobViewModel: NSObject {
                                                       eventTypeDes: eventTypeDes))
                     }
                 })
+                print(arrModel)
                 success(arrModel)
             }
         }
