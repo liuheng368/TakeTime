@@ -12,7 +12,17 @@ struct MainBmobModel {
     public var eventDate: Date
     public var eventType: EventType
     public var eventTypeDes: String
+    public var objectId : String?
     
+    init(eventDate:Date,eventType:EventType,eventTypeDes:String,objectId : String) {
+        self.eventDate = eventDate
+        self.eventType = eventType
+        self.eventTypeDes = eventTypeDes
+        self.objectId = objectId
+    }
+}
+
+extension MainBmobModel {
     init(eventDate:Date,eventType:EventType,eventTypeDes:String) {
         self.eventDate = eventDate
         self.eventType = eventType

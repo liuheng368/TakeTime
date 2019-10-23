@@ -215,7 +215,7 @@ class MainViewController: UIViewController {
     
     private func listEvent() {
         eventList.delegate = self
-        eventList.start()
+//        eventList.start()
     }
     
     @objc  func becomeActive(noti:Notification){

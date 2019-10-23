@@ -19,10 +19,12 @@ class MainBmobViewModel: NSObject {
                 arr.forEach({ (mod) in
                     if let obj = mod as? BmobObject,
                         let eventTypeDes = obj.object(forKey: "eventTypeDes") as? String,
-                        let date = obj.object(forKey: "eventTime") as? Date{
+                        let date = obj.object(forKey: "eventTime") as? Date,
+                        let id = obj.object(forKey: "objectId") as? String{
                         arrModel.append(MainBmobModel(eventDate: date,
                                                       eventType: type,
-                                                      eventTypeDes: eventTypeDes))
+                                                      eventTypeDes: eventTypeDes,
+                                                      objectId: id))
                     }
                 })
                 print(arrModel)
@@ -41,6 +43,17 @@ class MainBmobViewModel: NSObject {
             success(MainBmobModel(eventDate: eventTime,
                                   eventType: eventType,
                                   eventTypeDes: eventType[]))
+        }
+    }
+    
+    class func delete(_ objectId : String, success:@escaping ()->()) {
+        let gamescore:BmobObject = BmobObject(outDataWithClassName: "eventModel", objectId: objectId)
+        gamescore.deleteInBackground { (b, e) in
+            if let e = e {
+                print(e)
+            }else{
+                success()
+            }
         }
     }
 }
