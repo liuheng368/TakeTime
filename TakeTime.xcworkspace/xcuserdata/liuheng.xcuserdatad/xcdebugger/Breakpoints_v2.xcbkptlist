@@ -34,6 +34,53 @@
             endingLineNumber = "25"
             landmarkName = "bmobEvent(_:didReceiveMessage:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2B951BDE-F884-4807-AC42-6C1E00219749 - 7a9eb605f65d1a3f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TakeTime.EventTableViewController.init(style: __C.UITableViewStyle) -&gt; TakeTime.EventTableViewController"
+                  moduleName = "TakeTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuheng/codeSet/TakeTime/TakeTime/EventTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  uuid = "2B951BDE-F884-4807-AC42-6C1E00219749 - 7e8b8b5f05f68871"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TakeTime.EventTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; TakeTime.EventTableViewController"
+                  moduleName = "TakeTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuheng/codeSet/TakeTime/TakeTime/EventTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "29">
+               </Location>
+               <Location
+                  uuid = "2B951BDE-F884-4807-AC42-6C1E00219749 - 2a30c881673b151d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "function signature specialization &lt;Arg[0] = Owned To Guaranteed&gt; of TakeTime.EventTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;TakeTime.EventTableViewController&gt;"
+                  moduleName = "TakeTime"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/liuheng/codeSet/TakeTime/TakeTime/EventTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "18">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

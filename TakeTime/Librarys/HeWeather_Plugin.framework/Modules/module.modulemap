@@ -1,0 +1,6 @@
+framework module HeWeather_Plugin {
+  umbrella header "HeWeather_Plugin.h"
+
+  export *
+  module * { export * }
+}

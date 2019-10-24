@@ -5,6 +5,8 @@ use_frameworks!
 
 
 target "TakeTime" do
+    pod 'SDWebImage'
+    pod 'Masonry'
     pod 'BmobSDK'
 end
 

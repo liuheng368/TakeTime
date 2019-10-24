@@ -3,4 +3,4 @@
 //
 
 #import <BmobSDK/Bmob.h>
-
+#import <HeWeather_Plugin/HeWeather_Plugin.h>

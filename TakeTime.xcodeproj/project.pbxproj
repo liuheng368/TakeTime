@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,8 @@
 		02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */; };
 		02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB123368D890063A2F8 /* TimeFomatChange.swift */; };
 		02228CB4233710F50063A2F8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB3233710F50063A2F8 /* MainViewModel.swift */; };
+		0230D47E2361901000327ABA /* HeWeather_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */; };
+		0230D480236191F600327ABA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0230D47F236191F600327ABA /* WeatherViewController.swift */; };
 		02325FA1233F6A800044A000 /* MainBmobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02325FA0233F6A800044A000 /* MainBmobViewModel.swift */; };
 		02325FA4233F6B810044A000 /* MainBmobModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02325FA3233F6B810044A000 /* MainBmobModel.swift */; };
 		02325FA5233F7E2F0044A000 /* MainBmobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02325FA0233F6A800044A000 /* MainBmobViewModel.swift */; };
@@ -85,6 +87,8 @@
 		02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineGCDTimer.swift; sourceTree = "<group>"; };
 		02228CB123368D890063A2F8 /* TimeFomatChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFomatChange.swift; sourceTree = "<group>"; };
 		02228CB3233710F50063A2F8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HeWeather_Plugin.framework; sourceTree = "<group>"; };
+		0230D47F236191F600327ABA /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		02325F95233F4D860044A000 /* TakeTime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTime-Bridging-Header.h"; sourceTree = "<group>"; };
 		02325F99233F4F650044A000 /* TakeTimeToday-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTimeToday-Bridging-Header.h"; sourceTree = "<group>"; };
 		02325FA0233F6A800044A000 /* MainBmobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBmobViewModel.swift; sourceTree = "<group>"; };
@@ -120,6 +124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A2D455CA808ABEF6F830EF5 /* Pods_TakeTime.framework in Frameworks */,
+				0230D47E2361901000327ABA /* HeWeather_Plugin.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +155,14 @@
 				02325F99233F4F650044A000 /* TakeTimeToday-Bridging-Header.h */,
 			);
 			path = TakeTimeToday;
+			sourceTree = "<group>";
+		};
+		0230D47423618B3B00327ABA /* Librarys */ = {
+			isa = PBXGroup;
+			children = (
+				0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */,
+			);
+			path = Librarys;
 			sourceTree = "<group>";
 		};
 		02325FA2233F6B650044A000 /* Bmob */ = {
@@ -187,10 +200,12 @@
 		02A6E353233545FB00B70277 /* TakeTime */ = {
 			isa = PBXGroup;
 			children = (
+				0230D47423618B3B00327ABA /* Librarys */,
 				022073C923387FC100C967E2 /* TakeTime.entitlements */,
 				02A6E354233545FB00B70277 /* AppDelegate.swift */,
 				02A6E356233545FB00B70277 /* MainViewController.swift */,
 				022073B023375DEC00C967E2 /* EventTableViewController.swift */,
+				0230D47F236191F600327ABA /* WeatherViewController.swift */,
 				02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */,
 				02228CB123368D890063A2F8 /* TimeFomatChange.swift */,
 				02A6E358233545FB00B70277 /* Main.storyboard */,
@@ -254,6 +269,7 @@
 				02A6E34E233545FB00B70277 /* Frameworks */,
 				02A6E34F233545FB00B70277 /* Resources */,
 				022073C72337CD3A00C967E2 /* Embed App Extensions */,
+				3CFE1E5842F1B0D0D7F55AF8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -363,6 +379,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3CFE1E5842F1B0D0D7F55AF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TakeTime/Pods-TakeTime-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TakeTime/Pods-TakeTime-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TakeTime/Pods-TakeTime-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		FEAC815AA214C3E00A639078 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -412,6 +445,7 @@
 				02A6E3742335DA3700B70277 /* CoreDataManager.swift in Sources */,
 				020FF927233BB3240046A1DD /* EventModel+CoreDataClass.swift in Sources */,
 				02325FA5233F7E2F0044A000 /* MainBmobViewModel.swift in Sources */,
+				0230D480236191F600327ABA /* WeatherViewController.swift in Sources */,
 				02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */,
 				02A6E357233545FB00B70277 /* MainViewController.swift in Sources */,
 				022073B123375DEC00C967E2 /* EventTableViewController.swift in Sources */,
@@ -467,7 +501,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TakeTimeToday/TakeTimeToday.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4K46345F2F;
 				INFOPLIST_FILE = TakeTimeToday/Info.plist;
@@ -478,7 +512,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dada.TakeTimes.TakeTimeToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "dadaTakeTimeToday-dis";
+				PROVISIONING_PROFILE_SPECIFIER = "taketimeToday-dev";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TakeTimeToday/TakeTimeToday-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -493,7 +527,7 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TakeTimeToday/TakeTimeToday.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4K46345F2F;
 				INFOPLIST_FILE = TakeTimeToday/Info.plist;
@@ -504,7 +538,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.dada.TakeTimes.TakeTimeToday;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "dadaTakeTimeToday-dis";
+				PROVISIONING_PROFILE_SPECIFIER = "taketimeToday-dev";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "TakeTimeToday/TakeTimeToday-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -636,9 +670,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TakeTime/TakeTime.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4K46345F2F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TakeTime/Librarys",
+				);
 				INFOPLIST_FILE = TakeTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -647,7 +685,7 @@
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dada.TakeTimes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "bdTakeTimes-dis";
+				PROVISIONING_PROFILE_SPECIFIER = "taketime-dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "TakeTime-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -663,9 +701,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TakeTime/TakeTime.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4K46345F2F;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/TakeTime/Librarys",
+				);
 				INFOPLIST_FILE = TakeTime/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -674,7 +716,7 @@
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dada.TakeTimes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "bdTakeTimes-dis";
+				PROVISIONING_PROFILE_SPECIFIER = "taketime-dev";
 				SWIFT_OBJC_BRIDGING_HEADER = "TakeTime-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
