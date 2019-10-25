@@ -7,14 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		020FF9162339BBB80046A1DD /* TakeTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 020FF9142339BBB70046A1DD /* TakeTime.xcdatamodeld */; };
-		020FF91A233B93E50046A1DD /* TakeTime.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 020FF9142339BBB70046A1DD /* TakeTime.xcdatamodeld */; };
-		020FF91B233B96BA0046A1DD /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6E3732335DA3700B70277 /* CoreDataManager.swift */; };
-		020FF91E233B96CD0046A1DD /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB3233710F50063A2F8 /* MainViewModel.swift */; };
-		020FF927233BB3240046A1DD /* EventModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020FF925233BB3240046A1DD /* EventModel+CoreDataClass.swift */; };
-		020FF928233BB3240046A1DD /* EventModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020FF925233BB3240046A1DD /* EventModel+CoreDataClass.swift */; };
-		020FF929233BB3240046A1DD /* EventModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020FF926233BB3240046A1DD /* EventModel+CoreDataProperties.swift */; };
-		020FF92A233BB3240046A1DD /* EventModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020FF926233BB3240046A1DD /* EventModel+CoreDataProperties.swift */; };
 		020FF92B233BC0FE0046A1DD /* TimeFomatChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB123368D890063A2F8 /* TimeFomatChange.swift */; };
 		022073B123375DEC00C967E2 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022073B023375DEC00C967E2 /* EventTableViewController.swift */; };
 		022073B92337CD3A00C967E2 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022073B82337CD3A00C967E2 /* NotificationCenter.framework */; };
@@ -27,7 +19,6 @@
 		022073D123389E8300C967E2 /* 育儿_widget.png in Resources */ = {isa = PBXBuildFile; fileRef = 022073D023389E8300C967E2 /* 育儿_widget.png */; };
 		02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */; };
 		02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB123368D890063A2F8 /* TimeFomatChange.swift */; };
-		02228CB4233710F50063A2F8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB3233710F50063A2F8 /* MainViewModel.swift */; };
 		0230D47E2361901000327ABA /* HeWeather_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */; };
 		0230D480236191F600327ABA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0230D47F236191F600327ABA /* WeatherViewController.swift */; };
 		02325FA1233F6A800044A000 /* MainBmobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02325FA0233F6A800044A000 /* MainBmobViewModel.swift */; };
@@ -39,7 +30,6 @@
 		02A6E35A233545FB00B70277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E358233545FB00B70277 /* Main.storyboard */; };
 		02A6E35F233545FB00B70277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E35E233545FB00B70277 /* Assets.xcassets */; };
 		02A6E362233545FB00B70277 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E360233545FB00B70277 /* LaunchScreen.storyboard */; };
-		02A6E3742335DA3700B70277 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6E3732335DA3700B70277 /* CoreDataManager.swift */; };
 		27E4139567AE9A02982EAA6D /* Pods_TakeTimeToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C5CAA1593376D85BB84785 /* Pods_TakeTimeToday.framework */; };
 		3A2D455CA808ABEF6F830EF5 /* Pods_TakeTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE6D8A7BCF9897C9E49FB0F /* Pods_TakeTime.framework */; };
 /* End PBXBuildFile section */
@@ -69,9 +59,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		020FF9152339BBB80046A1DD /* TakeTime.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TakeTime.xcdatamodel; sourceTree = "<group>"; };
-		020FF925233BB3240046A1DD /* EventModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventModel+CoreDataClass.swift"; sourceTree = "<group>"; };
-		020FF926233BB3240046A1DD /* EventModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EventModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		022073B023375DEC00C967E2 /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		022073B62337CD3A00C967E2 /* TakeTimeToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TakeTimeToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		022073B82337CD3A00C967E2 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -86,7 +73,6 @@
 		022073D023389E8300C967E2 /* 育儿_widget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "育儿_widget.png"; path = "TakeTime/Assets.xcassets/育儿_blue.imageset/育儿_widget.png"; sourceTree = SOURCE_ROOT; };
 		02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineGCDTimer.swift; sourceTree = "<group>"; };
 		02228CB123368D890063A2F8 /* TimeFomatChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFomatChange.swift; sourceTree = "<group>"; };
-		02228CB3233710F50063A2F8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HeWeather_Plugin.framework; sourceTree = "<group>"; };
 		0230D47F236191F600327ABA /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		02325F95233F4D860044A000 /* TakeTime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTime-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -100,7 +86,6 @@
 		02A6E35E233545FB00B70277 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02A6E361233545FB00B70277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02A6E363233545FB00B70277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		02A6E3732335DA3700B70277 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		23C5C6DC53B296087693AD16 /* Pods-TakeTimeToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeTimeToday.debug.xcconfig"; path = "Target Support Files/Pods-TakeTimeToday/Pods-TakeTimeToday.debug.xcconfig"; sourceTree = "<group>"; };
 		26C5CAA1593376D85BB84785 /* Pods_TakeTimeToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeTimeToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE6D8A7BCF9897C9E49FB0F /* Pods_TakeTime.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeTime.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,7 +166,6 @@
 				02A6E353233545FB00B70277 /* TakeTime */,
 				022073BA2337CD3A00C967E2 /* TakeTimeToday */,
 				02325F95233F4D860044A000 /* TakeTime-Bridging-Header.h */,
-				02A6E3722335A49600B70277 /* CoreData */,
 				022073B72337CD3A00C967E2 /* Frameworks */,
 				02A6E352233545FB00B70277 /* Products */,
 				740F377A856DD3E4E17B8B22 /* Pods */,
@@ -214,18 +198,6 @@
 				02A6E363233545FB00B70277 /* Info.plist */,
 			);
 			path = TakeTime;
-			sourceTree = "<group>";
-		};
-		02A6E3722335A49600B70277 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				020FF925233BB3240046A1DD /* EventModel+CoreDataClass.swift */,
-				020FF926233BB3240046A1DD /* EventModel+CoreDataProperties.swift */,
-				020FF9142339BBB70046A1DD /* TakeTime.xcdatamodeld */,
-				02A6E3732335DA3700B70277 /* CoreDataManager.swift */,
-				02228CB3233710F50063A2F8 /* MainViewModel.swift */,
-			);
-			path = CoreData;
 			sourceTree = "<group>";
 		};
 		740F377A856DD3E4E17B8B22 /* Pods */ = {
@@ -425,15 +397,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				020FF91B233B96BA0046A1DD /* CoreDataManager.swift in Sources */,
-				020FF91A233B93E50046A1DD /* TakeTime.xcdatamodeld in Sources */,
 				022073BC2337CD3A00C967E2 /* TodayViewController.swift in Sources */,
 				02325FA1233F6A800044A000 /* MainBmobViewModel.swift in Sources */,
 				020FF92B233BC0FE0046A1DD /* TimeFomatChange.swift in Sources */,
-				020FF928233BB3240046A1DD /* EventModel+CoreDataClass.swift in Sources */,
 				02325FA4233F6B810044A000 /* MainBmobModel.swift in Sources */,
-				020FF92A233BB3240046A1DD /* EventModel+CoreDataProperties.swift in Sources */,
-				020FF91E233B96CD0046A1DD /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,18 +409,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				02325FA6233F7E320044A000 /* MainBmobModel.swift in Sources */,
-				02A6E3742335DA3700B70277 /* CoreDataManager.swift in Sources */,
-				020FF927233BB3240046A1DD /* EventModel+CoreDataClass.swift in Sources */,
 				02325FA5233F7E2F0044A000 /* MainBmobViewModel.swift in Sources */,
 				0230D480236191F600327ABA /* WeatherViewController.swift in Sources */,
 				02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */,
 				02A6E357233545FB00B70277 /* MainViewController.swift in Sources */,
 				022073B123375DEC00C967E2 /* EventTableViewController.swift in Sources */,
 				02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */,
-				020FF929233BB3240046A1DD /* EventModel+CoreDataProperties.swift in Sources */,
-				020FF9162339BBB80046A1DD /* TakeTime.xcdatamodeld in Sources */,
 				02A6E355233545FB00B70277 /* AppDelegate.swift in Sources */,
-				02228CB4233710F50063A2F8 /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -754,19 +716,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		020FF9142339BBB70046A1DD /* TakeTime.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				020FF9152339BBB80046A1DD /* TakeTime.xcdatamodel */,
-			);
-			currentVersion = 020FF9152339BBB80046A1DD /* TakeTime.xcdatamodel */;
-			path = TakeTime.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 02A6E349233545FA00B70277 /* Project object */;
 }

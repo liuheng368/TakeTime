@@ -27,7 +27,6 @@ class MainBmobViewModel: NSObject {
                                                       objectId: id))
                     }
                 })
-                print(arrModel)
                 success(arrModel)
             }
         }

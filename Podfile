@@ -5,11 +5,12 @@ use_frameworks!
 
 
 target "TakeTime" do
+    pod 'LeanCloud'
     pod 'SDWebImage'
     pod 'Masonry'
-    pod 'BmobSDK'
+    
 end
 
 target "TakeTimeToday" do
-    pod 'BmobSDK'
+    #pod 'LeanCloud'
 end
