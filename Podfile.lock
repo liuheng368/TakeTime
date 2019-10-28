@@ -1,26 +1,49 @@
 PODS:
-  - BmobSDK (2.3.4)
+  - Alamofire (4.8.2)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
+  - LeanCloud (16.5.1):
+    - LeanCloud/IM (= 16.5.1)
+    - LeanCloud/Storage (= 16.5.1)
+  - LeanCloud/IM (16.5.1):
+    - FMDB (~> 2.7.0)
+    - LeanCloud/Storage
+    - Starscream (~> 3.1.0)
+    - SwiftProtobuf (~> 1.6.0)
+  - LeanCloud/Storage (16.5.1):
+    - Alamofire (~> 4.8.0)
   - Masonry (1.1.0)
   - SDWebImage (5.2.3):
     - SDWebImage/Core (= 5.2.3)
   - SDWebImage/Core (5.2.3)
+  - Starscream (3.1.1)
+  - SwiftProtobuf (1.6.0)
 
 DEPENDENCIES:
-  - BmobSDK
+  - LeanCloud
   - Masonry
   - SDWebImage
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
-    - BmobSDK
+    - Alamofire
+    - FMDB
+    - LeanCloud
     - Masonry
     - SDWebImage
+    - Starscream
+    - SwiftProtobuf
 
 SPEC CHECKSUMS:
-  BmobSDK: 03e9889d92b721bfc2452faa5b2c2497581abbca
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
+  LeanCloud: 95885dab9edda56e36ca0f85dff73051830834b2
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+  SwiftProtobuf: e905ca1366405696411aaf174411c4b19c0ef73d
 
-PODFILE CHECKSUM: 24c3bda4cb07584fea6c613179e137cd9af64f4a
+PODFILE CHECKSUM: 077e0a5c488d2d2e6647ec3fd7099694b85289fc
 
 COCOAPODS: 1.8.3
