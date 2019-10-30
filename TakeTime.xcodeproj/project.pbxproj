@@ -21,8 +21,11 @@
 		02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB123368D890063A2F8 /* TimeFomatChange.swift */; };
 		0230D47E2361901000327ABA /* HeWeather_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */; };
 		0230D480236191F600327ABA /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0230D47F236191F600327ABA /* WeatherViewController.swift */; };
-		02325FA1233F6A800044A000 /* MainBmobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02325FA0233F6A800044A000 /* MainBmobViewModel.swift */; };
-		02325FA5233F7E2F0044A000 /* MainBmobViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02325FA0233F6A800044A000 /* MainBmobViewModel.swift */; };
+		028C3974236982CA00E299D3 /* LeanCloudGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD1B2366F79D0006F767 /* LeanCloudGlobal.swift */; };
+		028C3975236982CA00E299D3 /* LeanCloudLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD192366DFFE0006F767 /* LeanCloudLogin.swift */; };
+		028C3976236982CA00E299D3 /* LeanCloudDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD202367E29C0006F767 /* LeanCloudDataModel.swift */; };
+		028C3977236982CA00E299D3 /* LeanCloudDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD1E2367DD390006F767 /* LeanCloudDataViewModel.swift */; };
+		028C397C2369903B00E299D3 /* IMG_7230.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 028C397B2369903B00E299D3 /* IMG_7230.JPG */; };
 		02A6E355233545FB00B70277 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6E354233545FB00B70277 /* AppDelegate.swift */; };
 		02A6E357233545FB00B70277 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02A6E356233545FB00B70277 /* MainViewController.swift */; };
 		02A6E35A233545FB00B70277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E358233545FB00B70277 /* Main.storyboard */; };
@@ -30,7 +33,6 @@
 		02A6E362233545FB00B70277 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E360233545FB00B70277 /* LaunchScreen.storyboard */; };
 		02EFBD1A2366DFFE0006F767 /* LeanCloudLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD192366DFFE0006F767 /* LeanCloudLogin.swift */; };
 		02EFBD1C2366F79D0006F767 /* LeanCloudGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD1B2366F79D0006F767 /* LeanCloudGlobal.swift */; };
-		02EFBD1D2366F7A20006F767 /* LeanCloudGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD1B2366F79D0006F767 /* LeanCloudGlobal.swift */; };
 		02EFBD1F2367DD390006F767 /* LeanCloudDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD1E2367DD390006F767 /* LeanCloudDataViewModel.swift */; };
 		02EFBD212367E29C0006F767 /* LeanCloudDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD202367E29C0006F767 /* LeanCloudDataModel.swift */; };
 		27E4139567AE9A02982EAA6D /* Pods_TakeTimeToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C5CAA1593376D85BB84785 /* Pods_TakeTimeToday.framework */; };
@@ -80,7 +82,7 @@
 		0230D47F236191F600327ABA /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		02325F95233F4D860044A000 /* TakeTime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTime-Bridging-Header.h"; sourceTree = "<group>"; };
 		02325F99233F4F650044A000 /* TakeTimeToday-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTimeToday-Bridging-Header.h"; sourceTree = "<group>"; };
-		02325FA0233F6A800044A000 /* MainBmobViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBmobViewModel.swift; sourceTree = "<group>"; };
+		028C397B2369903B00E299D3 /* IMG_7230.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_7230.JPG; sourceTree = "<group>"; };
 		02A6E351233545FB00B70277 /* TakeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A6E354233545FB00B70277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02A6E356233545FB00B70277 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 		0230D47423618B3B00327ABA /* Librarys */ = {
 			isa = PBXGroup;
 			children = (
+				028C397B2369903B00E299D3 /* IMG_7230.JPG */,
 				0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */,
 			);
 			path = Librarys;
@@ -163,9 +166,17 @@
 				02EFBD192366DFFE0006F767 /* LeanCloudLogin.swift */,
 				02EFBD202367E29C0006F767 /* LeanCloudDataModel.swift */,
 				02EFBD1E2367DD390006F767 /* LeanCloudDataViewModel.swift */,
-				02325FA0233F6A800044A000 /* MainBmobViewModel.swift */,
 			);
 			path = LeanCloud;
+			sourceTree = "<group>";
+		};
+		028C397823698BB200E299D3 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */,
+				02228CB123368D890063A2F8 /* TimeFomatChange.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		02A6E348233545FA00B70277 = {
@@ -193,14 +204,13 @@
 		02A6E353233545FB00B70277 /* TakeTime */ = {
 			isa = PBXGroup;
 			children = (
+				028C397823698BB200E299D3 /* Common */,
 				0230D47423618B3B00327ABA /* Librarys */,
 				022073C923387FC100C967E2 /* TakeTime.entitlements */,
 				02A6E354233545FB00B70277 /* AppDelegate.swift */,
 				02A6E356233545FB00B70277 /* MainViewController.swift */,
 				022073B023375DEC00C967E2 /* EventTableViewController.swift */,
 				0230D47F236191F600327ABA /* WeatherViewController.swift */,
-				02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */,
-				02228CB123368D890063A2F8 /* TimeFomatChange.swift */,
 				02A6E358233545FB00B70277 /* Main.storyboard */,
 				02A6E35E233545FB00B70277 /* Assets.xcassets */,
 				02A6E360233545FB00B70277 /* LaunchScreen.storyboard */,
@@ -332,6 +342,7 @@
 				02A6E362233545FB00B70277 /* LaunchScreen.storyboard in Resources */,
 				02A6E35F233545FB00B70277 /* Assets.xcassets in Resources */,
 				02A6E35A233545FB00B70277 /* Main.storyboard in Resources */,
+				028C397C2369903B00E299D3 /* IMG_7230.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,10 +417,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				028C3977236982CA00E299D3 /* LeanCloudDataViewModel.swift in Sources */,
+				028C3976236982CA00E299D3 /* LeanCloudDataModel.swift in Sources */,
 				022073BC2337CD3A00C967E2 /* TodayViewController.swift in Sources */,
-				02325FA1233F6A800044A000 /* MainBmobViewModel.swift in Sources */,
 				020FF92B233BC0FE0046A1DD /* TimeFomatChange.swift in Sources */,
-				02EFBD1D2366F7A20006F767 /* LeanCloudGlobal.swift in Sources */,
+				028C3974236982CA00E299D3 /* LeanCloudGlobal.swift in Sources */,
+				028C3975236982CA00E299D3 /* LeanCloudLogin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +433,6 @@
 				02EFBD212367E29C0006F767 /* LeanCloudDataModel.swift in Sources */,
 				02EFBD1F2367DD390006F767 /* LeanCloudDataViewModel.swift in Sources */,
 				02EFBD1A2366DFFE0006F767 /* LeanCloudLogin.swift in Sources */,
-				02325FA5233F7E2F0044A000 /* MainBmobViewModel.swift in Sources */,
 				0230D480236191F600327ABA /* WeatherViewController.swift in Sources */,
 				02EFBD1C2366F79D0006F767 /* LeanCloudGlobal.swift in Sources */,
 				02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */,
@@ -641,12 +653,14 @@
 			baseConfigurationReference = 6556B86978094D1D0092155D /* Pods-TakeTime.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TakeTime/TakeTime.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4K46345F2F;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TakeTime/Librarys",
@@ -672,12 +686,14 @@
 			baseConfigurationReference = A34FEB212A625469AEB6A679 /* Pods-TakeTime.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = TakeTime/TakeTime.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4K46345F2F;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TakeTime/Librarys",

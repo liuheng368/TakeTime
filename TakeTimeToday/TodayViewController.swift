@@ -8,7 +8,7 @@
 
 import UIKit
 import NotificationCenter
-import CoreData
+import LeanCloud
 
 class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var lblMilk: UILabel!
@@ -19,11 +19,27 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewWillAppear(_ animated: Bool) {
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        do {
+            try LCApplication.default.set(id: LeanCloudID, key: LeanCloudKEY, configuration: LCApplication.Configuration(RTMCustomServerURL: LeanCloudServerURL))
+            LeanCloudLogin.login()
+            customModelRegister()
+        } catch {
+            print(error)
+        }
 //        vcInit()
+    }
+    
+    private func customModelRegister() {
+        UserInfoModel.register()
+        SleepEventModel.register()
+        PumpMilkEventModel.register()
+        FeedEventModel.register()
+        DiaperEventModel.register()
     }
     
 //    fileprivate func vcInit() {

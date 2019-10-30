@@ -17,6 +17,13 @@ class TimeFomatChange {
         return dateFor.string(from: Date())
     }
     
+    //MARK： 获取date标示
+    class func getDateString(_ date:Date) -> String {
+        let dateFor = DateFormatter()
+        dateFor.dateFormat = "yyyyMMdd"
+        return dateFor.string(from: date)
+    }
+    
     /// 将秒时间戳转为string
     /// 单位秒
     class func getIntFormatDate(_ iDate:Int, strFormat : String = "yyyy-MM-dd HH:mm") -> Date{

@@ -1,16 +1,15 @@
 source 'https://github.com/CocoaPods/Specs.git' #官方库
 
-platform :ios,'9.0'
+platform :ios,'10.0'
 use_frameworks!
 
 
 target "TakeTime" do
-    pod 'LeanCloud'
-    pod 'SDWebImage'
+    pod 'LeanCloud', '~> 17.0'
     pod 'Masonry'
-    
+    pod 'SDWebImage', '~> 5.2.3'
 end
 
 target "TakeTimeToday" do
-    #pod 'LeanCloud'
+   pod 'LeanCloud/Foundation', '~> 17.0'
 end

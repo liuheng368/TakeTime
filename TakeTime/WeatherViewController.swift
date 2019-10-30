@@ -38,3 +38,28 @@ class WeatherViewController: UIViewController {
     }
 
 }
+/*
+    func setGradientBackgroundColors(colors:[CGColor], locations:[NSNumber]?) {
+        let kScreenW = UIScreen.main.bounds.width
+        let kStatusBarH : CGFloat = 20
+        
+        let gradient = CAGradientLayer()
+        gradient.startPoint = CGPoint(x:0,y:0)
+        gradient.endPoint   = CGPoint(x:0,y:1)
+        gradient.frame = CGRect(x:0,y:0,width:kScreenW,height:self.navigationBar.bounds.height+kStatusBarH)
+        if let locations_ = locations {
+            gradient.locations = locations_
+        }
+        gradient.colors = colors
+        self.navigationBar.setBackgroundImage(self.image(fromLayer: gradient) , for: .default)
+        self.navigationBar.isTranslucent = false
+    }
+    
+    func image(fromLayer layer: CALayer) -> UIImage {
+        UIGraphicsBeginImageContext(layer.frame.size)
+        layer.render(in: UIGraphicsGetCurrentContext()!)
+        let outputImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return outputImage!
+    }
+ */

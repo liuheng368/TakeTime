@@ -38,9 +38,9 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>开启定位用于获取当地天气情况</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>开启定位用于获取当地天气情况</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>开启定位用于获取当地天气情况</string>
 	<key>UIBackgroundModes</key>
 	<array>

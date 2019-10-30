@@ -9,13 +9,13 @@
 import UIKit
 import LeanCloud
 
-struct DataBaseViewModel {
+struct DataBaseViewModel<T:EventSuperModel> {
     
     func fetchUserInfo(_ success: @escaping (UserInfoModel)->Void) {
         if let userId = LCApplication.default.currentUser?.objectId?.value {
             let query = LCQuery(className: "UserInfoChart")
             query.whereKey(userId, .equalTo("UserId"))
-            _ = query.getFirst({ (result) in
+            _ = query.getFirst(completion: { (result) in
                 switch result {
                 case .success(object: let obj):
                     if let obj = obj as? UserInfoModel {
@@ -28,7 +28,7 @@ struct DataBaseViewModel {
         }
     }
     
-    func fetchModel<T:EventSuperModel>(_ type: EventType, searchDateStr:String, success: @escaping (_ arr:[T])->Void) {
+    func fetchModel(_ type: EventType,_ searchDateStr:String,_ success: @escaping (_ arr:[T])->Void) {
         if let userId = LCApplication.default.currentUser?.objectId?.value {
             var arr : [T] = []
             var query : LCQuery
@@ -56,6 +56,46 @@ struct DataBaseViewModel {
                     print(error)
                 }
             }
+        }
+    }
+    
+    func addModel(_ model:T,_ success: ()->Void){
+        if let userId = LCApplication.default.currentUser?.objectId?.value {
+            let obj : EventSuperModel = model
+            obj.eventTime = model.eventTime
+            obj.currentDateDes = LCString(TimeFomatChange.getDateString(model.eventTime?.value ?? Date()))
+            obj.UserId = LCString(userId)
+            if obj.save().isSuccess {
+                success()
+            }
+        }
+    }
+    
+    func deleteModel(_ obectId:String,_ type: EventType,_ success:@escaping ()->Void) {
+        var obj : EventSuperModel
+        switch type {
+        case .feed:
+            obj = FeedEventModel(objectId: obectId)
+        case .sleep:
+            obj = SleepEventModel(objectId: obectId)
+        case .pumpMilk:
+            obj = PumpMilkEventModel(objectId: obectId)
+        case .diaper:
+            obj = DiaperEventModel(objectId: obectId)
+        }
+        obj.delete { (result) in
+            switch result {
+            case .success:
+                success()
+            case .failure(error: let err):
+                print(err)
+            }
+        }
+    }
+    
+    func updateModel(_ model:T,_ success:@escaping ()->Void) {
+        if model.save().isSuccess {
+            success()
         }
     }
 }
