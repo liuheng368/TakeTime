@@ -10,7 +10,7 @@ import UIKit
 
 let LeanCloudID = "K1GSlGpcWuaOiTXCrWz2mm1k-gzGzoHsz"
 let LeanCloudKEY = "AQNfm1G8SIa8WIwW5BPafclG"
-let LeanCloudServerURL = URL(string: "https://k1gslgpc.lc-cn-n1-shared.com")
+let LeanCloudServerURL = "https://k1gslgpc.lc-cn-n1-shared.com"
 
 enum EventType {
     case pumpMilk

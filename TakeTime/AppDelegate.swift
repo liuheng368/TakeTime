@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         do {
-            try LCApplication.default.set(id: LeanCloudID, key: LeanCloudKEY, configuration: LCApplication.Configuration(RTMCustomServerURL: LeanCloudServerURL))
+            try LCApplication.default.set(id: LeanCloudID, key: LeanCloudKEY, serverURL: LeanCloudServerURL)
             LeanCloudLogin.login()
             customModelRegister()
         } catch {

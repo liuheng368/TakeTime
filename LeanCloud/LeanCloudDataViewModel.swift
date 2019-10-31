@@ -9,12 +9,12 @@
 import UIKit
 import LeanCloud
 
-struct DataBaseViewModel<T:EventSuperModel> {
+class DataBaseViewModel<T:EventSuperModel> {
     
-    func fetchUserInfo(_ success: @escaping (UserInfoModel)->Void) {
+    class func fetchUserInfo(_ success: @escaping (UserInfoModel)->Void) {
         if let userId = LCApplication.default.currentUser?.objectId?.value {
             let query = LCQuery(className: "UserInfoChart")
-            query.whereKey(userId, .equalTo("UserId"))
+            query.whereKey("UserId", .equalTo(userId))
             _ = query.getFirst(completion: { (result) in
                 switch result {
                 case .success(object: let obj):
@@ -28,7 +28,7 @@ struct DataBaseViewModel<T:EventSuperModel> {
         }
     }
     
-    func fetchModel(_ type: EventType,_ searchDateStr:String,_ success: @escaping (_ arr:[T])->Void) {
+    class func fetchModel(_ type: EventType,_ searchDateStr:String,_ success: @escaping (_ arr:[T])->Void) {
         if let userId = LCApplication.default.currentUser?.objectId?.value {
             var arr : [T] = []
             var query : LCQuery
@@ -42,8 +42,8 @@ struct DataBaseViewModel<T:EventSuperModel> {
             case .diaper:
                 query = LCQuery(className: "DiaperEventChart")
             }
-            query.whereKey(userId, .equalTo("UserId"))
-            query.whereKey(searchDateStr, .equalTo("currentDateDes"))
+            query.whereKey("UserId", .equalTo(userId))
+            query.whereKey("currentDateDes", .equalTo(searchDateStr))
             query.limit = 1000
             _ = query.find { (result) in
                 switch result {
@@ -59,7 +59,7 @@ struct DataBaseViewModel<T:EventSuperModel> {
         }
     }
     
-    func addModel(_ model:T,_ success: ()->Void){
+    class func addModel(_ model:T,_ success: ()->Void){
         if let userId = LCApplication.default.currentUser?.objectId?.value {
             let obj : EventSuperModel = model
             obj.eventTime = model.eventTime
@@ -71,7 +71,7 @@ struct DataBaseViewModel<T:EventSuperModel> {
         }
     }
     
-    func deleteModel(_ obectId:String,_ type: EventType,_ success:@escaping ()->Void) {
+    class func deleteModel(_ obectId:String,_ type: EventType,_ success:@escaping ()->Void) {
         var obj : EventSuperModel
         switch type {
         case .feed:
@@ -93,7 +93,7 @@ struct DataBaseViewModel<T:EventSuperModel> {
         }
     }
     
-    func updateModel(_ model:T,_ success:@escaping ()->Void) {
+    class func updateModel(_ model:T,_ success:@escaping ()->Void) {
         if model.save().isSuccess {
             success()
         }

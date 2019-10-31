@@ -190,6 +190,7 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func didPressClock(_ sender: Any) {
+        
     }
     
     private var vcTimePass : (water:Int,milk:Int,diapre:Int,shower:Int) = (Int.min,Int.min,Int.min,Int.min)
@@ -225,8 +226,9 @@ class MainViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector:#selector(becomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         //注册进入后台的通知
         NotificationCenter.default.addObserver(self, selector:#selector(becomeDeath), name: UIApplication.willResignActiveNotification, object: nil)
-        showViewWithFrame()
         pageUIInit()
+        showViewWithFrame()
+        requestUserInfo()
     }
     
     @objc  func becomeActive(noti:Notification){
@@ -353,6 +355,18 @@ class MainViewController: UIViewController {
     }
 }
 
+//MARK: 页面请求相关
+extension MainViewController {
+    private func requestUserInfo() {
+        DataBaseViewModel.fetchUserInfo({[weak self] (model) in
+            guard let `self` = self else{return}
+            self.lblName.text = model.UserName?.value
+            self.lblBirthday.text = "已经出生\((TimeFomatChange.timeInterval(model.BabyBirthDate!.value) / (60 * 60 * 24)))天了！"
+        })
+    }
+}
+
+//MARK: 页面展示相关
 extension MainViewController {
     private func pageUIInit() {
         ivHeadImg.layer.cornerRadius = 40
@@ -389,6 +403,7 @@ extension MainViewController {
         weatherView?.themType = .light
         weatherView?.isShowBorder = false
         weatherView?.backgroundColor = UIColor.clear
+        weatherView?.isUserInteractionEnabled = false
         vWeather.addSubview(weatherView!)
     }
 }

@@ -16,7 +16,6 @@ class LeanCloudLogin {
         user.username = "liuheng368"
         user.password = "dashu365"
         user.setValue("15102204662", forKey: "mobilePhoneNumber")
-//        user.setValue(Date(timeIntervalSince1970: (1568674800)), forKey: "BirthDate")
         assert(user.signUp().isSuccess)
 //        assert(user.save().isSuccess) //更新用户信息
     }

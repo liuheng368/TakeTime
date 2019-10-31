@@ -25,7 +25,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
-            try LCApplication.default.set(id: LeanCloudID, key: LeanCloudKEY, configuration: LCApplication.Configuration(RTMCustomServerURL: LeanCloudServerURL))
+            try LCApplication.default.set(id: LeanCloudID, key: LeanCloudKEY, serverURL: LeanCloudServerURL)
             LeanCloudLogin.login()
             customModelRegister()
         } catch {

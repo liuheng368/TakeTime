@@ -85,4 +85,6 @@ class TimeFomatChange {
     class func timeInterval(_ pastDate:Date)->Int{
         return Int(Date().timeIntervalSince(pastDate))
     }
+    
+    
 }
