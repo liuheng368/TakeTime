@@ -228,7 +228,8 @@ class MainViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector:#selector(becomeDeath), name: UIApplication.willResignActiveNotification, object: nil)
         pageUIInit()
         showViewWithFrame()
-        requestUserInfo()
+        fetchUserInfo()
+        fetchAllData()
     }
     
     @objc  func becomeActive(noti:Notification){
@@ -357,12 +358,80 @@ class MainViewController: UIViewController {
 
 //MARK: 页面请求相关
 extension MainViewController {
-    private func requestUserInfo() {
+    private func fetchUserInfo() {
         DataBaseViewModel.fetchUserInfo({[weak self] (model) in
             guard let `self` = self else{return}
             self.lblName.text = model.UserName?.value
             self.lblBirthday.text = "已经出生\((TimeFomatChange.timeInterval(model.BabyBirthDate!.value) / (60 * 60 * 24)))天了！"
         })
+    }
+    
+    private func fetchAllData() {
+        let group = DispatchGroup()
+        let currentDateStr = TimeFomatChange.getAppointDayString()
+        var totalOperate = 0
+        DispatchQueue.global().async(group:group) {
+            DataBaseViewModel.fetchModel(.feed, currentDateStr) {[weak self] (arr) in
+                guard let `self` = self else{return}
+                totalOperate += arr.count
+                let res = arr.reduce((0,0,0)) { (r, model) -> (Int,Int,Int) in
+                    var left = 0,right = 0,total = 0
+                    if let model = model as? FeedEventModel{
+                        if model.feedOri == 1 {
+                            left = r.0 + 1
+                        }else if model.feedOri == 2 {
+                            right = r.1 + 1
+                        }
+                        total = r.2 + 1
+                    }
+                    return (left,right,total)
+                }
+                self.lblFeedDes.text = "今日已喂奶\(res.2)(左\(res.0)次,右\(res.1)次)"
+            }
+        }
+        
+        DispatchQueue.global().async(group:group) {
+            DataBaseViewModel.fetchModel(.diaper, currentDateStr) {[weak self] (arr) in
+                guard let `self` = self else{return}
+                totalOperate += arr.count
+                let res = arr.reduce((0,0,0,0,0)) { (r, model) -> (Int,Int,Int,Int,Int) in
+                    var bAndn = 0,bian = 0,niao = 0,gan = 0,total = 0
+                    if let model = model as? DiaperEventModel{
+                        if model.diaperStatus == 1 {
+                            bAndn = r.0 + 1
+                        }else if model.diaperStatus == 2 {
+                            bian = r.1 + 1
+                        }else if model.diaperStatus == 3 {
+                            niao = r.2 + 1
+                        }else if model.diaperStatus == 4 {
+                            gan = r.3 + 1
+                        }
+                        total = r.4 + 1
+                    }
+                    return (bAndn,bian,niao,gan,total)
+                }
+                self.lblDiaperDes.text = "今日已换尿布\(res.4)次(便尿\(res.0)次,便\(res.1)次,尿\(res.2)次)"
+            }
+        }
+        
+        DispatchQueue.global().async(group:group) {
+            DataBaseViewModel.fetchModel(.sleep, currentDateStr) {[weak self] (arr) in
+                guard let `self` = self else{return}
+                totalOperate += arr.count
+            }
+        }
+        
+        DispatchQueue.global().async(group:group) {
+            DataBaseViewModel.fetchModel(.pumpMilk, currentDateStr) {[weak self] (arr) in
+                guard let `self` = self else{return}
+                totalOperate += arr.count
+            }
+        }
+        
+        group.notify(queue: .main) {[weak self] in
+            guard let `self` = self else{return}
+            self.btnRecord.setTitle("今日共产生\(totalOperate)条记录", for: .normal)
+        }
     }
 }
 
