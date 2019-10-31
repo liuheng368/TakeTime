@@ -12,7 +12,9 @@ import LeanCloud
 class UserInfoModel: LCObject {
 
     @objc dynamic var UserId: LCString?
+    @objc dynamic var UserName: LCString?
     @objc dynamic var BabyBirthDate: LCDate?
+    
 
     override static func objectClassName() -> String {
         return "UserInfoChart"
