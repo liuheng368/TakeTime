@@ -10,11 +10,11 @@ import UIKit
 
 let feedStartBGcolor = UIColor(red:1, green:0.22, blue:0.67, alpha:1).cgColor
 let feedMediumBGcolor = UIColor(red:1, green:0.26, blue:0.73, alpha:1).cgColor
-let feedEndBGColor = UIColor(red:1, green:0.22, blue:0.76, alpha:1).cgColor
+let feedEndBGColor = UIColor(red:1, green:0.26, blue:0.78, alpha:1).cgColor
 
 let diaperStartBGcolor = UIColor(red:1, green:0.58, blue:0.25, alpha:1).cgColor
 let diaperMediumBGcolor = UIColor(red:1, green:0.66, blue:0.27, alpha:1).cgColor
-let diaperEndBGColor = UIColor(red:1, green:0.7, blue:0.22, alpha:1).cgColor
+let diaperEndBGColor = UIColor(red:1, green:0.71, blue:0.26, alpha:1).cgColor
 
 let sleepStartBGcolor = UIColor(red:0.21, green:0.62, blue:1, alpha:1).cgColor
 let sleepMediumBGcolor = UIColor(red:0.26, green:0.72, blue:1, alpha:1).cgColor

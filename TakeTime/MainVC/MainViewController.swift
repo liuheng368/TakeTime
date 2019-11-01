@@ -190,9 +190,9 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func didPressClock(_ sender: Any) {
-        
     }
     
+    private let dataViewModel = MainVCViewModel()
     private var vcTimePass : (water:Int,milk:Int,diapre:Int,shower:Int) = (Int.min,Int.min,Int.min,Int.min)
     private var initialTimer : (water:String,milk:String,diapre:String,shower:String) = ("","","","")
     private let arrType = ["喝奶","喝水","换尿布","洗澡"]
@@ -227,7 +227,7 @@ class MainViewController: UIViewController {
         //注册进入后台的通知
         NotificationCenter.default.addObserver(self, selector:#selector(becomeDeath), name: UIApplication.willResignActiveNotification, object: nil)
         pageUIInit()
-        showViewWithFrame()
+        showWeatherWithFrame()
         fetchUserInfo()
         fetchAllData()
     }
@@ -368,66 +368,40 @@ extension MainViewController {
     
     private func fetchAllData() {
         let group = DispatchGroup()
-        let currentDateStr = TimeFomatChange.getAppointDayString()
         var totalOperate = 0
-        DispatchQueue.global().async(group:group) {
-            DataBaseViewModel.fetchModel(.feed, currentDateStr) {[weak self] (arr) in
-                guard let `self` = self else{return}
-                totalOperate += arr.count
-                let res = arr.reduce((0,0,0)) { (r, model) -> (Int,Int,Int) in
-                    var left = 0,right = 0,total = 0
-                    if let model = model as? FeedEventModel{
-                        if model.feedOri == 1 {
-                            left = r.0 + 1
-                        }else if model.feedOri == 2 {
-                            right = r.1 + 1
-                        }
-                        total = r.2 + 1
-                    }
-                    return (left,right,total)
+        DispatchQueue.global().async(group:group) {[weak self] in
+            guard let `self` = self else{return}
+            totalOperate += self.dataViewModel.arrFeed.count
+            self.dataViewModel.fetchFeedModel { (t, l, r) in
+                self.lblFeedDes.text = "今日共喂奶\(t)次(左\(l)次,右\(r)次)"
+            }
+        }
+        DispatchQueue.global().async(group:group) {[weak self] in
+            guard let `self` = self else{return}
+            totalOperate += self.dataViewModel.arrDiaper.count
+            self.dataViewModel.fetchDiaperModel { (t, bAntN, b, n, g) in
+                self.lblDiaperDes.text = "今日共换尿布\(t)次(便尿\(bAntN)次,便\(b)次,尿\(n)次)"
+            }
+        }
+        DispatchQueue.global().async(group:group) {[weak self] in
+            guard let `self` = self else{return}
+            totalOperate += self.dataViewModel.arrSleep.count
+            self.dataViewModel.fetchSleepModel { (t, s) in
+                if let total = t {
+                    self.lblSleepDes.text = "已睡\(total / 60)小时"
                 }
-                self.lblFeedDes.text = "今日已喂奶\(res.2)(左\(res.0)次,右\(res.1)次)"
-            }
-        }
-        
-        DispatchQueue.global().async(group:group) {
-            DataBaseViewModel.fetchModel(.diaper, currentDateStr) {[weak self] (arr) in
-                guard let `self` = self else{return}
-                totalOperate += arr.count
-                let res = arr.reduce((0,0,0,0,0)) { (r, model) -> (Int,Int,Int,Int,Int) in
-                    var bAndn = 0,bian = 0,niao = 0,gan = 0,total = 0
-                    if let model = model as? DiaperEventModel{
-                        if model.diaperStatus == 1 {
-                            bAndn = r.0 + 1
-                        }else if model.diaperStatus == 2 {
-                            bian = r.1 + 1
-                        }else if model.diaperStatus == 3 {
-                            niao = r.2 + 1
-                        }else if model.diaperStatus == 4 {
-                            gan = r.3 + 1
-                        }
-                        total = r.4 + 1
-                    }
-                    return (bAndn,bian,niao,gan,total)
+                if let sleeping = s {
+                    self.lblSleepDes.text =  "\(sleeping)入睡,还未醒"
                 }
-                self.lblDiaperDes.text = "今日已换尿布\(res.4)次(便尿\(res.0)次,便\(res.1)次,尿\(res.2)次)"
             }
         }
-        
-        DispatchQueue.global().async(group:group) {
-            DataBaseViewModel.fetchModel(.sleep, currentDateStr) {[weak self] (arr) in
-                guard let `self` = self else{return}
-                totalOperate += arr.count
+        DispatchQueue.global().async(group:group) {[weak self] in
+            guard let `self` = self else{return}
+            totalOperate += self.dataViewModel.arrPump.count
+            self.dataViewModel.fetchPumpMilk { (t) in
+                self.lblPumpMilkDes.text = "已泵奶\(Int(t))ml"
             }
         }
-        
-        DispatchQueue.global().async(group:group) {
-            DataBaseViewModel.fetchModel(.pumpMilk, currentDateStr) {[weak self] (arr) in
-                guard let `self` = self else{return}
-                totalOperate += arr.count
-            }
-        }
-        
         group.notify(queue: .main) {[weak self] in
             guard let `self` = self else{return}
             self.btnRecord.setTitle("今日共产生\(totalOperate)条记录", for: .normal)
@@ -452,7 +426,7 @@ extension MainViewController {
         vPumpMilk.layer.cornerRadius = 8
     }
     
-    func showViewWithFrame() {
+    func showWeatherWithFrame() {
         let weatherView = HeFengPluginView(frame: CGRect(x: 0, y: 0, width: 50, height: 50), viewType: .leftLarge, userKey: "d4d211b3144548898f1ffb833c9222eb", location: "")
         let leftModel = HeFengConfigModel()
         leftModel.iconSize = 30

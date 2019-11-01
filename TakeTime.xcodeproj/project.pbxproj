@@ -21,6 +21,7 @@
 		02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB123368D890063A2F8 /* TimeFomatChange.swift */; };
 		022CEC89236AB3B0001B40A0 /* GradientBGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022CEC88236AB3B0001B40A0 /* GradientBGColor.swift */; };
 		0230D47E2361901000327ABA /* HeWeather_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */; };
+		026DD881236BCE3600B6C866 /* MainVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DD880236BCE3600B6C866 /* MainVCViewModel.swift */; };
 		028C3974236982CA00E299D3 /* LeanCloudGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD1B2366F79D0006F767 /* LeanCloudGlobal.swift */; };
 		028C3975236982CA00E299D3 /* LeanCloudLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD192366DFFE0006F767 /* LeanCloudLogin.swift */; };
 		028C3976236982CA00E299D3 /* LeanCloudDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD202367E29C0006F767 /* LeanCloudDataModel.swift */; };
@@ -83,6 +84,7 @@
 		0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HeWeather_Plugin.framework; sourceTree = "<group>"; };
 		02325F95233F4D860044A000 /* TakeTime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTime-Bridging-Header.h"; sourceTree = "<group>"; };
 		02325F99233F4F650044A000 /* TakeTimeToday-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTimeToday-Bridging-Header.h"; sourceTree = "<group>"; };
+		026DD880236BCE3600B6C866 /* MainVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCViewModel.swift; sourceTree = "<group>"; };
 		028C397B2369903B00E299D3 /* IMG_7230.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_7230.JPG; sourceTree = "<group>"; };
 		02A6E351233545FB00B70277 /* TakeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A6E354233545FB00B70277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -173,6 +175,25 @@
 			path = LeanCloud;
 			sourceTree = "<group>";
 		};
+		026DD87F236BCE1F00B6C866 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				026DD880236BCE3600B6C866 /* MainVCViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		026DD882236BCE4200B6C866 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				026DD87F236BCE1F00B6C866 /* ViewModel */,
+				02A6E356233545FB00B70277 /* MainViewController.swift */,
+				02A6E358233545FB00B70277 /* Main.storyboard */,
+				022073B023375DEC00C967E2 /* EventTableViewController.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
 		028C397823698BB200E299D3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
@@ -208,34 +229,16 @@
 		02A6E353233545FB00B70277 /* TakeTime */ = {
 			isa = PBXGroup;
 			children = (
-				02FD1D93236A868300CEE875 /* Model */,
-				02FD1D92236A866900CEE875 /* ViewModel */,
+				026DD882236BCE4200B6C866 /* MainVC */,
 				028C397823698BB200E299D3 /* Common */,
 				0230D47423618B3B00327ABA /* Librarys */,
 				022073C923387FC100C967E2 /* TakeTime.entitlements */,
 				02A6E354233545FB00B70277 /* AppDelegate.swift */,
-				02A6E356233545FB00B70277 /* MainViewController.swift */,
-				022073B023375DEC00C967E2 /* EventTableViewController.swift */,
-				02A6E358233545FB00B70277 /* Main.storyboard */,
 				02A6E35E233545FB00B70277 /* Assets.xcassets */,
 				02A6E360233545FB00B70277 /* LaunchScreen.storyboard */,
 				02A6E363233545FB00B70277 /* Info.plist */,
 			);
 			path = TakeTime;
-			sourceTree = "<group>";
-		};
-		02FD1D92236A866900CEE875 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		02FD1D93236A868300CEE875 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		740F377A856DD3E4E17B8B22 /* Pods */ = {
@@ -458,6 +461,7 @@
 				02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */,
 				02A6E357233545FB00B70277 /* MainViewController.swift in Sources */,
 				022073B123375DEC00C967E2 /* EventTableViewController.swift in Sources */,
+				026DD881236BCE3600B6C866 /* MainVCViewModel.swift in Sources */,
 				02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */,
 				02A6E355233545FB00B70277 /* AppDelegate.swift in Sources */,
 			);

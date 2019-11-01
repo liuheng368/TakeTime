@@ -82,8 +82,8 @@ class TimeFomatChange {
     }
     
     //MARK: 距现在多少秒
-    class func timeInterval(_ pastDate:Date)->Int{
-        return Int(Date().timeIntervalSince(pastDate))
+    class func timeInterval(_ pastDate:Date, currentDate:Date = Date())->Int{
+        return Int(currentDate.timeIntervalSince(pastDate))
     }
     
     

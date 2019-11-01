@@ -35,12 +35,16 @@ class DataBaseViewModel<T:EventSuperModel> {
             switch type {
             case .feed:
                 query = LCQuery(className: "FeedEventChart")
+                query.whereKey("eventTime", .descending)
             case .sleep:
                 query = LCQuery(className: "SleepEventChart")
+                query.whereKey("sleepStartTime", .descending)
             case .pumpMilk:
                 query = LCQuery(className: "PumpMilkEventChart")
+                query.whereKey("eventTime", .descending)
             case .diaper:
                 query = LCQuery(className: "DiaperEventChart")
+                query.whereKey("eventTime", .descending)
             }
             query.whereKey("UserId", .equalTo(userId))
             query.whereKey("currentDateDes", .equalTo(searchDateStr))
