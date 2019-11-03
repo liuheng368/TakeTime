@@ -17,10 +17,8 @@ class FeedAppendViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        ivBg.backgroundColor = feedStartBGcolor
         ivBg.layer.cornerRadius = 100
         ivBg.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
-//        ivBg.image = GradientBGColor.setGradientBackgroundColors(.feed,width:UIScreen.main.bounds.width , height:ivBg.frame.height)
         ivBg.layer.insertSublayer(GradientBGColor.setGradientBackgroundLayer(.sleep,width:UIScreen.main.bounds.width , height:ivBg.frame.height), at: 0)
     }
 
