@@ -45,7 +45,13 @@ class MainViewController: UIViewController {
     private let dataViewModel = MainVCViewModel()
     private var vcTimePass : (feed:Int,diapre:Int,sleep:Int,pumpMilk:Int) = (Int.min,Int.min,Int.min,Int.min)
     private var initialTimer : (feed:String,diapre:String,sleep:String,pumpMilk:String) = ("","","","")
-    private var bubbleTransition : HYBBubbleTransition?
+    private lazy var bubbleTransition : HYBBubbleTransition = {
+        let bt = HYBBubbleTransition(presented: { (_, _, _, _) in })
+        { (_, transition) in transition?.transitionMode = .dismiss}
+        bt?.bubbleStartPoint = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height)
+        bt?.duration = 0.2
+        return bt!
+    }()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -76,15 +82,7 @@ class MainViewController: UIViewController {
             guard let `self` = self else{return}
             self.timerTitleInit(.feed, model.eventTime!.value)
         }
-        bubbleTransition = HYBBubbleTransition(presented: { (presented, presenting, source, transition) in
-            if let bubble = transition as? HYBBubbleTransition{
-                bubble.bubbleColor = UIColor.red
-                bubble.bubbleStartPoint = CGPoint(x: self.view.center.x, y: self.view.frame.maxY)
-                bubble.duration = 0.2
-            }
-        }) { (dismissed, transition) in
-            transition?.transitionMode = .dismiss
-        }
+        bubbleTransition.bubbleColor = feedStartBGcolor
         vc.transitioningDelegate = bubbleTransition
         self.present(vc, animated: true, completion: nil)
     }
@@ -237,7 +235,7 @@ extension MainViewController {
             guard let `self` = self else{return}
             self.lblName.text = model.UserName?.value
             self.lblBirthday.text = "已经出生\((TimeFomatChange.timeInterval(model.BabyBirthDate!.value) / (60 * 60 * 24)))天了！"
-            self.fetchOperateTotal()
+            self.fetchAllData()
         })
     }
     
@@ -245,7 +243,6 @@ extension MainViewController {
         self.dataViewModel.fetchOperateTotal {[weak self] (i) in
             guard let `self` = self else{return}
             self.btnRecord.setTitle("今日共产生\(i)条记录", for: .normal)
-            self.fetchAllData()
         }
     }
     
@@ -254,6 +251,10 @@ extension MainViewController {
         fetchDiaperData()
         fetchSleepData()
         fetchPumpMilkData()
+        //避免线程拥堵
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.fetchOperateTotal()
+        }
     }
     
     private func fetchFeedData() {

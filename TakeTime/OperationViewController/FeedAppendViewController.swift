@@ -12,10 +12,16 @@ class FeedAppendViewController: UIViewController {
 
     public var finishBlock : ((FeedEventModel)->Void)?
     
+    
+    @IBOutlet weak var ivBg: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.red
         
+//        ivBg.backgroundColor = feedStartBGcolor
+        ivBg.layer.cornerRadius = 100
+        ivBg.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+//        ivBg.image = GradientBGColor.setGradientBackgroundColors(.feed,width:UIScreen.main.bounds.width , height:ivBg.frame.height)
+        ivBg.layer.insertSublayer(GradientBGColor.setGradientBackgroundLayer(.sleep,width:UIScreen.main.bounds.width , height:ivBg.frame.height), at: 0)
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
