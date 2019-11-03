@@ -43,10 +43,6 @@ class TimeFomatChange {
         hoursText = hours > 9 ? "\(hours)" : "0\(hours)"
         minutes = allTime % 3600 / 60
         minutesText = minutes > 9 ? "\(minutes)" : "0\(minutes)"
-        //        var seconds = 0
-        //        var secondsText = ""
-        //        seconds = allTime % 3600 % 60
-        //        secondsText = seconds > 9 ? "\(seconds)" : "0\(seconds)"
         return "\(hoursText):\(minutesText)"
     }
     

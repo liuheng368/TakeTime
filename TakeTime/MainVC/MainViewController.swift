@@ -7,144 +7,7 @@
 //
 
 import UIKit
-
-//extension MainViewController: UIPickerViewDataSource,UIPickerViewDelegate {
-//    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-//        return 3
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-//        switch component {
-//        case 0:
-//            return arrType.count
-//        case 1:
-//            return arrHour.count
-//        case 2:
-//            return arrMinute.count
-//        default:
-//            return 0
-//        }
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-//        for view in pickerView.subviews {
-//            if view.frame.size.height < 1 {
-//                view.backgroundColor = UIColor(red: 187/255, green: 187/255, blue: 187/255, alpha: 1.0)
-//            }
-//        }
-//        let lab = UILabel()
-//        lab.textAlignment = NSTextAlignment.center
-//        lab.textColor = UIColor(red: 51/255, green: 51/255, blue: 51/255, alpha: 1.0)
-//        lab.font = UIFont.systemFont(ofSize: 20)
-//        if component == 0 {
-//            lab.text = arrType[row]
-//        }else if component == 1 {
-//            lab.text = arrHour[row]
-//        }else{
-//            lab.text = arrMinute[row]
-//        }
-//        return lab
-//    }
-//    
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        switch component {
-//        case 0:
-//            pickSelectData.type = row
-//        case 1:
-//            pickSelectData.hour = row
-//        case 2:
-//            pickSelectData.minute = row
-//        default:break
-//        }
-//    }
-//}
-
-extension MainViewController {
-//    fileprivate func vcInit() {
-//        MainBmobViewModel.fetchEnent(.Milk) {[weak self] (arrModel) in
-//            guard let `self` = self else{return}
-//            if arrModel.count <= 0 {
-//                self.timerTitleInit(.Milk, Date())
-//            }else{
-//                self.timerTitleInit(.Milk, arrModel.first?.eventDate ?? Date())
-//                self.vcTimePass.milk = 0
-//            }
-//        }
-//        MainBmobViewModel.fetchEnent(.Water) {[weak self] (arrModel) in
-//            guard let `self` = self else{return}
-//            if arrModel.count <= 0 {
-//                self.timerTitleInit(.Water, Date())
-//            }else{
-//                self.timerTitleInit(.Water, arrModel.first?.eventDate ?? Date())
-//                self.vcTimePass.water = 0
-//            }
-//        }
-//        MainBmobViewModel.fetchEnent(.Diaper) {[weak self] (arrModel) in
-//            guard let `self` = self else{return}
-//            if arrModel.count <= 0 {
-//                self.timerTitleInit(.Diaper, Date())
-//            }else{
-//                self.timerTitleInit(.Diaper, arrModel.first?.eventDate ?? Date())
-//                self.vcTimePass.diapre = 0
-//            }
-//        }
-//        MainBmobViewModel.fetchEnent(.Shower) {[weak self] (arrModel) in
-//            guard let `self` = self else{return}
-//            if arrModel.count <= 0 {
-//                self.timerTitleInit(.Shower, Date())
-//            }else{
-//                self.timerTitleInit(.Shower, arrModel.first?.eventDate ?? Date())
-//                self.vcTimePass.shower = 0
-//            }
-//        }
-//        MineGCDTimer.start {[weak self] _ in
-//            guard let `self` = self else{return}
-//            self.vcTimePass = (self.vcTimePass.water + 1,
-//                          self.vcTimePass.milk + 1,
-//                          self.vcTimePass.diapre + 1,
-//                          self.vcTimePass.shower + 1)
-//            self.timerPass()
-//        }
-//    }
-    
-//    private func timerTitleInit(_ type:EventType,_ pastDate:Date) {
-//        let str = TimeFomatChange.getDateTimeFormat(
-//            TimeFomatChange.timeInterval(pastDate))
-//        switch type {
-//        case .Diaper:
-//            lblDiaper.text = str
-//            initialTimer.diapre = str
-//        case .Milk:
-//            lblMilk.text = str
-//            initialTimer.milk = str
-//        case .Water:
-//            lblWater.text = str
-//            initialTimer.water = str
-//        case .Shower:
-//            lblShwoer.text = str
-//            initialTimer.shower = str
-//        }
-//    }
-    
-//    private func timerPass() {
-//        if vcTimePass.diapre > 0 {
-//            lblDiaper.text = TimeFomatChange.getDateTimeFormat(
-//                TimeFomatChange.stringToTimeStamp(initialTimer.diapre) + vcTimePass.diapre)
-//        }
-//        if vcTimePass.milk > 0 {
-//            lblMilk.text = TimeFomatChange.getDateTimeFormat(
-//                TimeFomatChange.stringToTimeStamp(initialTimer.milk) + vcTimePass.milk)
-//        }
-//        if vcTimePass.water > 0 {
-//            lblWater.text = TimeFomatChange.getDateTimeFormat(
-//                TimeFomatChange.stringToTimeStamp(initialTimer.water) + vcTimePass.water)
-//        }
-//        if vcTimePass.shower > 0 {
-//            lblShwoer.text = TimeFomatChange.getDateTimeFormat(
-//                TimeFomatChange.stringToTimeStamp(initialTimer.shower) + vcTimePass.shower)
-//        }
-//    }
-}
+import LeanCloud
 
 class MainViewController: UIViewController {
 
@@ -159,65 +22,39 @@ class MainViewController: UIViewController {
     @IBOutlet weak var bgFeed: UIImageView!
     @IBOutlet weak var lblFeedDes: UILabel!
     @IBOutlet weak var lblFeedTime: UILabel!
-    @IBAction func didPressFeed(_ sender: Any) {
-    }
     
     //diaper
     @IBOutlet weak var vDiaper: UIView!
     @IBOutlet weak var bgDiaper: UIImageView!
     @IBOutlet weak var lblDiaperTime: UILabel!
     @IBOutlet weak var lblDiaperDes: UILabel!
-    @IBAction func didPressDiaper(_ sender: Any) {
-    }
     
     //sleep
     @IBOutlet weak var vSleep: UIView!
     @IBOutlet weak var bgSleep: UIImageView!
     @IBOutlet weak var lblSleepTime: UILabel!
     @IBOutlet weak var lblSleepDes: UILabel!
-    @IBAction func didPressSleep(_ sender: Any) {
-    }
     
     //pumpMilk
     @IBOutlet weak var vPumpMilk: UIView!
     @IBOutlet weak var bgPumpMilk: UIImageView!
     @IBOutlet weak var lblPumpMilkDes: UILabel!
     @IBOutlet weak var lblPumpMilkTime: UILabel!
-    @IBAction func didPressPumpMilk(_ sender: Any) {
-    }
-    
-    @IBAction func didPressRecord(_ sender: Any) {
-    }
-    
-    @IBAction func didPressClock(_ sender: Any) {
-    }
+
     
     private let dataViewModel = MainVCViewModel()
-    private var vcTimePass : (water:Int,milk:Int,diapre:Int,shower:Int) = (Int.min,Int.min,Int.min,Int.min)
-    private var initialTimer : (water:String,milk:String,diapre:String,shower:String) = ("","","","")
-    private let arrType = ["喝奶","喝水","换尿布","洗澡"]
-    private let arrHour = { () -> [String] in
-        var arr : [String] = []
-        for i in 0...23{
-            arr.append("\(i)")
-        }
-        return arr
-    }()
-    private let arrMinute = { () -> [String] in
-        var arr : [String] = []
-        for i in 0...59{
-            arr.append("\(i)")
-        }
-        return arr
-    }()
-    private var pickSelectData : (type:Int,hour:Int,minute:Int) = (0,0,0)
-    lazy var calendar:Calendar = {
-        return Calendar.current
-    }()
+    private var vcTimePass : (feed:Int,diapre:Int,sleep:Int,pumpMilk:Int) = (Int.min,Int.min,Int.min,Int.min)
+    private var initialTimer : (feed:String,diapre:String,sleep:String,pumpMilk:String) = ("","","","")
+    private var bubbleTransition : HYBBubbleTransition?
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-//        vcInit()
+        becomeActive()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        becomeDeath()
     }
     
     override func viewDidLoad() {
@@ -229,18 +66,43 @@ class MainViewController: UIViewController {
         pageUIInit()
         showWeatherWithFrame()
         fetchUserInfo()
-        fetchAllData()
-    }
-    
-    @objc  func becomeActive(noti:Notification){
-//        vcInit()
-    }
-    
-    @objc  func becomeDeath(noti:Notification){
-        MineGCDTimer.stop()
     }
     
     //MARK: Point Event
+    @IBAction func didPressFeed(_ sender: Any) {
+        let vc = FeedAppendViewController(nibName: "FeedAppendViewController", bundle: nil)
+        vc.modalPresentationStyle = .custom
+        vc.finishBlock = {[weak self] (model) in
+            guard let `self` = self else{return}
+            self.timerTitleInit(.feed, model.eventTime!.value)
+        }
+        bubbleTransition = HYBBubbleTransition(presented: { (presented, presenting, source, transition) in
+            if let bubble = transition as? HYBBubbleTransition{
+                bubble.bubbleColor = UIColor.red
+                bubble.bubbleStartPoint = CGPoint(x: self.view.center.x, y: self.view.frame.maxY)
+                bubble.duration = 0.2
+            }
+        }) { (dismissed, transition) in
+            transition?.transitionMode = .dismiss
+        }
+        vc.transitioningDelegate = bubbleTransition
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    @IBAction func didPressDiaper(_ sender: Any) {
+    }
+    
+    @IBAction func didPressSleep(_ sender: Any) {
+    }
+    
+    @IBAction func didPressPumpMilk(_ sender: Any) {
+    }
+    
+    @IBAction func didPressRecord(_ sender: Any) {
+    }
+    
+    @IBAction func didPressClock(_ sender: Any) {
+    }
 //    @IBAction func didPressWater(_ sender: Any) {
 //        MainBmobViewModel.add(Date(), .Water, success: {[weak self] (model) in
 //            guard let `self` = self else{return}
@@ -301,110 +163,150 @@ class MainViewController: UIViewController {
 //        let nav = UINavigationController(rootViewController: vc)
 //        self.present(nav, animated: true, completion: nil)
 //    }
-//    @IBAction func didPressPickView(_ sender: Any) {
-//        vPick.isHidden = false
-//        let comp:DateComponents = (self.calendar as NSCalendar).components([.hour, .minute], from: Date())
-//        pickView.selectRow(comp.hour!, inComponent: 1, animated: false)
-//        pickView.selectRow(comp.minute!, inComponent: 2, animated: false)
-//        pickSelectData.hour = comp.hour!
-//        pickSelectData.minute = comp.minute!
-//    }
-//
-//    @IBAction func didPressPickCancle(_ sender: Any) {
-//        vPick.isHidden = true
-//    }
-    
-    @IBAction func didPressPickSure(_ sender: Any) {
-//        vPick.isHidden = true
-//        let comp:DateComponents = (self.calendar as NSCalendar).components([.year, .month, .day], from: Date())
-//        let strTime = "\(comp.year!)-\(comp.month!)-\(comp.day!)-\(pickSelectData.hour)-\(pickSelectData.minute)"
-//        let dateFor = DateFormatter()
-//        dateFor.dateFormat = "yyyy-MM-dd-HH-mm"
-//        let date = dateFor.date(from: strTime)!
-//
-//        switch pickSelectData.type {
-//        case 0:
-////            MainBmobViewModel.add(date, .Milk, success: {[weak self] (model) in
-////                guard let `self` = self else{return}
-////                self.vcTimePass.milk = 0
-////                self.vcInit()
-////            })
-//        case 1:
-////            MainBmobViewModel.add(date, .Water, success: {[weak self] (model) in
-////                guard let `self` = self else{return}
-////                self.vcTimePass.water = 0
-////                self.vcInit()
-////            })
-//        case 2:
-////            MainBmobViewModel.add(date, .Diaper, success: {[weak self] (model) in
-////                guard let `self` = self else{return}
-////                self.vcTimePass.milk = 0
-////                self.vcInit()
-////            })
-//        case 3:
-////            MainBmobViewModel.add(date, .Shower, success: {[weak self] (model) in
-////                guard let `self` = self else{return}
-////                self.vcTimePass.milk = 0
-////                self.vcInit()
-////            })
-//        default:break
-//        }
-    }
+
     
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
 }
+//MARK: 倒计时相关
+extension MainViewController{
+    
+    @objc  func becomeActive(){
+        MineGCDTimer.start {[weak self] _ in
+            guard let `self` = self else{return}
+            self.vcTimePass = (self.vcTimePass.diapre + 1,
+                          self.vcTimePass.feed + 1,
+                          self.vcTimePass.sleep + 1,
+                          self.vcTimePass.pumpMilk + 1)
+            self.timerPass()
+        }
+    }
+    
+    @objc  func becomeDeath(){
+        MineGCDTimer.stop()
+    }
+    
+    private func timerTitleInit(_ type:EventType,_ pastDate:Date) {
+        let str = TimeFomatChange.getDateTimeFormat(TimeFomatChange.timeInterval(pastDate))
+        switch type {
+        case .diaper:
+            lblDiaperTime.text = str
+            initialTimer.diapre = str
+            vcTimePass.diapre = 0
+        case .feed:
+            lblFeedTime.text = str
+            initialTimer.feed = str
+            vcTimePass.feed = 0
+        case .pumpMilk:
+            lblPumpMilkTime.text = str
+            initialTimer.pumpMilk = str
+            vcTimePass.pumpMilk = 0
+        case .sleep:
+            lblSleepTime.text = str
+            initialTimer.sleep = str
+            vcTimePass.sleep = 0
+        }
+    }
+    
+    private func timerPass() {
+        if vcTimePass.diapre > 0 {
+            lblDiaperTime.text = TimeFomatChange.getDateTimeFormat(
+                TimeFomatChange.stringToTimeStamp(initialTimer.diapre) + vcTimePass.diapre)
+        }
+        if vcTimePass.feed > 0 {
+            lblFeedTime.text = TimeFomatChange.getDateTimeFormat(
+                TimeFomatChange.stringToTimeStamp(initialTimer.feed) + vcTimePass.feed)
+        }
+        if vcTimePass.pumpMilk > 0 {
+            lblPumpMilkTime.text = TimeFomatChange.getDateTimeFormat(
+                TimeFomatChange.stringToTimeStamp(initialTimer.pumpMilk) + vcTimePass.pumpMilk)
+        }
+        if vcTimePass.sleep > 0 {
+            lblSleepTime.text = TimeFomatChange.getDateTimeFormat(
+                TimeFomatChange.stringToTimeStamp(initialTimer.sleep) + vcTimePass.sleep)
+        }
+    }
+}
 
 //MARK: 页面请求相关
 extension MainViewController {
+    
     private func fetchUserInfo() {
         DataBaseViewModel.fetchUserInfo({[weak self] (model) in
             guard let `self` = self else{return}
             self.lblName.text = model.UserName?.value
             self.lblBirthday.text = "已经出生\((TimeFomatChange.timeInterval(model.BabyBirthDate!.value) / (60 * 60 * 24)))天了！"
+            self.fetchOperateTotal()
         })
     }
     
+    private func fetchOperateTotal() {
+        self.dataViewModel.fetchOperateTotal {[weak self] (i) in
+            guard let `self` = self else{return}
+            self.btnRecord.setTitle("今日共产生\(i)条记录", for: .normal)
+            self.fetchAllData()
+        }
+    }
+    
     private func fetchAllData() {
-        let group = DispatchGroup()
-        var totalOperate = 0
-        DispatchQueue.global().async(group:group) {[weak self] in
+        fetchFeedData()
+        fetchDiaperData()
+        fetchSleepData()
+        fetchPumpMilkData()
+    }
+    
+    private func fetchFeedData() {
+        dataViewModel.fetchFeedModel {[weak self] (t, l, r) in
             guard let `self` = self else{return}
-            totalOperate += self.dataViewModel.arrFeed.count
-            self.dataViewModel.fetchFeedModel { (t, l, r) in
-                self.lblFeedDes.text = "今日共喂奶\(t)次(左\(l)次,右\(r)次)"
+            self.lblFeedDes.text = "今日共喂奶\(t)次(左\(l)次,右\(r)次)"
+            if let firObj = self.dataViewModel.arrFeed.first {
+                self.timerTitleInit(.feed, firObj.eventTime?.value ?? Date())
+            }else{
+                self.timerTitleInit(.feed, Date())
             }
         }
-        DispatchQueue.global().async(group:group) {[weak self] in
+    }
+    
+    private func fetchDiaperData() {
+        dataViewModel.fetchDiaperModel {[weak self] (t, bAntN, b, n, g) in
             guard let `self` = self else{return}
-            totalOperate += self.dataViewModel.arrDiaper.count
-            self.dataViewModel.fetchDiaperModel { (t, bAntN, b, n, g) in
-                self.lblDiaperDes.text = "今日共换尿布\(t)次(便尿\(bAntN)次,便\(b)次,尿\(n)次)"
+            self.lblDiaperDes.text = "今日共换尿布\(t)次(便尿\(bAntN)次,便\(b)次,尿\(n)次)"
+            if let firObj = self.dataViewModel.arrDiaper.first {
+                self.timerTitleInit(.diaper, firObj.eventTime?.value ?? Date())
+            }else{
+                self.timerTitleInit(.diaper, Date())
             }
         }
-        DispatchQueue.global().async(group:group) {[weak self] in
+    }
+    
+    private func fetchSleepData() {
+        dataViewModel.fetchSleepModel {[weak self] (t, s) in
             guard let `self` = self else{return}
-            totalOperate += self.dataViewModel.arrSleep.count
-            self.dataViewModel.fetchSleepModel { (t, s) in
-                if let total = t {
-                    self.lblSleepDes.text = "已睡\(total / 60)小时"
-                }
-                if let sleeping = s {
-                    self.lblSleepDes.text =  "\(sleeping)入睡,还未醒"
-                }
+            if let total = t {
+                self.lblSleepDes.text = "已睡\(total / 60)小时"
+            }
+            if let sleeping = s {
+                self.lblSleepDes.text =  "\(sleeping)入睡,还未醒"
+            }
+            if let firObj = self.dataViewModel.arrSleep.first {
+                self.timerTitleInit(.sleep, firObj.sleepStartTime?.value ?? Date())
+            }else{
+                self.timerTitleInit(.sleep, Date())
             }
         }
-        DispatchQueue.global().async(group:group) {[weak self] in
+    }
+    
+    private func fetchPumpMilkData() {
+        dataViewModel.fetchPumpMilk {[weak self] (t) in
             guard let `self` = self else{return}
-            totalOperate += self.dataViewModel.arrPump.count
-            self.dataViewModel.fetchPumpMilk { (t) in
-                self.lblPumpMilkDes.text = "已泵奶\(Int(t))ml"
+            self.lblPumpMilkDes.text = "已泵奶\(Int(t))ml"
+            if let firObj = self.dataViewModel.arrPump.first {
+                self.timerTitleInit(.pumpMilk, firObj.eventTime?.value ?? Date())
+                self.vcTimePass.pumpMilk = 0
+            }else{
+                self.timerTitleInit(.pumpMilk, Date())
             }
-        }
-        group.notify(queue: .main) {[weak self] in
-            guard let `self` = self else{return}
-            self.btnRecord.setTitle("今日共产生\(totalOperate)条记录", for: .normal)
         }
     }
 }

@@ -22,6 +22,7 @@
 		022CEC89236AB3B0001B40A0 /* GradientBGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022CEC88236AB3B0001B40A0 /* GradientBGColor.swift */; };
 		0230D47E2361901000327ABA /* HeWeather_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */; };
 		026DD881236BCE3600B6C866 /* MainVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DD880236BCE3600B6C866 /* MainVCViewModel.swift */; };
+		027B7CE0236EE3ED006A6831 /* HYBBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 027B7CDF236EE3ED006A6831 /* HYBBubbleTransition.m */; };
 		028C3974236982CA00E299D3 /* LeanCloudGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD1B2366F79D0006F767 /* LeanCloudGlobal.swift */; };
 		028C3975236982CA00E299D3 /* LeanCloudLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD192366DFFE0006F767 /* LeanCloudLogin.swift */; };
 		028C3976236982CA00E299D3 /* LeanCloudDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD202367E29C0006F767 /* LeanCloudDataModel.swift */; };
@@ -32,6 +33,10 @@
 		02A6E35A233545FB00B70277 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E358233545FB00B70277 /* Main.storyboard */; };
 		02A6E35F233545FB00B70277 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E35E233545FB00B70277 /* Assets.xcassets */; };
 		02A6E362233545FB00B70277 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E360233545FB00B70277 /* LaunchScreen.storyboard */; };
+		02CE0E2F236EE1E000330E77 /* HYBBaseTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 02CE0E2C236EE1E000330E77 /* HYBBaseTransition.m */; };
+		02CE0E34236EE28300330E77 /* FeedAppendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02CE0E32236EE28300330E77 /* FeedAppendViewController.swift */; };
+		02CE0E35236EE28300330E77 /* FeedAppendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02CE0E33236EE28300330E77 /* FeedAppendViewController.xib */; };
+		02E596AC236C1503009481FC /* timePicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E596AB236C1503009481FC /* timePicket.swift */; };
 		02EFBD1A2366DFFE0006F767 /* LeanCloudLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD192366DFFE0006F767 /* LeanCloudLogin.swift */; };
 		02EFBD1C2366F79D0006F767 /* LeanCloudGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD1B2366F79D0006F767 /* LeanCloudGlobal.swift */; };
 		02EFBD1F2367DD390006F767 /* LeanCloudDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD1E2367DD390006F767 /* LeanCloudDataViewModel.swift */; };
@@ -85,6 +90,8 @@
 		02325F95233F4D860044A000 /* TakeTime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTime-Bridging-Header.h"; sourceTree = "<group>"; };
 		02325F99233F4F650044A000 /* TakeTimeToday-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTimeToday-Bridging-Header.h"; sourceTree = "<group>"; };
 		026DD880236BCE3600B6C866 /* MainVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCViewModel.swift; sourceTree = "<group>"; };
+		027B7CDE236EE3ED006A6831 /* HYBBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBBubbleTransition.h; sourceTree = "<group>"; };
+		027B7CDF236EE3ED006A6831 /* HYBBubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBBubbleTransition.m; sourceTree = "<group>"; };
 		028C397B2369903B00E299D3 /* IMG_7230.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_7230.JPG; sourceTree = "<group>"; };
 		02A6E351233545FB00B70277 /* TakeTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02A6E354233545FB00B70277 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +100,11 @@
 		02A6E35E233545FB00B70277 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		02A6E361233545FB00B70277 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		02A6E363233545FB00B70277 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		02CE0E2B236EE1E000330E77 /* HYBBaseTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBBaseTransition.h; sourceTree = "<group>"; };
+		02CE0E2C236EE1E000330E77 /* HYBBaseTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBBaseTransition.m; sourceTree = "<group>"; };
+		02CE0E32236EE28300330E77 /* FeedAppendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedAppendViewController.swift; sourceTree = "<group>"; };
+		02CE0E33236EE28300330E77 /* FeedAppendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FeedAppendViewController.xib; sourceTree = "<group>"; };
+		02E596AB236C1503009481FC /* timePicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timePicket.swift; sourceTree = "<group>"; };
 		02EFBD192366DFFE0006F767 /* LeanCloudLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanCloudLogin.swift; sourceTree = "<group>"; };
 		02EFBD1B2366F79D0006F767 /* LeanCloudGlobal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanCloudGlobal.swift; sourceTree = "<group>"; };
 		02EFBD1E2367DD390006F767 /* LeanCloudDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanCloudDataViewModel.swift; sourceTree = "<group>"; };
@@ -157,6 +169,7 @@
 		0230D47423618B3B00327ABA /* Librarys */ = {
 			isa = PBXGroup;
 			children = (
+				02CE0E2A236EE1B100330E77 /* Transitions */,
 				02FD1D90236A802A00CEE875 /* headBG.jpg */,
 				028C397B2369903B00E299D3 /* IMG_7230.JPG */,
 				0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */,
@@ -188,6 +201,7 @@
 			children = (
 				026DD87F236BCE1F00B6C866 /* ViewModel */,
 				02A6E356233545FB00B70277 /* MainViewController.swift */,
+				02E596AB236C1503009481FC /* timePicket.swift */,
 				02A6E358233545FB00B70277 /* Main.storyboard */,
 				022073B023375DEC00C967E2 /* EventTableViewController.swift */,
 			);
@@ -230,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				026DD882236BCE4200B6C866 /* MainVC */,
+				02CE0E31236EE24500330E77 /* OperationViewController */,
 				028C397823698BB200E299D3 /* Common */,
 				0230D47423618B3B00327ABA /* Librarys */,
 				022073C923387FC100C967E2 /* TakeTime.entitlements */,
@@ -239,6 +254,26 @@
 				02A6E363233545FB00B70277 /* Info.plist */,
 			);
 			path = TakeTime;
+			sourceTree = "<group>";
+		};
+		02CE0E2A236EE1B100330E77 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				027B7CDE236EE3ED006A6831 /* HYBBubbleTransition.h */,
+				027B7CDF236EE3ED006A6831 /* HYBBubbleTransition.m */,
+				02CE0E2B236EE1E000330E77 /* HYBBaseTransition.h */,
+				02CE0E2C236EE1E000330E77 /* HYBBaseTransition.m */,
+			);
+			path = Transitions;
+			sourceTree = "<group>";
+		};
+		02CE0E31236EE24500330E77 /* OperationViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02CE0E32236EE28300330E77 /* FeedAppendViewController.swift */,
+				02CE0E33236EE28300330E77 /* FeedAppendViewController.xib */,
+			);
+			path = OperationViewController;
 			sourceTree = "<group>";
 		};
 		740F377A856DD3E4E17B8B22 /* Pods */ = {
@@ -365,6 +400,7 @@
 				02A6E35F233545FB00B70277 /* Assets.xcassets in Resources */,
 				02A6E35A233545FB00B70277 /* Main.storyboard in Resources */,
 				02FD1D91236A802A00CEE875 /* headBG.jpg in Resources */,
+				02CE0E35236EE28300330E77 /* FeedAppendViewController.xib in Resources */,
 				028C397C2369903B00E299D3 /* IMG_7230.JPG in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -455,6 +491,7 @@
 			files = (
 				02EFBD212367E29C0006F767 /* LeanCloudDataModel.swift in Sources */,
 				02EFBD1F2367DD390006F767 /* LeanCloudDataViewModel.swift in Sources */,
+				02CE0E2F236EE1E000330E77 /* HYBBaseTransition.m in Sources */,
 				022CEC89236AB3B0001B40A0 /* GradientBGColor.swift in Sources */,
 				02EFBD1A2366DFFE0006F767 /* LeanCloudLogin.swift in Sources */,
 				02EFBD1C2366F79D0006F767 /* LeanCloudGlobal.swift in Sources */,
@@ -462,7 +499,10 @@
 				02A6E357233545FB00B70277 /* MainViewController.swift in Sources */,
 				022073B123375DEC00C967E2 /* EventTableViewController.swift in Sources */,
 				026DD881236BCE3600B6C866 /* MainVCViewModel.swift in Sources */,
+				02CE0E34236EE28300330E77 /* FeedAppendViewController.swift in Sources */,
+				027B7CE0236EE3ED006A6831 /* HYBBubbleTransition.m in Sources */,
 				02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */,
+				02E596AC236C1503009481FC /* timePicket.swift in Sources */,
 				02A6E355233545FB00B70277 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

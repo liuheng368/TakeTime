@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func customModelRegister() {
         UserInfoModel.register()
+        EventSuperModel.register()
         SleepEventModel.register()
         PumpMilkEventModel.register()
         FeedEventModel.register()

@@ -63,14 +63,63 @@ class DataBaseViewModel<T:EventSuperModel> {
         }
     }
     
-    class func addModel(_ model:T,_ success: ()->Void){
+    class func fetchTotalCount(_ searchDateStr:String,success: @escaping (Int)->Void) {
+        if let userId = LCApplication.default.currentUser?.objectId?.value {
+            let group = DispatchGroup()
+            var totalOperate = 0
+            DispatchQueue.global().async(group:group) {
+                let feedQuery = LCQuery(className: "FeedEventChart")
+                feedQuery.whereKey("UserId", .equalTo(userId))
+                feedQuery.whereKey("currentDateDes", .equalTo(searchDateStr))
+                _ = feedQuery.count { (r) in
+                    totalOperate += r.intValue
+                }
+            }
+            DispatchQueue.global().async(group:group) {
+                let diaperQuery = LCQuery(className: "DiaperEventChart")
+                diaperQuery.whereKey("UserId", .equalTo(userId))
+                diaperQuery.whereKey("currentDateDes", .equalTo(searchDateStr))
+                _ = diaperQuery.count { (r) in
+                    totalOperate += r.intValue
+                }
+            }
+            DispatchQueue.global().async(group:group) {
+                let pumpQuery = LCQuery(className: "PumpMilkEventChart")
+                pumpQuery.whereKey("UserId", .equalTo(userId))
+                pumpQuery.whereKey("currentDateDes", .equalTo(searchDateStr))
+                _ = pumpQuery.count { (r) in
+                    totalOperate += r.intValue
+                }
+            }
+            DispatchQueue.global().async(group:group) {
+                let sleepQuery = LCQuery(className: "SleepEventChart")
+                sleepQuery.whereKey("UserId", .equalTo(userId))
+                sleepQuery.whereKey("currentDateDes", .equalTo(searchDateStr))
+                _ = sleepQuery.count { (r) in
+                    totalOperate += r.intValue
+                }
+            }
+            group.notify(queue: .main) {
+                success(totalOperate)
+            }
+        }
+    }
+    
+    class func addModel(_ model:T,_ success: (T)->Void){
         if let userId = LCApplication.default.currentUser?.objectId?.value {
             let obj : EventSuperModel = model
-            obj.eventTime = model.eventTime
-            obj.currentDateDes = LCString(TimeFomatChange.getDateString(model.eventTime?.value ?? Date()))
+            if T.self == SleepEventModel.self {
+                obj.currentDateDes = LCString(TimeFomatChange.getDateString((model as? SleepEventModel)?.sleepStartTime?.value ?? Date()))
+            }else if T.self == FeedEventModel.self {
+                obj.currentDateDes = LCString(TimeFomatChange.getDateString((model as? FeedEventModel)?.eventTime?.value ?? Date()))
+            }else if T.self == DiaperEventModel.self {
+                obj.currentDateDes = LCString(TimeFomatChange.getDateString((model as? DiaperEventModel)?.eventTime?.value ?? Date()))
+            }else if T.self == PumpMilkEventModel.self {
+                obj.currentDateDes = LCString(TimeFomatChange.getDateString((model as? PumpMilkEventModel)?.eventTime?.value ?? Date()))
+            }
             obj.UserId = LCString(userId)
             if obj.save().isSuccess {
-                success()
+                success(obj as! T)
             }
         }
     }

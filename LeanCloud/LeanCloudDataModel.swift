@@ -23,7 +23,6 @@ class UserInfoModel: LCObject {
 
 class EventSuperModel: LCObject {
     @objc dynamic var currentDateDes: LCString?
-    @objc dynamic var eventTime: LCDate?
     @objc dynamic var UserId: LCString?
 }
 
@@ -44,6 +43,7 @@ class PumpMilkEventModel: EventSuperModel {
     @objc dynamic var leftAmout: LCNumber?
     @objc dynamic var rightAmout: LCNumber?
     @objc dynamic var tatolAmout: LCNumber?
+    @objc dynamic var eventTime: LCDate?
 
     override static func objectClassName() -> String {
         return "PumpMilkEventChart"
@@ -53,6 +53,7 @@ class PumpMilkEventModel: EventSuperModel {
 class FeedEventModel: EventSuperModel {
 
     @objc dynamic var feedOri: LCNumber?
+    @objc dynamic var eventTime: LCDate?
 
     override static func objectClassName() -> String {
         return "FeedEventChart"
@@ -63,6 +64,7 @@ class DiaperEventModel: EventSuperModel {
 
     @objc dynamic var diaperStatus: LCNumber?
     @objc dynamic var diaperStatusDes: LCString?
+    @objc dynamic var eventTime: LCDate?
 
     override static func objectClassName() -> String {
         return "DiaperEventChart"

@@ -3,3 +3,4 @@
 //
 
 #import <HeWeather_Plugin/HeWeather_Plugin.h>
+#import "HYBBubbleTransition.h"

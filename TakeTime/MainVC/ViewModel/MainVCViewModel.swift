@@ -14,6 +14,8 @@ class MainVCViewModel: NSObject {
     var arrPump : [PumpMilkEventModel] = []
     var arrDiaper : [DiaperEventModel] = []
     
+    
+    /// 获取当前日期
     var currentDateStr : String {
         get{TimeFomatChange.getAppointDayString()}
     }
@@ -101,6 +103,15 @@ class MainVCViewModel: NSObject {
                 }
                 success(Int(res))
             }
+        }
+    }
+    
+    
+    /// 查询所有记录总和
+    /// - Parameter success: <#success description#>
+    func fetchOperateTotal(_ success:@escaping (Int)->Void) {
+        DataBaseViewModel.fetchTotalCount(currentDateStr) { (i) in
+            success(i)
         }
     }
 }
