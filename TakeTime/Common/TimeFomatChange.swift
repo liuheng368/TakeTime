@@ -10,14 +10,19 @@ import UIKit
 
 class TimeFomatChange {
     
-    //MARK: 获取当前时间戳
+    
+    /// 获取当前时间戳
+    /// - Parameter strFormat: <#strFormat description#>
     class func getCurrentDateTime(_ strFormat : String = "yyyy-MM-dd HH:mm") -> String{
         let dateFor = DateFormatter()
         dateFor.dateFormat = strFormat
         return dateFor.string(from: Date())
     }
     
-    //MARK： 获取date标示
+    
+    /// 获取date标示
+    /// - Parameter date: <#date description#>
+    /// - Parameter dateFormat: <#dateFormat description#>
     class func getDateString(_ date:Date,_ dateFormat:String = "yyyyMMdd") -> String {
         let dateFor = DateFormatter()
         dateFor.dateFormat = dateFormat
@@ -25,7 +30,8 @@ class TimeFomatChange {
     }
     
     /// 将秒时间戳转为string
-    /// 单位秒
+    /// - Parameter iDate: 单位秒
+    /// - Parameter strFormat: <#strFormat description#>
     class func getIntFormatDate(_ iDate:Int, strFormat : String = "yyyy-MM-dd HH:mm") -> Date{
         let dateFor = DateFormatter()
         dateFor.dateFormat = strFormat
@@ -77,11 +83,26 @@ class TimeFomatChange {
         return seconds
     }
     
-    //MARK: 距现在多少秒
+    
+    /// 距现在多少秒
+    /// - Parameter pastDate: <#pastDate description#>
+    /// - Parameter currentDate: <#currentDate description#>
     class func timeInterval(_ pastDate:Date, currentDate:Date = Date())->Int{
         return Int(currentDate.timeIntervalSince(pastDate))
     }
     
+    
+    /// 相差时间超不超过1分钟
+    /// - Parameter pastDate: <#pastDate description#>
+    /// - Parameter currentDate: <#currentDate description#>
+    class func timeOneMinute(_ pastDate:Date, currentDate:Date = Date())->Bool{
+        if timeInterval(pastDate, currentDate: currentDate) <= 60 &&
+            timeInterval(pastDate, currentDate: currentDate) > 0{
+            return true
+        }else {
+            return false
+        }
+    }
     
     /// 获取从当天开始指定日期的字符串 (yyyy-MM-dd)
     /// - Parameter day: 指定天数 ，默认为0

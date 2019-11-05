@@ -87,7 +87,7 @@
                                 <action selector="didPressSure:" destination="-1" eventType="touchUpInside" id="F3W-yn-FbT"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3b-OS-Dhg">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3b-OS-Dhg">
                             <rect key="frame" x="155" y="216.5" width="215" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="便便 + 尿尿">
@@ -97,7 +97,7 @@
                                 <action selector="didPressStatusPick:" destination="-1" eventType="touchUpInside" id="Mcc-4A-k5Y"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1p-fh-1tM">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C1p-fh-1tM">
                             <rect key="frame" x="155" y="260.5" width="215" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="便便">
@@ -107,7 +107,7 @@
                                 <action selector="didPressStatusPick:" destination="-1" eventType="touchUpInside" id="9nZ-ek-kLK"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKQ-Y0-qff">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKQ-Y0-qff">
                             <rect key="frame" x="155" y="304.5" width="215" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="尿尿">
@@ -117,7 +117,7 @@
                                 <action selector="didPressStatusPick:" destination="-1" eventType="touchUpInside" id="x86-9z-JKi"/>
                             </connections>
                         </button>
-                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBt-9W-Hm8">
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBt-9W-Hm8">
                             <rect key="frame" x="155" y="348.5" width="215" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="干爽">

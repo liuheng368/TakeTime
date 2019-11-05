@@ -71,7 +71,10 @@ class MainViewController: UIViewController {
         sleepVC.modalPresentationStyle = .custom
         sleepVC.finishBlock = {[weak self] in
             guard let `self` = self else{return}
-            self.fetchDiaperData()
+            self.fetchSleepData()
+        }
+        if dataViewModel.arrSleep.first?.sleepEndTime?.value == nil {
+            sleepVC.currentModel = dataViewModel.arrSleep.first
         }
         bubbleTransition.bubbleColor = sleepStartBGcolor
         sleepVC.transitioningDelegate = bubbleTransition
@@ -83,7 +86,7 @@ class MainViewController: UIViewController {
         pumpMilkVC.modalPresentationStyle = .custom
         pumpMilkVC.finishBlock = {[weak self] in
             guard let `self` = self else{return}
-            self.fetchDiaperData()
+            self.fetchPumpMilkData()
         }
         bubbleTransition.bubbleColor = pumpMilkStartBGcolor
         pumpMilkVC.transitioningDelegate = bubbleTransition
@@ -168,7 +171,11 @@ extension MainViewController{
         }
         if let model = dataViewModel.arrSleep.first,
             let date = model.eventTime?.value{
-            lblSleepTime.text = TimeFomatChange.getDateTimeFormat(TimeFomatChange.timeInterval(date))
+            if let _ = model.sleepEndTime {
+                lblSleepTime.text = "00:00"
+            }else{
+                lblSleepTime.text = TimeFomatChange.getDateTimeFormat(TimeFomatChange.timeInterval(date))
+            }
         }else{
             lblSleepTime.text = "00:00"
         }
@@ -223,7 +230,7 @@ extension MainViewController {
         dataViewModel.fetchSleepModel {[weak self] (t, s) in
             guard let `self` = self else{return}
             if let total = t {
-                self.lblSleepDes.text = "已睡\(total / 60)小时"
+                self.lblSleepDes.text = "今日已睡\(total / 3600)小时\(total % 3600 / 60)分钟"
             }
             if let sleeping = s {
                 self.lblSleepDes.text =  "\(sleeping)入睡,还未醒"

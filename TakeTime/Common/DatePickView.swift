@@ -62,10 +62,14 @@ class DatePickView: UIView {
     }
     
     @IBAction func didPreseCancle(_ sender: Any) {
-        hide()
+        self.removeFromSuperview()
+        myMaskView?.removeFromSuperview()
+        myMaskView = nil
+        mainView = nil
     }
     
     @objc func hide() {
+        blockAction(vDatePick.date)
         self.removeFromSuperview()
         myMaskView?.removeFromSuperview()
         myMaskView = nil

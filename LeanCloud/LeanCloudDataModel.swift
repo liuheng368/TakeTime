@@ -31,7 +31,6 @@ class SleepEventModel: EventSuperModel {
 
     @objc dynamic var sleepEndTime: LCDate?
     @objc dynamic var wakeUpStatus: LCNumber?
-    @objc dynamic var wakeUpStatusDes: LCString?
 
     override static func objectClassName() -> String {
         return "SleepEventChart"
@@ -39,16 +38,22 @@ class SleepEventModel: EventSuperModel {
 }
 
 enum SleepEventEnum : Int{
-    case left = 1
-    case right = 2
+    case eWake = 1
+    case nrWake = 2
+    case jWake = 3
+    case xWake = 4
     
     subscript() -> String{
         get {
             switch self{
-            case .left:
-                return "左"
-            case .right:
-                return "右"
+            case .eWake:
+                return "饿醒"
+            case .nrWake:
+                return "自然醒"
+            case .jWake:
+                return "叫醒"
+            case .xWake:
+                return "惊醒"
             }
         }
     }
@@ -74,10 +79,25 @@ class FeedEventModel: EventSuperModel {
     }
 }
 
+enum FeedEventEnum : Int{
+    case left = 1
+    case right = 2
+    
+    subscript() -> String{
+        get {
+            switch self{
+            case .left:
+                return "左"
+            case .right:
+                return "右"
+            }
+        }
+    }
+}
+
 class DiaperEventModel: EventSuperModel {
 
     @objc dynamic var diaperStatus: LCNumber?
-    @objc dynamic var diaperStatusDes: LCString?
 
     override static func objectClassName() -> String {
         return "DiaperEventChart"

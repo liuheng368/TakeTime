@@ -82,8 +82,9 @@ class MainVCViewModel: NSObject {
                         dateFor.dateFormat = "MM-dd HH:mm"
                         if let startTime = first.eventTime?.value {
                             success(nil,dateFor.string(from: startTime))
+                        }else{
+                            success(nil,dateFor.string(from: Date()))
                         }
-                        success(nil,dateFor.string(from: Date()))
                     }
                 }
             }

@@ -70,7 +70,8 @@ class FeedAppendViewController: UIViewController {
         let model = FeedEventModel()
         model.eventTime = LCDate(pickDate)
         model.feedOri = LCNumber(orLeft ? 1 : 2)
-        DataBaseViewModel.addModel(model) { (_) in
+        DataBaseViewModel.addModel(model) {[weak self] (_) in
+            guard let `self` = self else{return}
             if let block = finishBlock {
                 block()
                 self.dismiss(animated: true, completion: nil)
