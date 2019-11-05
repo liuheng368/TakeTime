@@ -28,16 +28,16 @@ class DiaperAppendViewController: UIViewController {
              height:vBG.frame.height),at: 0)
         
         btnBianNiao.layer.borderColor = UIColor.white.cgColor
-        btnBianNiao.layer.cornerRadius = 3
+        btnBianNiao.layer.cornerRadius = 5
         btnBianNiao.layer.borderWidth = 2
         btnBian.layer.borderColor = UIColor.white.cgColor
-        btnBian.layer.cornerRadius = 3
+        btnBian.layer.cornerRadius = 5
         btnBian.layer.borderWidth = 0
         btnNiao.layer.borderColor = UIColor.white.cgColor
-        btnNiao.layer.cornerRadius = 3
+        btnNiao.layer.cornerRadius = 5
         btnNiao.layer.borderWidth = 0
         btnGan.layer.borderColor = UIColor.white.cgColor
-        btnGan.layer.cornerRadius = 3
+        btnGan.layer.cornerRadius = 5
         btnGan.layer.borderWidth = 0
         btnDatePick.setTitle(TimeFomatChange.getDateString(Date(), "MM月dd日 HH:mm"), for: .normal)
     }
