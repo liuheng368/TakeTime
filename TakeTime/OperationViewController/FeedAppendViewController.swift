@@ -7,33 +7,78 @@
 //
 
 import UIKit
+import LeanCloud
 
 class FeedAppendViewController: UIViewController {
 
     public var finishBlock : ((FeedEventModel)->Void)?
     
+    @IBOutlet weak var vBG: UIView!
+    @IBOutlet weak var btnDate: UIButton!
+    @IBOutlet weak var btnLeft: titLeftButton!
+    @IBOutlet weak var btnRight: UIButton!
     
-    @IBOutlet weak var ivBg: UIImageView!
+    private var pickDate : Date = Date()
+    private var orLeft : Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ivBg.layer.cornerRadius = 100
-        ivBg.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
-        ivBg.layer.insertSublayer(GradientBGColor.setGradientBackgroundLayer(.sleep,width:UIScreen.main.bounds.width , height:ivBg.frame.height), at: 0)
+        vBG.layer.cornerRadius = 100
+        vBG.layer.maskedCorners = [.layerMinXMinYCorner,.layerMaxXMinYCorner]
+        vBG.layer.masksToBounds = true
+        vBG.layer.insertSublayer(
+         GradientBGColor.setGradientBackgroundLayer(
+             .feed,
+             width:UIScreen.main.bounds.width,
+             height:vBG.frame.height),at: 0)
+        
+        btnLeft.layer.borderColor = UIColor.white.cgColor
+        btnLeft.layer.cornerRadius = 30
+        btnRight.layer.borderColor = UIColor.white.cgColor
+        btnRight.layer.cornerRadius = 30
+        btnDate.setTitle(TimeFomatChange.getDateString(Date(), "yyyy.MM.dd HH:mm"), for: .normal)
     }
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+    @IBAction func didPressDatePick(_ sender: Any) {
+        _ = DatePickView {[weak self] (date) in
+            guard let `self` = self else{return}
+            self.pickDate = date
+            self.btnDate.setTitle(TimeFomatChange.getDateString(date, "yyyy.MM.dd HH:mm"), for: .normal)
+        }
+    }
+    
+    @IBAction func didPressLeft(_ sender: Any) {
+        orLeft = true
+        btnLeft.layer.borderWidth = 2
+        btnRight.layer.borderWidth = 0
+    }
+    
+    @IBAction func didPressRight(_ sender: Any) {
+        orLeft = false
+        btnLeft.layer.borderWidth = 0
+        btnRight.layer.borderWidth = 2
+    }
+    
+    @IBAction func didPressCancle(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func didPressSure(_ sender: Any) {
+        if let orLeft = orLeft {
+            let model = FeedEventModel()
+            model.eventTime = LCDate(pickDate)
+            model.feedOri = LCNumber(orLeft ? 1 : 2)
+            DataBaseViewModel.addModel(model) { (obj) in
+                if let block = finishBlock {
+                    block(obj)
+                    self.dismiss(animated: true, completion: nil)
+                }
+            }
+        }else{
+            btnRight.shake(offset: 2)
+            btnLeft.shake(offset: -2)
+        }
     }
-    */
-
+    
 }

@@ -70,7 +70,7 @@ class MainVCViewModel: NSObject {
                 if let first = arr.first {
                     if let _ = first.sleepEndTime {
                         let res = arr.reduce(0) { (r, model) -> Int in
-                            if let startTime = model.sleepStartTime?.value,
+                            if let startTime = model.eventTime?.value,
                                 let endTime = model.sleepEndTime?.value {
                                 return (TimeFomatChange.timeInterval(startTime, currentDate: endTime) + r)
                             }
@@ -80,7 +80,7 @@ class MainVCViewModel: NSObject {
                     }else{
                         let dateFor = DateFormatter()
                         dateFor.dateFormat = "MM-dd HH:mm"
-                        if let startTime = first.sleepStartTime?.value {
+                        if let startTime = first.eventTime?.value {
                             success(nil,dateFor.string(from: startTime))
                         }
                         success(nil,dateFor.string(from: Date()))

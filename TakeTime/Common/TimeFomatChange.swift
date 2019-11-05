@@ -18,9 +18,9 @@ class TimeFomatChange {
     }
     
     //MARK： 获取date标示
-    class func getDateString(_ date:Date) -> String {
+    class func getDateString(_ date:Date,_ dateFormat:String = "yyyyMMdd") -> String {
         let dateFor = DateFormatter()
-        dateFor.dateFormat = "yyyyMMdd"
+        dateFor.dateFormat = dateFormat
         return dateFor.string(from: date)
     }
     
@@ -89,7 +89,7 @@ class TimeFomatChange {
         let calendar = Calendar.current
         let date = calendar.date(byAdding: .day, value: day, to: Date())!
         let dateFor = DateFormatter()
-        dateFor.dateFormat = "yyyy-MM-dd"
+        dateFor.dateFormat = "yyyyMMdd"
         return dateFor.string(from: date)
     }
 }

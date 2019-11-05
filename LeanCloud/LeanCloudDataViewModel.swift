@@ -35,17 +35,14 @@ class DataBaseViewModel<T:EventSuperModel> {
             switch type {
             case .feed:
                 query = LCQuery(className: "FeedEventChart")
-                query.whereKey("eventTime", .descending)
             case .sleep:
                 query = LCQuery(className: "SleepEventChart")
-                query.whereKey("sleepStartTime", .descending)
             case .pumpMilk:
                 query = LCQuery(className: "PumpMilkEventChart")
-                query.whereKey("eventTime", .descending)
             case .diaper:
                 query = LCQuery(className: "DiaperEventChart")
-                query.whereKey("eventTime", .descending)
             }
+            query.whereKey("eventTime", .descending)
             query.whereKey("UserId", .equalTo(userId))
             query.whereKey("currentDateDes", .equalTo(searchDateStr))
             query.limit = 1000
@@ -108,15 +105,7 @@ class DataBaseViewModel<T:EventSuperModel> {
     class func addModel(_ model:T,_ success: (T)->Void){
         if let userId = LCApplication.default.currentUser?.objectId?.value {
             let obj : EventSuperModel = model
-            if T.self == SleepEventModel.self {
-                obj.currentDateDes = LCString(TimeFomatChange.getDateString((model as? SleepEventModel)?.sleepStartTime?.value ?? Date()))
-            }else if T.self == FeedEventModel.self {
-                obj.currentDateDes = LCString(TimeFomatChange.getDateString((model as? FeedEventModel)?.eventTime?.value ?? Date()))
-            }else if T.self == DiaperEventModel.self {
-                obj.currentDateDes = LCString(TimeFomatChange.getDateString((model as? DiaperEventModel)?.eventTime?.value ?? Date()))
-            }else if T.self == PumpMilkEventModel.self {
-                obj.currentDateDes = LCString(TimeFomatChange.getDateString((model as? PumpMilkEventModel)?.eventTime?.value ?? Date()))
-            }
+            obj.currentDateDes = LCString(TimeFomatChange.getDateString(model.eventTime?.value ?? Date()))
             obj.UserId = LCString(userId)
             if obj.save().isSuccess {
                 success(obj as! T)

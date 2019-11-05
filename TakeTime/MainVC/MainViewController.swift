@@ -43,8 +43,6 @@ class MainViewController: UIViewController {
 
     
     private let dataViewModel = MainVCViewModel()
-    private var vcTimePass : (feed:Int,diapre:Int,sleep:Int,pumpMilk:Int) = (Int.min,Int.min,Int.min,Int.min)
-    private var initialTimer : (feed:String,diapre:String,sleep:String,pumpMilk:String) = ("","","","")
     private lazy var bubbleTransition : HYBBubbleTransition = {
         let bt = HYBBubbleTransition(presented: { (_, _, _, _) in })
         { (_, transition) in transition?.transitionMode = .dismiss}
@@ -80,7 +78,7 @@ class MainViewController: UIViewController {
         vc.modalPresentationStyle = .custom
         vc.finishBlock = {[weak self] (model) in
             guard let `self` = self else{return}
-            self.timerTitleInit(.feed, model.eventTime!.value)
+            self.fetchFeedData()
         }
         bubbleTransition.bubbleColor = feedStartBGcolor
         vc.transitioningDelegate = bubbleTransition
@@ -167,16 +165,13 @@ class MainViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
 }
+
 //MARK: 倒计时相关
 extension MainViewController{
     
     @objc  func becomeActive(){
         MineGCDTimer.start {[weak self] _ in
             guard let `self` = self else{return}
-            self.vcTimePass = (self.vcTimePass.diapre + 1,
-                          self.vcTimePass.feed + 1,
-                          self.vcTimePass.sleep + 1,
-                          self.vcTimePass.pumpMilk + 1)
             self.timerPass()
         }
     }
@@ -185,44 +180,30 @@ extension MainViewController{
         MineGCDTimer.stop()
     }
     
-    private func timerTitleInit(_ type:EventType,_ pastDate:Date) {
-        let str = TimeFomatChange.getDateTimeFormat(TimeFomatChange.timeInterval(pastDate))
-        switch type {
-        case .diaper:
-            lblDiaperTime.text = str
-            initialTimer.diapre = str
-            vcTimePass.diapre = 0
-        case .feed:
-            lblFeedTime.text = str
-            initialTimer.feed = str
-            vcTimePass.feed = 0
-        case .pumpMilk:
-            lblPumpMilkTime.text = str
-            initialTimer.pumpMilk = str
-            vcTimePass.pumpMilk = 0
-        case .sleep:
-            lblSleepTime.text = str
-            initialTimer.sleep = str
-            vcTimePass.sleep = 0
-        }
-    }
-    
     private func timerPass() {
-        if vcTimePass.diapre > 0 {
-            lblDiaperTime.text = TimeFomatChange.getDateTimeFormat(
-                TimeFomatChange.stringToTimeStamp(initialTimer.diapre) + vcTimePass.diapre)
+        if let model = dataViewModel.arrDiaper.first,
+            let date = model.eventTime?.value{
+            lblDiaperTime.text = TimeFomatChange.getDateTimeFormat(TimeFomatChange.timeInterval(date))
+        }else{
+            lblDiaperTime.text = "00:00"
         }
-        if vcTimePass.feed > 0 {
-            lblFeedTime.text = TimeFomatChange.getDateTimeFormat(
-                TimeFomatChange.stringToTimeStamp(initialTimer.feed) + vcTimePass.feed)
+        if let model = dataViewModel.arrFeed.first,
+            let date = model.eventTime?.value{
+            lblFeedTime.text = TimeFomatChange.getDateTimeFormat(TimeFomatChange.timeInterval(date))
+        }else{
+            lblFeedTime.text = "00:00"
         }
-        if vcTimePass.pumpMilk > 0 {
-            lblPumpMilkTime.text = TimeFomatChange.getDateTimeFormat(
-                TimeFomatChange.stringToTimeStamp(initialTimer.pumpMilk) + vcTimePass.pumpMilk)
+        if let model = dataViewModel.arrPump.first,
+            let date = model.eventTime?.value{
+            lblPumpMilkTime.text = TimeFomatChange.getDateTimeFormat(TimeFomatChange.timeInterval(date))
+        }else{
+            lblPumpMilkTime.text = "00:00"
         }
-        if vcTimePass.sleep > 0 {
-            lblSleepTime.text = TimeFomatChange.getDateTimeFormat(
-                TimeFomatChange.stringToTimeStamp(initialTimer.sleep) + vcTimePass.sleep)
+        if let model = dataViewModel.arrSleep.first,
+            let date = model.eventTime?.value{
+            lblSleepTime.text = TimeFomatChange.getDateTimeFormat(TimeFomatChange.timeInterval(date))
+        }else{
+            lblSleepTime.text = "00:00"
         }
     }
 }
@@ -261,11 +242,6 @@ extension MainViewController {
         dataViewModel.fetchFeedModel {[weak self] (t, l, r) in
             guard let `self` = self else{return}
             self.lblFeedDes.text = "今日共喂奶\(t)次(左\(l)次,右\(r)次)"
-            if let firObj = self.dataViewModel.arrFeed.first {
-                self.timerTitleInit(.feed, firObj.eventTime?.value ?? Date())
-            }else{
-                self.timerTitleInit(.feed, Date())
-            }
         }
     }
     
@@ -273,11 +249,6 @@ extension MainViewController {
         dataViewModel.fetchDiaperModel {[weak self] (t, bAntN, b, n, g) in
             guard let `self` = self else{return}
             self.lblDiaperDes.text = "今日共换尿布\(t)次(便尿\(bAntN)次,便\(b)次,尿\(n)次)"
-            if let firObj = self.dataViewModel.arrDiaper.first {
-                self.timerTitleInit(.diaper, firObj.eventTime?.value ?? Date())
-            }else{
-                self.timerTitleInit(.diaper, Date())
-            }
         }
     }
     
@@ -290,11 +261,6 @@ extension MainViewController {
             if let sleeping = s {
                 self.lblSleepDes.text =  "\(sleeping)入睡,还未醒"
             }
-            if let firObj = self.dataViewModel.arrSleep.first {
-                self.timerTitleInit(.sleep, firObj.sleepStartTime?.value ?? Date())
-            }else{
-                self.timerTitleInit(.sleep, Date())
-            }
         }
     }
     
@@ -302,12 +268,6 @@ extension MainViewController {
         dataViewModel.fetchPumpMilk {[weak self] (t) in
             guard let `self` = self else{return}
             self.lblPumpMilkDes.text = "已泵奶\(Int(t))ml"
-            if let firObj = self.dataViewModel.arrPump.first {
-                self.timerTitleInit(.pumpMilk, firObj.eventTime?.value ?? Date())
-                self.vcTimePass.pumpMilk = 0
-            }else{
-                self.timerTitleInit(.pumpMilk, Date())
-            }
         }
     }
 }

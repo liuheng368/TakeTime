@@ -22,6 +22,9 @@
 		022CEC89236AB3B0001B40A0 /* GradientBGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022CEC88236AB3B0001B40A0 /* GradientBGColor.swift */; };
 		0230D47E2361901000327ABA /* HeWeather_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */; };
 		026DD881236BCE3600B6C866 /* MainVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DD880236BCE3600B6C866 /* MainVCViewModel.swift */; };
+		02787B4D23704C7000947DD6 /* titLeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02787B4C23704C7000947DD6 /* titLeftButton.swift */; };
+		02787B5323710DAD00947DD6 /* DatePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02787B5223710DAD00947DD6 /* DatePickView.swift */; };
+		02787B5523710DB600947DD6 /* DatePickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02787B5423710DB600947DD6 /* DatePickView.xib */; };
 		027B7CE0236EE3ED006A6831 /* HYBBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 027B7CDF236EE3ED006A6831 /* HYBBubbleTransition.m */; };
 		028C3974236982CA00E299D3 /* LeanCloudGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD1B2366F79D0006F767 /* LeanCloudGlobal.swift */; };
 		028C3975236982CA00E299D3 /* LeanCloudLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD192366DFFE0006F767 /* LeanCloudLogin.swift */; };
@@ -90,6 +93,9 @@
 		02325F95233F4D860044A000 /* TakeTime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTime-Bridging-Header.h"; sourceTree = "<group>"; };
 		02325F99233F4F650044A000 /* TakeTimeToday-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTimeToday-Bridging-Header.h"; sourceTree = "<group>"; };
 		026DD880236BCE3600B6C866 /* MainVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCViewModel.swift; sourceTree = "<group>"; };
+		02787B4C23704C7000947DD6 /* titLeftButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = titLeftButton.swift; sourceTree = "<group>"; };
+		02787B5223710DAD00947DD6 /* DatePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickView.swift; sourceTree = "<group>"; };
+		02787B5423710DB600947DD6 /* DatePickView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickView.xib; sourceTree = "<group>"; };
 		027B7CDE236EE3ED006A6831 /* HYBBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBBubbleTransition.h; sourceTree = "<group>"; };
 		027B7CDF236EE3ED006A6831 /* HYBBubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBBubbleTransition.m; sourceTree = "<group>"; };
 		028C397B2369903B00E299D3 /* IMG_7230.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_7230.JPG; sourceTree = "<group>"; };
@@ -214,6 +220,9 @@
 				02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */,
 				02228CB123368D890063A2F8 /* TimeFomatChange.swift */,
 				022CEC88236AB3B0001B40A0 /* GradientBGColor.swift */,
+				02787B4C23704C7000947DD6 /* titLeftButton.swift */,
+				02787B5223710DAD00947DD6 /* DatePickView.swift */,
+				02787B5423710DB600947DD6 /* DatePickView.xib */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -397,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				02A6E362233545FB00B70277 /* LaunchScreen.storyboard in Resources */,
+				02787B5523710DB600947DD6 /* DatePickView.xib in Resources */,
 				02A6E35F233545FB00B70277 /* Assets.xcassets in Resources */,
 				02A6E35A233545FB00B70277 /* Main.storyboard in Resources */,
 				02FD1D91236A802A00CEE875 /* headBG.jpg in Resources */,
@@ -495,12 +505,14 @@
 				022CEC89236AB3B0001B40A0 /* GradientBGColor.swift in Sources */,
 				02EFBD1A2366DFFE0006F767 /* LeanCloudLogin.swift in Sources */,
 				02EFBD1C2366F79D0006F767 /* LeanCloudGlobal.swift in Sources */,
+				02787B4D23704C7000947DD6 /* titLeftButton.swift in Sources */,
 				02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */,
 				02A6E357233545FB00B70277 /* MainViewController.swift in Sources */,
 				022073B123375DEC00C967E2 /* EventTableViewController.swift in Sources */,
 				026DD881236BCE3600B6C866 /* MainVCViewModel.swift in Sources */,
 				02CE0E34236EE28300330E77 /* FeedAppendViewController.swift in Sources */,
 				027B7CE0236EE3ED006A6831 /* HYBBubbleTransition.m in Sources */,
+				02787B5323710DAD00947DD6 /* DatePickView.swift in Sources */,
 				02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */,
 				02E596AC236C1503009481FC /* timePicket.swift in Sources */,
 				02A6E355233545FB00B70277 /* AppDelegate.swift in Sources */,
