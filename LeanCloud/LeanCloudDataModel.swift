@@ -38,6 +38,22 @@ class SleepEventModel: EventSuperModel {
     }
 }
 
+enum SleepEventEnum : Int{
+    case left = 1
+    case right = 2
+    
+    subscript() -> String{
+        get {
+            switch self{
+            case .left:
+                return "左"
+            case .right:
+                return "右"
+            }
+        }
+    }
+}
+
 class PumpMilkEventModel: EventSuperModel {
 
     @objc dynamic var leftAmout: LCNumber?
@@ -65,6 +81,28 @@ class DiaperEventModel: EventSuperModel {
 
     override static func objectClassName() -> String {
         return "DiaperEventChart"
+    }
+}
+
+enum DiaperEventEnum : Int{
+    case bianAndNiao = 1
+    case bian = 2
+    case niao = 3
+    case gan = 4
+    
+    subscript() -> String{
+        get {
+            switch self{
+            case .bianAndNiao:
+                return "便便 + 尿尿"
+            case .bian:
+                return "便便"
+            case .niao:
+                return "尿尿"
+            case .gan:
+                return "干"
+            }
+        }
     }
 }
 

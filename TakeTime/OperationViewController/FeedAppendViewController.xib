@@ -22,7 +22,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喂养" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhM-G5-F8P">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="喂奶" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KhM-G5-F8P">
                     <rect key="frame" x="184.5" y="52.5" width="45" height="26.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <color key="textColor" red="0.20784313725490194" green="0.20784313725490194" blue="0.20784313725490194" alpha="1" colorSpace="calibratedRGB"/>
@@ -30,7 +30,6 @@
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygB-Y7-SN0">
                     <rect key="frame" x="0.0" y="94" width="414" height="802"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2A7-Q9-G6q">
                     <rect key="frame" x="0.0" y="94" width="414" height="802"/>
@@ -48,7 +47,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ge6-dR-Fwk">
-                            <rect key="frame" x="83" y="448" width="80" height="80"/>
+                            <rect key="frame" x="83" y="450" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="80" id="HtJ-wA-GRW"/>
                                 <constraint firstAttribute="width" constant="80" id="TcC-h8-V96"/>
@@ -59,7 +58,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V68-yO-moa">
-                            <rect key="frame" x="251" y="448" width="80" height="80"/>
+                            <rect key="frame" x="251" y="450" width="80" height="80"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="80" id="P0Q-LV-TcG"/>
                                 <constraint firstAttribute="height" constant="80" id="qnu-dn-BUC"/>
@@ -79,6 +78,13 @@
                                 <action selector="didPressDatePick:" destination="-1" eventType="touchUpInside" id="Eye-ua-AeO"/>
                             </connections>
                         </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0n-zB-jem">
+                            <rect key="frame" x="153" y="180.5" width="217" height="1"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="Nyv-sh-kIf"/>
+                            </constraints>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6M-JF-c6s" customClass="titLeftButton" customModule="TakeTime" customModuleProvider="target">
                             <rect key="frame" x="155" y="256" width="60" height="60"/>
                             <constraints>
@@ -103,20 +109,23 @@
                         </button>
                     </subviews>
                     <constraints>
+                        <constraint firstItem="c0n-zB-jem" firstAttribute="bottom" secondItem="tda-04-L9U" secondAttribute="bottom" id="1ep-Wt-Os6"/>
                         <constraint firstItem="g6M-JF-c6s" firstAttribute="centerY" secondItem="UBM-q9-sGm" secondAttribute="centerY" id="31x-QX-Qxu"/>
                         <constraint firstAttribute="trailing" secondItem="tda-04-L9U" secondAttribute="trailing" constant="44" id="3ST-qj-9Sh"/>
                         <constraint firstItem="tm1-iF-DTR" firstAttribute="top" secondItem="2A7-Q9-G6q" secondAttribute="top" constant="150" id="6FC-yc-RFl"/>
                         <constraint firstItem="FQw-OA-LPb" firstAttribute="centerY" secondItem="UBM-q9-sGm" secondAttribute="centerY" id="7wE-an-1cj"/>
                         <constraint firstAttribute="centerX" secondItem="Ge6-dR-Fwk" secondAttribute="trailing" constant="44" id="8Xl-Lb-b0e"/>
                         <constraint firstItem="UBM-q9-sGm" firstAttribute="top" secondItem="tm1-iF-DTR" secondAttribute="bottom" constant="100" id="Ekb-kJ-y81"/>
+                        <constraint firstItem="tda-04-L9U" firstAttribute="leading" secondItem="c0n-zB-jem" secondAttribute="leading" constant="2" id="HiE-6F-f1d"/>
+                        <constraint firstItem="tda-04-L9U" firstAttribute="trailing" secondItem="c0n-zB-jem" secondAttribute="trailing" id="I6f-No-8RK"/>
                         <constraint firstItem="tda-04-L9U" firstAttribute="leading" secondItem="tm1-iF-DTR" secondAttribute="trailing" constant="70" id="RT9-qm-xaB"/>
                         <constraint firstItem="V68-yO-moa" firstAttribute="leading" secondItem="2A7-Q9-G6q" secondAttribute="centerX" constant="44" id="VfK-lm-0Nt"/>
                         <constraint firstItem="g6M-JF-c6s" firstAttribute="leading" secondItem="tda-04-L9U" secondAttribute="leading" id="XFC-S2-bef"/>
                         <constraint firstItem="UBM-q9-sGm" firstAttribute="leading" secondItem="2A7-Q9-G6q" secondAttribute="leading" constant="44" id="ebq-5R-YPM"/>
-                        <constraint firstItem="Ge6-dR-Fwk" firstAttribute="top" secondItem="UBM-q9-sGm" secondAttribute="bottom" constant="150" id="hFf-9G-I1X"/>
                         <constraint firstItem="tda-04-L9U" firstAttribute="centerY" secondItem="tm1-iF-DTR" secondAttribute="centerY" id="lBs-gh-4Ns"/>
                         <constraint firstItem="tm1-iF-DTR" firstAttribute="leading" secondItem="2A7-Q9-G6q" secondAttribute="leading" constant="44" id="nbu-LI-RAG"/>
                         <constraint firstItem="FQw-OA-LPb" firstAttribute="leading" secondItem="g6M-JF-c6s" secondAttribute="trailing" constant="40" id="r2A-Bp-Pin"/>
+                        <constraint firstItem="Ge6-dR-Fwk" firstAttribute="top" secondItem="2A7-Q9-G6q" secondAttribute="top" constant="450" id="rgn-8a-Abt"/>
                         <constraint firstItem="V68-yO-moa" firstAttribute="centerY" secondItem="Ge6-dR-Fwk" secondAttribute="centerY" id="u8s-yE-moS"/>
                     </constraints>
                 </view>

@@ -25,6 +25,12 @@
 		02787B4D23704C7000947DD6 /* titLeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02787B4C23704C7000947DD6 /* titLeftButton.swift */; };
 		02787B5323710DAD00947DD6 /* DatePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02787B5223710DAD00947DD6 /* DatePickView.swift */; };
 		02787B5523710DB600947DD6 /* DatePickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02787B5423710DB600947DD6 /* DatePickView.xib */; };
+		02787B5823714E1900947DD6 /* DiaperAppendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02787B5623714E1900947DD6 /* DiaperAppendViewController.swift */; };
+		02787B5923714E1900947DD6 /* DiaperAppendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02787B5723714E1900947DD6 /* DiaperAppendViewController.xib */; };
+		02787B5C23714EDD00947DD6 /* SleepAppendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02787B5A23714EDD00947DD6 /* SleepAppendViewController.swift */; };
+		02787B5D23714EDD00947DD6 /* SleepAppendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02787B5B23714EDD00947DD6 /* SleepAppendViewController.xib */; };
+		02787B6023714EF000947DD6 /* PumpMilkAppendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02787B5E23714EF000947DD6 /* PumpMilkAppendViewController.swift */; };
+		02787B6123714EF000947DD6 /* PumpMilkAppendViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02787B5F23714EF000947DD6 /* PumpMilkAppendViewController.xib */; };
 		027B7CE0236EE3ED006A6831 /* HYBBubbleTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = 027B7CDF236EE3ED006A6831 /* HYBBubbleTransition.m */; };
 		028C3974236982CA00E299D3 /* LeanCloudGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD1B2366F79D0006F767 /* LeanCloudGlobal.swift */; };
 		028C3975236982CA00E299D3 /* LeanCloudLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD192366DFFE0006F767 /* LeanCloudLogin.swift */; };
@@ -96,6 +102,12 @@
 		02787B4C23704C7000947DD6 /* titLeftButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = titLeftButton.swift; sourceTree = "<group>"; };
 		02787B5223710DAD00947DD6 /* DatePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickView.swift; sourceTree = "<group>"; };
 		02787B5423710DB600947DD6 /* DatePickView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickView.xib; sourceTree = "<group>"; };
+		02787B5623714E1900947DD6 /* DiaperAppendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaperAppendViewController.swift; sourceTree = "<group>"; };
+		02787B5723714E1900947DD6 /* DiaperAppendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiaperAppendViewController.xib; sourceTree = "<group>"; };
+		02787B5A23714EDD00947DD6 /* SleepAppendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepAppendViewController.swift; sourceTree = "<group>"; };
+		02787B5B23714EDD00947DD6 /* SleepAppendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SleepAppendViewController.xib; sourceTree = "<group>"; };
+		02787B5E23714EF000947DD6 /* PumpMilkAppendViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PumpMilkAppendViewController.swift; sourceTree = "<group>"; };
+		02787B5F23714EF000947DD6 /* PumpMilkAppendViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PumpMilkAppendViewController.xib; sourceTree = "<group>"; };
 		027B7CDE236EE3ED006A6831 /* HYBBubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYBBubbleTransition.h; sourceTree = "<group>"; };
 		027B7CDF236EE3ED006A6831 /* HYBBubbleTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYBBubbleTransition.m; sourceTree = "<group>"; };
 		028C397B2369903B00E299D3 /* IMG_7230.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_7230.JPG; sourceTree = "<group>"; };
@@ -281,6 +293,12 @@
 			children = (
 				02CE0E32236EE28300330E77 /* FeedAppendViewController.swift */,
 				02CE0E33236EE28300330E77 /* FeedAppendViewController.xib */,
+				02787B5623714E1900947DD6 /* DiaperAppendViewController.swift */,
+				02787B5723714E1900947DD6 /* DiaperAppendViewController.xib */,
+				02787B5A23714EDD00947DD6 /* SleepAppendViewController.swift */,
+				02787B5B23714EDD00947DD6 /* SleepAppendViewController.xib */,
+				02787B5E23714EF000947DD6 /* PumpMilkAppendViewController.swift */,
+				02787B5F23714EF000947DD6 /* PumpMilkAppendViewController.xib */,
 			);
 			path = OperationViewController;
 			sourceTree = "<group>";
@@ -405,11 +423,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02787B6123714EF000947DD6 /* PumpMilkAppendViewController.xib in Resources */,
 				02A6E362233545FB00B70277 /* LaunchScreen.storyboard in Resources */,
 				02787B5523710DB600947DD6 /* DatePickView.xib in Resources */,
 				02A6E35F233545FB00B70277 /* Assets.xcassets in Resources */,
+				02787B5923714E1900947DD6 /* DiaperAppendViewController.xib in Resources */,
 				02A6E35A233545FB00B70277 /* Main.storyboard in Resources */,
 				02FD1D91236A802A00CEE875 /* headBG.jpg in Resources */,
+				02787B5D23714EDD00947DD6 /* SleepAppendViewController.xib in Resources */,
 				02CE0E35236EE28300330E77 /* FeedAppendViewController.xib in Resources */,
 				028C397C2369903B00E299D3 /* IMG_7230.JPG in Resources */,
 			);
@@ -503,6 +524,7 @@
 				02EFBD1F2367DD390006F767 /* LeanCloudDataViewModel.swift in Sources */,
 				02CE0E2F236EE1E000330E77 /* HYBBaseTransition.m in Sources */,
 				022CEC89236AB3B0001B40A0 /* GradientBGColor.swift in Sources */,
+				02787B5823714E1900947DD6 /* DiaperAppendViewController.swift in Sources */,
 				02EFBD1A2366DFFE0006F767 /* LeanCloudLogin.swift in Sources */,
 				02EFBD1C2366F79D0006F767 /* LeanCloudGlobal.swift in Sources */,
 				02787B4D23704C7000947DD6 /* titLeftButton.swift in Sources */,
@@ -511,7 +533,9 @@
 				022073B123375DEC00C967E2 /* EventTableViewController.swift in Sources */,
 				026DD881236BCE3600B6C866 /* MainVCViewModel.swift in Sources */,
 				02CE0E34236EE28300330E77 /* FeedAppendViewController.swift in Sources */,
+				02787B5C23714EDD00947DD6 /* SleepAppendViewController.swift in Sources */,
 				027B7CE0236EE3ED006A6831 /* HYBBubbleTransition.m in Sources */,
+				02787B6023714EF000947DD6 /* PumpMilkAppendViewController.swift in Sources */,
 				02787B5323710DAD00947DD6 /* DatePickView.swift in Sources */,
 				02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */,
 				02E596AC236C1503009481FC /* timePicket.swift in Sources */,

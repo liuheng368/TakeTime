@@ -10,7 +10,94 @@ import UIKit
 import LeanCloud
 
 class MainViewController: UIViewController {
-
+    
+    private let dataViewModel = MainVCViewModel()
+    private lazy var bubbleTransition : HYBBubbleTransition = {
+        let bt = HYBBubbleTransition(presented: { (_, _, _, _) in })
+        { (_, transition) in transition?.transitionMode = .dismiss}
+        bt?.bubbleStartPoint = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height)
+        bt?.duration = 0.25
+        return bt!
+    }()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        becomeActive()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        becomeDeath()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        //注册进入前台的通知
+        NotificationCenter.default.addObserver(self, selector:#selector(becomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
+        //注册进入后台的通知
+        NotificationCenter.default.addObserver(self, selector:#selector(becomeDeath), name: UIApplication.willResignActiveNotification, object: nil)
+        pageUIInit()
+        showWeatherWithFrame()
+        fetchUserInfo()
+    }
+    
+    //MARK: Point Event
+    @IBAction func didPressFeed(_ sender: Any) {
+        let feedVc = FeedAppendViewController(nibName: "FeedAppendViewController", bundle: nil)
+        feedVc.modalPresentationStyle = .custom
+        feedVc.finishBlock = {[weak self] in
+            guard let `self` = self else{return}
+            self.fetchFeedData()
+        }
+        bubbleTransition.bubbleColor = feedStartBGcolor
+        feedVc.transitioningDelegate = bubbleTransition
+        self.present(feedVc, animated: true, completion: nil)
+    }
+    
+    @IBAction func didPressDiaper(_ sender: Any) {
+        let diaperVC = DiaperAppendViewController(nibName: "DiaperAppendViewController", bundle: nil)
+        diaperVC.modalPresentationStyle = .custom
+        diaperVC.finishBlock = {[weak self] in
+            guard let `self` = self else{return}
+            self.fetchDiaperData()
+        }
+        bubbleTransition.bubbleColor = diaperStartBGcolor
+        diaperVC.transitioningDelegate = bubbleTransition
+        self.present(diaperVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func didPressSleep(_ sender: Any) {
+        let sleepVC = SleepAppendViewController(nibName: "SleepAppendViewController", bundle: nil)
+        sleepVC.modalPresentationStyle = .custom
+        sleepVC.finishBlock = {[weak self] in
+            guard let `self` = self else{return}
+            self.fetchDiaperData()
+        }
+        bubbleTransition.bubbleColor = sleepStartBGcolor
+        sleepVC.transitioningDelegate = bubbleTransition
+        self.present(sleepVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func didPressPumpMilk(_ sender: Any) {
+        let pumpMilkVC = PumpMilkAppendViewController(nibName: "PumpMilkAppendViewController", bundle: nil)
+        pumpMilkVC.modalPresentationStyle = .custom
+        pumpMilkVC.finishBlock = {[weak self] in
+            guard let `self` = self else{return}
+            self.fetchDiaperData()
+        }
+        bubbleTransition.bubbleColor = pumpMilkStartBGcolor
+        pumpMilkVC.transitioningDelegate = bubbleTransition
+        self.present(pumpMilkVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func didPressRecord(_ sender: Any) {
+        
+    }
+    
+    @IBAction func didPressClock(_ sender: Any) {
+        
+    }
+    
     @IBOutlet weak var lblBirthday: UILabel!
     @IBOutlet weak var lblName: UILabel!
     @IBOutlet weak var ivHeadImg: UIImageView!
@@ -40,126 +127,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var bgPumpMilk: UIImageView!
     @IBOutlet weak var lblPumpMilkDes: UILabel!
     @IBOutlet weak var lblPumpMilkTime: UILabel!
-
-    
-    private let dataViewModel = MainVCViewModel()
-    private lazy var bubbleTransition : HYBBubbleTransition = {
-        let bt = HYBBubbleTransition(presented: { (_, _, _, _) in })
-        { (_, transition) in transition?.transitionMode = .dismiss}
-        bt?.bubbleStartPoint = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height)
-        bt?.duration = 0.2
-        return bt!
-    }()
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        becomeActive()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        becomeDeath()
-    }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //注册进入前台的通知
-        NotificationCenter.default.addObserver(self, selector:#selector(becomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
-        //注册进入后台的通知
-        NotificationCenter.default.addObserver(self, selector:#selector(becomeDeath), name: UIApplication.willResignActiveNotification, object: nil)
-        pageUIInit()
-        showWeatherWithFrame()
-        fetchUserInfo()
-    }
-    
-    //MARK: Point Event
-    @IBAction func didPressFeed(_ sender: Any) {
-        let vc = FeedAppendViewController(nibName: "FeedAppendViewController", bundle: nil)
-        vc.modalPresentationStyle = .custom
-        vc.finishBlock = {[weak self] (model) in
-            guard let `self` = self else{return}
-            self.fetchFeedData()
-        }
-        bubbleTransition.bubbleColor = feedStartBGcolor
-        vc.transitioningDelegate = bubbleTransition
-        self.present(vc, animated: true, completion: nil)
-    }
-    
-    @IBAction func didPressDiaper(_ sender: Any) {
-    }
-    
-    @IBAction func didPressSleep(_ sender: Any) {
-    }
-    
-    @IBAction func didPressPumpMilk(_ sender: Any) {
-    }
-    
-    @IBAction func didPressRecord(_ sender: Any) {
-    }
-    
-    @IBAction func didPressClock(_ sender: Any) {
-    }
-//    @IBAction func didPressWater(_ sender: Any) {
-//        MainBmobViewModel.add(Date(), .Water, success: {[weak self] (model) in
-//            guard let `self` = self else{return}
-//            self.vcTimePass.water = 0
-//            self.timerTitleInit(.Water, model.eventDate)
-//        })
-//    }
-    
-//    @IBAction func didPressMilk(_ sender: Any) {
-//        MainBmobViewModel.add(Date(), .Milk, success: {[weak self] (model) in
-//            guard let `self` = self else{return}
-//            self.vcTimePass.milk = 0
-//            self.timerTitleInit(.Milk, model.eventDate)
-//        })
-//    }
-    
-//    @IBAction func didPressDiaper(_ sender: Any) {
-//        MainBmobViewModel.add(Date(), .Diaper, success: {[weak self] (model) in
-//            guard let `self` = self else{return}
-//            self.vcTimePass.diapre = 0
-//            self.timerTitleInit(.Diaper, model.eventDate)
-//        })
-//    }
-    
-//    @IBAction func didPressShower(_ sender: Any) {
-//        MainBmobViewModel.add(Date(), .Shower, success: {[weak self] (model) in
-//            guard let `self` = self else{return}
-//            self.vcTimePass.shower = 0
-//            self.timerTitleInit(.Shower, model.eventDate)
-//        })
-//    }
-    
-    //MARK: Look For List
-//    @IBAction func didPressMilkList(_ sender: Any) {
-//        let vc = EventTableViewController()
-////        vc.vcType = .Milk
-//        let nav = UINavigationController(rootViewController: vc)
-//        self.present(nav, animated: true, completion: nil)
-//    }
-//
-//    @IBAction func didPressDiaperList(_ sender: Any) {
-//        let vc = EventTableViewController()
-////        vc.vcType = .Diaper
-//        let nav = UINavigationController(rootViewController: vc)
-//        self.present(nav, animated: true, completion: nil)
-//    }
-//
-//    @IBAction func didPressWaterList(_ sender: Any) {
-//        let vc = EventTableViewController()
-////        vc.vcType = .Water
-//        let nav = UINavigationController(rootViewController: vc)
-//        self.present(nav, animated: true, completion: nil)
-//    }
-    
-//    @IBAction func didPressShowerList(_ sender: Any) {
-//        let vc = EventTableViewController()
-////        vc.vcType = .Shower
-//        let nav = UINavigationController(rootViewController: vc)
-//        self.present(nav, animated: true, completion: nil)
-//    }
-
     
     deinit {
         NotificationCenter.default.removeObserver(self)

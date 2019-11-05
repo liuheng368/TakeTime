@@ -11,7 +11,7 @@ import LeanCloud
 
 class FeedAppendViewController: UIViewController {
 
-    public var finishBlock : ((FeedEventModel)->Void)?
+    public var finishBlock : (()->Void)?
     
     @IBOutlet weak var vBG: UIView!
     @IBOutlet weak var btnDate: UIButton!
@@ -19,7 +19,7 @@ class FeedAppendViewController: UIViewController {
     @IBOutlet weak var btnRight: UIButton!
     
     private var pickDate : Date = Date()
-    private var orLeft : Bool?
+    private var orLeft : Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,16 +35,18 @@ class FeedAppendViewController: UIViewController {
         
         btnLeft.layer.borderColor = UIColor.white.cgColor
         btnLeft.layer.cornerRadius = 30
+        btnLeft.layer.borderWidth = 2
         btnRight.layer.borderColor = UIColor.white.cgColor
         btnRight.layer.cornerRadius = 30
-        btnDate.setTitle(TimeFomatChange.getDateString(Date(), "yyyy.MM.dd HH:mm"), for: .normal)
+        btnRight.layer.borderWidth = 0
+        btnDate.setTitle(TimeFomatChange.getDateString(Date(), "MM月dd日 HH:mm"), for: .normal)
     }
 
     @IBAction func didPressDatePick(_ sender: Any) {
         _ = DatePickView {[weak self] (date) in
             guard let `self` = self else{return}
             self.pickDate = date
-            self.btnDate.setTitle(TimeFomatChange.getDateString(date, "yyyy.MM.dd HH:mm"), for: .normal)
+            self.btnDate.setTitle(TimeFomatChange.getDateString(date, "MM月dd日 HH:mm"), for: .normal)
         }
     }
     
@@ -65,19 +67,14 @@ class FeedAppendViewController: UIViewController {
     }
     
     @IBAction func didPressSure(_ sender: Any) {
-        if let orLeft = orLeft {
-            let model = FeedEventModel()
-            model.eventTime = LCDate(pickDate)
-            model.feedOri = LCNumber(orLeft ? 1 : 2)
-            DataBaseViewModel.addModel(model) { (obj) in
-                if let block = finishBlock {
-                    block(obj)
-                    self.dismiss(animated: true, completion: nil)
-                }
+        let model = FeedEventModel()
+        model.eventTime = LCDate(pickDate)
+        model.feedOri = LCNumber(orLeft ? 1 : 2)
+        DataBaseViewModel.addModel(model) { (_) in
+            if let block = finishBlock {
+                block()
+                self.dismiss(animated: true, completion: nil)
             }
-        }else{
-            btnRight.shake(offset: 2)
-            btnLeft.shake(offset: -2)
         }
     }
     
