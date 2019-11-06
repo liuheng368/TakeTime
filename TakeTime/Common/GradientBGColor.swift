@@ -8,21 +8,21 @@
 
 import UIKit
 
-let feedStartBGcolor = UIColor(red:1, green:0.22, blue:0.67, alpha:1)
-let feedMediumBGcolor = UIColor(red:1, green:0.26, blue:0.73, alpha:1)
-let feedEndBGColor = UIColor(red:1, green:0.26, blue:0.78, alpha:1)
+let feedStartBGcolor = UIColor(red:1, green:0.58, blue:0.25, alpha:1)
+let feedMediumBGcolor = UIColor(red:1, green:0.66, blue:0.27, alpha:1)
+let feedEndBGColor = UIColor(red:1, green:0.71, blue:0.26, alpha:1)
 
-let diaperStartBGcolor = UIColor(red:1, green:0.58, blue:0.25, alpha:1)
-let diaperMediumBGcolor = UIColor(red:1, green:0.66, blue:0.27, alpha:1)
-let diaperEndBGColor = UIColor(red:1, green:0.71, blue:0.26, alpha:1)
+let pumpMilkStartBGcolor = UIColor(red:1, green:0.22, blue:0.67, alpha:1)
+let pumpMilkMediumBGcolor = UIColor(red:1, green:0.26, blue:0.73, alpha:1)
+let pumpMilkEndBGColor = UIColor(red:1, green:0.26, blue:0.78, alpha:1)
 
 let sleepStartBGcolor = UIColor(red:0.21, green:0.62, blue:1, alpha:1)
 let sleepMediumBGcolor = UIColor(red:0.26, green:0.72, blue:1, alpha:1)
 let sleepEndBGColor = UIColor(red:0.22, green:0.82, blue:1, alpha:1)
 
-let pumpMilkStartBGcolor = UIColor(red:0.17, green:0.82, blue:0.78, alpha:1)
-let pumpMilkMediumBGcolor = UIColor(red:0.23, green:0.87, blue:0.76, alpha:1)
-let pumpMilkEndBGColor = UIColor(red:0.21, green:0.91, blue:0.71, alpha:1)
+let diaperStartBGcolor = UIColor(red:0.17, green:0.82, blue:0.78, alpha:1)
+let diaperMediumBGcolor = UIColor(red:0.23, green:0.87, blue:0.76, alpha:1)
+let diaperEndBGColor = UIColor(red:0.21, green:0.91, blue:0.71, alpha:1)
 
 
 class GradientBGColor {

@@ -12,13 +12,6 @@ import LeanCloud
 class MainViewController: UIViewController {
     
     private let dataViewModel = MainVCViewModel()
-    private lazy var bubbleTransition : HYBBubbleTransition = {
-        let bt = HYBBubbleTransition(presented: { (_, _, _, _) in })
-        { (_, transition) in transition?.transitionMode = .dismiss}
-        bt?.bubbleStartPoint = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height)
-        bt?.duration = 0.25
-        return bt!
-    }()
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -44,31 +37,27 @@ class MainViewController: UIViewController {
     //MARK: Point Event
     @IBAction func didPressFeed(_ sender: Any) {
         let feedVc = FeedAppendViewController(nibName: "FeedAppendViewController", bundle: nil)
-        feedVc.modalPresentationStyle = .custom
+        feedVc.modalPresentationStyle = .fullScreen
         feedVc.finishBlock = {[weak self] in
             guard let `self` = self else{return}
             self.fetchFeedData()
         }
-        bubbleTransition.bubbleColor = feedStartBGcolor
-        feedVc.transitioningDelegate = bubbleTransition
         self.present(feedVc, animated: true, completion: nil)
     }
     
     @IBAction func didPressDiaper(_ sender: Any) {
         let diaperVC = DiaperAppendViewController(nibName: "DiaperAppendViewController", bundle: nil)
-        diaperVC.modalPresentationStyle = .custom
+        diaperVC.modalPresentationStyle = .fullScreen
         diaperVC.finishBlock = {[weak self] in
             guard let `self` = self else{return}
             self.fetchDiaperData()
         }
-        bubbleTransition.bubbleColor = diaperStartBGcolor
-        diaperVC.transitioningDelegate = bubbleTransition
         self.present(diaperVC, animated: true, completion: nil)
     }
     
     @IBAction func didPressSleep(_ sender: Any) {
         let sleepVC = SleepAppendViewController(nibName: "SleepAppendViewController", bundle: nil)
-        sleepVC.modalPresentationStyle = .custom
+        sleepVC.modalPresentationStyle = .fullScreen
         sleepVC.finishBlock = {[weak self] in
             guard let `self` = self else{return}
             self.fetchSleepData()
@@ -76,20 +65,17 @@ class MainViewController: UIViewController {
         if dataViewModel.arrSleep.first?.sleepEndTime?.value == nil {
             sleepVC.currentModel = dataViewModel.arrSleep.first
         }
-        bubbleTransition.bubbleColor = sleepStartBGcolor
-        sleepVC.transitioningDelegate = bubbleTransition
         self.present(sleepVC, animated: true, completion: nil)
     }
     
     @IBAction func didPressPumpMilk(_ sender: Any) {
         let pumpMilkVC = PumpMilkAppendViewController(nibName: "PumpMilkAppendViewController", bundle: nil)
-        pumpMilkVC.modalPresentationStyle = .custom
+        pumpMilkVC.modalPresentationStyle = .fullScreen
         pumpMilkVC.finishBlock = {[weak self] in
             guard let `self` = self else{return}
             self.fetchPumpMilkData()
         }
-        bubbleTransition.bubbleColor = pumpMilkStartBGcolor
-        pumpMilkVC.transitioningDelegate = bubbleTransition
+        pumpMilkVC.arrPump = dataViewModel.arrPump
         self.present(pumpMilkVC, animated: true, completion: nil)
     }
     

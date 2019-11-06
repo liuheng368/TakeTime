@@ -95,9 +95,9 @@ class MainVCViewModel: NSObject {
         DataBaseViewModel.fetchModel(.pumpMilk, currentDateStr) {[weak self] (arr) in
             guard let `self` = self else{return}
             if let arr = arr as? [PumpMilkEventModel]{
-                self.arrPump = arr
+                self.arrPump = arr                                                            
                 let res = arr.reduce(0) { (r, model) -> Double in
-                    if let t = model.tatolAmout?.value {
+                    if let t = model.totalAmout?.value {
                         return (r + t)
                     }
                     return r

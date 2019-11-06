@@ -3,6 +3,7 @@ PODS:
   - GRDB.swift (4.5.0):
     - GRDB.swift/standard (= 4.5.0)
   - GRDB.swift/standard (4.5.0)
+  - IQKeyboardManagerSwift (6.5.2)
   - LeanCloud (17.1.0):
     - LeanCloud/Foundation (= 17.1.0)
     - LeanCloud/RTM (= 17.1.0)
@@ -21,6 +22,7 @@ PODS:
   - SwiftProtobuf (1.7.0)
 
 DEPENDENCIES:
+  - IQKeyboardManagerSwift
   - LeanCloud (~> 17.0)
   - LeanCloud/Foundation (~> 17.0)
   - Masonry
@@ -30,6 +32,7 @@ SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Alamofire
     - GRDB.swift
+    - IQKeyboardManagerSwift
     - LeanCloud
     - Masonry
     - SDWebImage
@@ -39,12 +42,13 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: ca8c0de6906873be89d6deec5c8de279e00bf872
   GRDB.swift: f9c4cabfb4d1266685e80b1f6ea433eb61c7950c
+  IQKeyboardManagerSwift: c75366f1f19590e8caeae45fcd5815c9289d6099
   LeanCloud: fc275505a7b505a7ea938a8dc50c6c4d54c114d4
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   SDWebImage: 4eabf2fa6695c95c47724214417a9c036c965e4a
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftProtobuf: 4fd9645e69b72cbae6ec8da5be0cdd20ca6565dd
 
-PODFILE CHECKSUM: c4444703ec13597ade6db08c3c99150f2337446f
+PODFILE CHECKSUM: 41f540a82a1e782eae0e6bdc8f0e36c9981787b1
 
 COCOAPODS: 1.8.4

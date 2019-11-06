@@ -63,7 +63,7 @@ class PumpMilkEventModel: EventSuperModel {
 
     @objc dynamic var leftAmout: LCNumber?
     @objc dynamic var rightAmout: LCNumber?
-    @objc dynamic var tatolAmout: LCNumber?
+    @objc dynamic var totalAmout: LCNumber?
 
     override static func objectClassName() -> String {
         return "PumpMilkEventChart"

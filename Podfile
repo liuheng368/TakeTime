@@ -8,6 +8,7 @@ target "TakeTime" do
     pod 'LeanCloud', '~> 17.0'
     pod 'Masonry'
     pod 'SDWebImage', '~> 5.2.3'
+    pod 'IQKeyboardManagerSwift'
 end
 
 target "TakeTimeToday" do
