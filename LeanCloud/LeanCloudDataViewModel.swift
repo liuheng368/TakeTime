@@ -9,6 +9,7 @@
 import UIKit
 import LeanCloud
 
+let fetchTotalLock = NSLock()
 class DataBaseViewModel<T:EventSuperModel> {
     
     class func fetchUserInfo(_ success: @escaping (UserInfoModel)->Void) {
@@ -28,7 +29,7 @@ class DataBaseViewModel<T:EventSuperModel> {
         }
     }
     
-    class func fetchModel(_ type: EventType,_ searchDateStr:String,_ success: @escaping (_ arr:[T])->Void) {
+    class func fetchModel(_ type: EventType,_ searchDateStr:String? = nil,_ success: @escaping (_ arr:[T])->Void) {
         if let userId = LCApplication.default.currentUser?.objectId?.value {
             var arr : [T] = []
             var query : LCQuery
@@ -44,14 +45,14 @@ class DataBaseViewModel<T:EventSuperModel> {
             }
             query.whereKey("eventTime", .descending)
             query.whereKey("UserId", .equalTo(userId))
-            query.whereKey("currentDateDes", .equalTo(searchDateStr))
+            if let searchDateStr = searchDateStr {
+                query.whereKey("currentDateDes", .equalTo(searchDateStr))
+            }
             query.limit = 1000
             _ = query.find { (result) in
                 switch result {
                 case .success(objects: let objs):
-                    for obj in objs {
-                        arr.append(obj as! T)
-                    }
+                    arr += objs as! [T]
                     success(arr)
                 case .failure(error: let error):
                     print(error)
@@ -62,42 +63,42 @@ class DataBaseViewModel<T:EventSuperModel> {
     
     class func fetchTotalCount(_ searchDateStr:String,success: @escaping (Int)->Void) {
         if let userId = LCApplication.default.currentUser?.objectId?.value {
-            let group = DispatchGroup()
             var totalOperate = 0
-            DispatchQueue.global().async(group:group) {
-                let feedQuery = LCQuery(className: "FeedEventChart")
-                feedQuery.whereKey("UserId", .equalTo(userId))
-                feedQuery.whereKey("currentDateDes", .equalTo(searchDateStr))
-                _ = feedQuery.count { (r) in
-                    totalOperate += r.intValue
-                }
-            }
-            DispatchQueue.global().async(group:group) {
-                let diaperQuery = LCQuery(className: "DiaperEventChart")
-                diaperQuery.whereKey("UserId", .equalTo(userId))
-                diaperQuery.whereKey("currentDateDes", .equalTo(searchDateStr))
-                _ = diaperQuery.count { (r) in
-                    totalOperate += r.intValue
-                }
-            }
-            DispatchQueue.global().async(group:group) {
-                let pumpQuery = LCQuery(className: "PumpMilkEventChart")
-                pumpQuery.whereKey("UserId", .equalTo(userId))
-                pumpQuery.whereKey("currentDateDes", .equalTo(searchDateStr))
-                _ = pumpQuery.count { (r) in
-                    totalOperate += r.intValue
-                }
-            }
-            DispatchQueue.global().async(group:group) {
-                let sleepQuery = LCQuery(className: "SleepEventChart")
-                sleepQuery.whereKey("UserId", .equalTo(userId))
-                sleepQuery.whereKey("currentDateDes", .equalTo(searchDateStr))
-                _ = sleepQuery.count { (r) in
-                    totalOperate += r.intValue
-                }
-            }
-            group.notify(queue: .main) {
+            let feedQuery = LCQuery(className: "FeedEventChart")
+            feedQuery.whereKey("UserId", .equalTo(userId))
+            feedQuery.whereKey("currentDateDes", .equalTo(searchDateStr))
+            _ = feedQuery.count { (r) in
+                fetchTotalLock.lock()
+                totalOperate += r.intValue
                 success(totalOperate)
+                fetchTotalLock.unlock()
+            }
+            let diaperQuery = LCQuery(className: "DiaperEventChart")
+            diaperQuery.whereKey("UserId", .equalTo(userId))
+            diaperQuery.whereKey("currentDateDes", .equalTo(searchDateStr))
+            _ = diaperQuery.count { (r) in
+                fetchTotalLock.lock()
+                totalOperate += r.intValue
+                success(totalOperate)
+                fetchTotalLock.unlock()
+            }
+            let pumpQuery = LCQuery(className: "PumpMilkEventChart")
+            pumpQuery.whereKey("UserId", .equalTo(userId))
+            pumpQuery.whereKey("currentDateDes", .equalTo(searchDateStr))
+            _ = pumpQuery.count { (r) in
+                fetchTotalLock.lock()
+                totalOperate += r.intValue
+                success(totalOperate)
+                fetchTotalLock.unlock()
+            }
+            let sleepQuery = LCQuery(className: "SleepEventChart")
+            sleepQuery.whereKey("UserId", .equalTo(userId))
+            sleepQuery.whereKey("currentDateDes", .equalTo(searchDateStr))
+            _ = sleepQuery.count { (r) in
+                fetchTotalLock.lock()
+                totalOperate += r.intValue
+                success(totalOperate)
+                fetchTotalLock.unlock()
             }
         }
     }

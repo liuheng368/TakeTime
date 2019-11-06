@@ -90,9 +90,9 @@ class SleepAppendViewController: UIViewController {
                 self.btnStartDate.setTitle(TimeFomatChange.getDateString(date, "MM月dd日 HH:mm"), for: .normal)
                 self.btnEndDate.setTitle(TimeFomatChange.getDateString(Date(), "MM月dd日 HH:mm"), for: .normal)
                 if let _ = self.currentModel {
-                    self.currentModel?.sleepEndTime = LCDate(date)
+                    self.currentModel?.sleepEndTime = LCDate(Date())
                 }else{
-                    self.pickEndDate = date
+                    self.pickEndDate = Date()
                 }
                 self.wakeHidden(false)
             }

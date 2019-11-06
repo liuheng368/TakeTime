@@ -80,7 +80,9 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func didPressRecord(_ sender: Any) {
-        
+        let vc = RecordListViewController(nibName: "RecordListViewController", bundle: nil)
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func didPressClock(_ sender: Any) {
@@ -206,6 +208,8 @@ extension MainViewController {
     }
     
     private func fetchDiaperData() {
+        
+        
         dataViewModel.fetchDiaperModel {[weak self] (t, bAntN, b, n, g) in
             guard let `self` = self else{return}
             self.lblDiaperDes.text = "今日共换尿布\(t)次(便尿\(bAntN)次,便\(b)次,尿\(n)次)"
