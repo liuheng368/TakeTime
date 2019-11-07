@@ -12,10 +12,6 @@
 		022073BC2337CD3A00C967E2 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022073BB2337CD3A00C967E2 /* TodayViewController.swift */; };
 		022073BF2337CD3A00C967E2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 022073BD2337CD3A00C967E2 /* MainInterface.storyboard */; };
 		022073C32337CD3A00C967E2 /* TakeTimeToday.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 022073B62337CD3A00C967E2 /* TakeTimeToday.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		022073CB23389E6B00C967E2 /* 尿布_widget.png in Resources */ = {isa = PBXBuildFile; fileRef = 022073CA23389E6B00C967E2 /* 尿布_widget.png */; };
-		022073CD23389E7600C967E2 /* 水杯_widget.png in Resources */ = {isa = PBXBuildFile; fileRef = 022073CC23389E7500C967E2 /* 水杯_widget.png */; };
-		022073CF23389E7C00C967E2 /* 洗澡_widget.png in Resources */ = {isa = PBXBuildFile; fileRef = 022073CE23389E7C00C967E2 /* 洗澡_widget.png */; };
-		022073D123389E8300C967E2 /* 育儿_widget.png in Resources */ = {isa = PBXBuildFile; fileRef = 022073D023389E8300C967E2 /* 育儿_widget.png */; };
 		02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */; };
 		02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB123368D890063A2F8 /* TimeFomatChange.swift */; };
 		022CEC89236AB3B0001B40A0 /* GradientBGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022CEC88236AB3B0001B40A0 /* GradientBGColor.swift */; };
@@ -26,6 +22,8 @@
 		026F92862373B9D5003E51D3 /* RecordListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026F92842373B9D5003E51D3 /* RecordListCell.xib */; };
 		026F928A2373CA33003E51D3 /* RecordListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F92892373CA33003E51D3 /* RecordListHeaderView.swift */; };
 		026F928C2373CA4A003E51D3 /* RecordListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026F928B2373CA4A003E51D3 /* RecordListHeaderView.xib */; };
+		026F928D23741A40003E51D3 /* MainVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DD880236BCE3600B6C866 /* MainVCViewModel.swift */; };
+		026F928E23741A51003E51D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02A6E35E233545FB00B70277 /* Assets.xcassets */; };
 		02787B4D23704C7000947DD6 /* titLeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02787B4C23704C7000947DD6 /* titLeftButton.swift */; };
 		02787B5323710DAD00947DD6 /* DatePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02787B5223710DAD00947DD6 /* DatePickView.swift */; };
 		02787B5523710DB600947DD6 /* DatePickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02787B5423710DB600947DD6 /* DatePickView.xib */; };
@@ -91,10 +89,6 @@
 		022073C02337CD3A00C967E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		022073C823387A5A00C967E2 /* TakeTimeToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TakeTimeToday.entitlements; sourceTree = "<group>"; };
 		022073C923387FC100C967E2 /* TakeTime.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TakeTime.entitlements; sourceTree = "<group>"; };
-		022073CA23389E6B00C967E2 /* 尿布_widget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "尿布_widget.png"; path = "TakeTime/Assets.xcassets/尿布_blue.imageset/尿布_widget.png"; sourceTree = SOURCE_ROOT; };
-		022073CC23389E7500C967E2 /* 水杯_widget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "水杯_widget.png"; path = "TakeTime/Assets.xcassets/水杯_blue.imageset/水杯_widget.png"; sourceTree = SOURCE_ROOT; };
-		022073CE23389E7C00C967E2 /* 洗澡_widget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "洗澡_widget.png"; path = "TakeTime/Assets.xcassets/洗澡_blue.imageset/洗澡_widget.png"; sourceTree = SOURCE_ROOT; };
-		022073D023389E8300C967E2 /* 育儿_widget.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "育儿_widget.png"; path = "TakeTime/Assets.xcassets/育儿_blue.imageset/育儿_widget.png"; sourceTree = SOURCE_ROOT; };
 		02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineGCDTimer.swift; sourceTree = "<group>"; };
 		02228CB123368D890063A2F8 /* TimeFomatChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFomatChange.swift; sourceTree = "<group>"; };
 		022CEC88236AB3B0001B40A0 /* GradientBGColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientBGColor.swift; sourceTree = "<group>"; };
@@ -179,10 +173,6 @@
 		022073BA2337CD3A00C967E2 /* TakeTimeToday */ = {
 			isa = PBXGroup;
 			children = (
-				022073CA23389E6B00C967E2 /* 尿布_widget.png */,
-				022073CC23389E7500C967E2 /* 水杯_widget.png */,
-				022073CE23389E7C00C967E2 /* 洗澡_widget.png */,
-				022073D023389E8300C967E2 /* 育儿_widget.png */,
 				022073C823387A5A00C967E2 /* TakeTimeToday.entitlements */,
 				022073BB2337CD3A00C967E2 /* TodayViewController.swift */,
 				022073BD2337CD3A00C967E2 /* MainInterface.storyboard */,
@@ -439,11 +429,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				022073D123389E8300C967E2 /* 育儿_widget.png in Resources */,
+				026F928E23741A51003E51D3 /* Assets.xcassets in Resources */,
 				022073BF2337CD3A00C967E2 /* MainInterface.storyboard in Resources */,
-				022073CD23389E7600C967E2 /* 水杯_widget.png in Resources */,
-				022073CB23389E6B00C967E2 /* 尿布_widget.png in Resources */,
-				022073CF23389E7C00C967E2 /* 洗澡_widget.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -537,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026F928D23741A40003E51D3 /* MainVCViewModel.swift in Sources */,
 				028C3977236982CA00E299D3 /* LeanCloudDataViewModel.swift in Sources */,
 				028C3976236982CA00E299D3 /* LeanCloudDataModel.swift in Sources */,
 				022073BC2337CD3A00C967E2 /* TodayViewController.swift in Sources */,

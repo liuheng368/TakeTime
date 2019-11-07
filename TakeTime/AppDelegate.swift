@@ -44,7 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         if url.scheme == "TodayWidget"{
-            
+            let str = url.absoluteString.components(separatedBy: "//")[1]
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: TodayWeightNotificationKey), object: str)
         }
         return true
     }

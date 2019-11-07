@@ -17,9 +17,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBOutlet weak var lblShower: UILabel!
     @IBOutlet weak var btnPushApp: UIButton!
     
+    private let dataViewModel = MainVCViewModel()
     override func viewWillAppear(_ animated: Bool) {
         extensionContext?.widgetLargestAvailableDisplayMode = .expanded
-        
     }
     
     override func viewDidLoad() {
@@ -31,7 +31,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         } catch {
             print(error)
         }
-//        vcInit()
+        fetchFeedData()
+        fetchDiaperData()
+        fetchSleepData()
+        fetchPumpMilkData()
     }
     
     private func customModelRegister() {
@@ -42,55 +45,50 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         DiaperEventModel.register()
     }
     
-//    fileprivate func vcInit() {
-//        MainBmobViewModel.fetchEnent(.Milk) {[weak self] (arrModel) in
-//            guard let `self` = self else{return}
-//            if arrModel.count <= 0 {
-//                self.timerTitleInit(.Milk, Date())
-//            }else{
-//                self.timerTitleInit(.Milk, arrModel.first?.eventDate ?? Date())
-//            }
-//        }
-//        MainBmobViewModel.fetchEnent(.Water) {[weak self] (arrModel) in
-//            guard let `self` = self else{return}
-//            if arrModel.count <= 0 {
-//                self.timerTitleInit(.Water, Date())
-//            }else{
-//                self.timerTitleInit(.Water, arrModel.first?.eventDate ?? Date())
-//            }
-//        }
-//        MainBmobViewModel.fetchEnent(.Diaper) {[weak self] (arrModel) in
-//            guard let `self` = self else{return}
-//            if arrModel.count <= 0 {
-//                self.timerTitleInit(.Diaper, Date())
-//            }else{
-//                self.timerTitleInit(.Diaper, arrModel.first?.eventDate ?? Date())
-//            }
-//        }
-//        MainBmobViewModel.fetchEnent(.Shower) {[weak self] (arrModel) in
-//            guard let `self` = self else{return}
-//            if arrModel.count <= 0 {
-//                self.timerTitleInit(.Shower, Date())
-//            }else{
-//                self.timerTitleInit(.Shower, arrModel.first?.eventDate ?? Date())
-//            }
-//        }
-//    }
+    private func fetchFeedData() {
+        dataViewModel.fetchFeedModel {[weak self] (t, l, r) in
+            guard let `self` = self else{return}
+            if let date = self.dataViewModel.arrFeed.first?.eventTime?.value {
+                self.lblMilk.text = TimeFomatChange.getDateTimeFormat(TimeFomatChange.timeInterval(date))
+            }else{
+                self.lblMilk.text = "00:00"
+            }
+        }
+    }
     
-//    private func timerTitleInit(_ type:EventType,_ pastDate:Date) {
-//        let str = TimeFomatChange.getDateTimeFormat(
-//            TimeFomatChange.timeInterval(pastDate))
-//        switch type {
-//        case .Diaper:
-//            lblDiapre.text = str
-//        case .Milk:
-//            lblMilk.text = str
-//        case .Water:
-//            lblWater.text = str
-//        case .Shower:
-//            lblShower.text = str
-//        }
-//    }
+    private func fetchDiaperData() {
+        dataViewModel.fetchDiaperModel {[weak self] (t, bAntN, b, n, g) in
+            guard let `self` = self else{return}
+            if let date = self.dataViewModel.arrDiaper.first?.eventTime?.value {
+                self.lblDiapre.text = TimeFomatChange.getDateTimeFormat(TimeFomatChange.timeInterval(date))
+            }else{
+                self.lblDiapre.text = "00:00"
+            }
+        }
+    }
+    
+    private func fetchSleepData() {
+        dataViewModel.fetchSleepModel {[weak self] (t, s) in
+            guard let `self` = self else{return}
+            if let total = t {
+                self.lblWater.text = "已睡\(total/60)分钟"
+            }
+            if let _ = s {
+                self.lblWater.text = "还没醒"
+            }
+        }
+    }
+    
+    private func fetchPumpMilkData() {
+        dataViewModel.fetchPumpMilk {[weak self] (t) in
+            guard let `self` = self else{return}
+            if let date = self.dataViewModel.arrPump.first?.eventTime?.value {
+                self.lblShower.text = TimeFomatChange.getDateTimeFormat(TimeFomatChange.timeInterval(date))
+            }else{
+                self.lblShower.text = "00:00"
+            }
+        }
+    }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         if activeDisplayMode == .compact{
@@ -108,31 +106,19 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     @IBAction func didPressDiaper(_ sender: Any) {
-//        MainBmobViewModel.add(Date(), .Diaper, success: {[weak self] (model) in
-//            guard let `self` = self else{return}
-//            self.timerTitleInit(.Diaper, model.eventDate)
-//        })
+        extensionContext?.open(URL(string: "TodayWidget://diaper")!, completionHandler: { _ in })
     }
     
     @IBAction func didPressMilk(_ sender: Any) {
-//        MainBmobViewModel.add(Date(), .Milk, success: {[weak self] (model) in
-//            guard let `self` = self else{return}
-//            self.timerTitleInit(.Milk, model.eventDate)
-//        })
+        extensionContext?.open(URL(string: "TodayWidget://feed")!, completionHandler: { _ in })
     }
     
     @IBAction func didPressShower(_ sender: Any) {
-//        MainBmobViewModel.add(Date(), .Shower, success: {[weak self] (model) in
-//            guard let `self` = self else{return}
-//            self.timerTitleInit(.Shower, model.eventDate)
-//        })
+        extensionContext?.open(URL(string: "TodayWidget://pumpMilk")!, completionHandler: { _ in })
     }
     
     @IBAction func didPressWater(_ sender: Any) {
-//        MainBmobViewModel.add(Date(), .Water, success: {[weak self] (model) in
-//            guard let `self` = self else{return}
-//            self.timerTitleInit(.Water, model.eventDate)
-//        })
+        extensionContext?.open(URL(string: "TodayWidget://sleep")!, completionHandler: { _ in })
     }
     
     @IBAction func didPressOpenApp(_ sender: Any) {

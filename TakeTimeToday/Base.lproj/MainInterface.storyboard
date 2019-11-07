@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4Y-Lb-cyx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,7 +22,7 @@
                                     <constraint firstAttribute="width" constant="25" id="00F-je-cuU"/>
                                     <constraint firstAttribute="height" constant="25" id="GYa-wg-mWf"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="育儿_widget.png"/>
+                                <state key="normal" backgroundImage="奶瓶"/>
                                 <connections>
                                     <action selector="didPressMilk:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="OVa-hq-JlV"/>
                                 </connections>
@@ -35,7 +33,7 @@
                                     <constraint firstAttribute="width" constant="25" id="Alo-B1-hDw"/>
                                     <constraint firstAttribute="height" constant="25" id="MRI-bU-2Tu"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="水杯_widget.png"/>
+                                <state key="normal" backgroundImage="睡眠"/>
                                 <connections>
                                     <action selector="didPressWater:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="mH6-0t-W2B"/>
                                 </connections>
@@ -46,7 +44,7 @@
                                     <constraint firstAttribute="width" constant="25" id="873-hB-wFW"/>
                                     <constraint firstAttribute="height" constant="25" id="DDg-8K-FDW"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="尿布_widget.png"/>
+                                <state key="normal" backgroundImage="尿布"/>
                                 <connections>
                                     <action selector="didPressDiaper:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="JPL-jg-Cl5"/>
                                 </connections>
@@ -57,30 +55,30 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="Ibm-Ax-P50"/>
                                 </constraints>
-                                <state key="normal" title="open app">
+                                <state key="normal" title="打开应用">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="didPressOpenApp:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="gNy-8b-Cyl"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrZ-42-4zJ">
-                                <rect key="frame" x="45" y="57" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrZ-42-4zJ">
+                                <rect key="frame" x="45" y="57" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZd-cR-daG">
-                                <rect key="frame" x="45" y="17" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SZd-cR-daG">
+                                <rect key="frame" x="45" y="17" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HV-Tz-tQF">
-                                <rect key="frame" x="205" y="57" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0HV-Tz-tQF">
+                                <rect key="frame" x="205" y="57" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Gw-PR-feo">
-                                <rect key="frame" x="205" y="17" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="无数据" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Gw-PR-feo">
+                                <rect key="frame" x="205" y="17" width="52" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -90,7 +88,7 @@
                                     <constraint firstAttribute="width" constant="25" id="3Bt-Sb-YQd"/>
                                     <constraint firstAttribute="height" constant="25" id="H9Y-qh-CkK"/>
                                 </constraints>
-                                <state key="normal" backgroundImage="洗澡_widget.png"/>
+                                <state key="normal" backgroundImage="小型泵站"/>
                                 <connections>
                                     <action selector="didPressShower:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="e0F-Ho-iCb"/>
                                 </connections>
@@ -132,12 +130,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vXp-U4-Rya" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="139" y="74"/>
         </scene>
     </scenes>
     <resources>
-        <image name="尿布_widget.png" width="43" height="40"/>
-        <image name="水杯_widget.png" width="40" height="40"/>
-        <image name="洗澡_widget.png" width="40" height="40"/>
-        <image name="育儿_widget.png" width="40" height="40"/>
+        <image name="奶瓶" width="32" height="32"/>
+        <image name="小型泵站" width="32" height="32"/>
+        <image name="尿布" width="34" height="32"/>
+        <image name="睡眠" width="32" height="32"/>
     </resources>
 </document>

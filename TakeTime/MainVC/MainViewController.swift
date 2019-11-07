@@ -9,6 +9,7 @@
 import UIKit
 import LeanCloud
 
+let TodayWeightNotificationKey = "TodayWeightNotificationKey"
 class MainViewController: UIViewController {
     
     private let dataViewModel = MainVCViewModel()
@@ -29,9 +30,26 @@ class MainViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector:#selector(becomeActive), name: UIApplication.didBecomeActiveNotification, object: nil)
         //注册进入后台的通知
         NotificationCenter.default.addObserver(self, selector:#selector(becomeDeath), name: UIApplication.willResignActiveNotification, object: nil)
+        //todayWeight进入
+        NotificationCenter.default.addObserver(self, selector: #selector(todayWeightPush(_:)), name: NSNotification.Name(rawValue: TodayWeightNotificationKey), object: nil)
         pageUIInit()
         showWeatherWithFrame()
         fetchUserInfo()
+    }
+    
+    @objc func todayWeightPush(_ notification:Notification) {
+        guard let strTag = notification.object as? String else {
+            return
+        }
+        if strTag == "feed" {
+            didPressFeed(UIButton())
+        }else if strTag == "diaper" {
+            didPressDiaper(UIButton())
+        }else if strTag == "sleep" {
+            didPressSleep(UIButton())
+        }else if strTag == "pumpMilk" {
+            didPressPumpMilk(UIButton())
+        }
     }
     
     //MARK: Point Event
@@ -219,8 +237,6 @@ extension MainViewController {
     }
     
     private func fetchDiaperData() {
-        
-        
         dataViewModel.fetchDiaperModel {[weak self] (t, bAntN, b, n, g) in
             guard let `self` = self else{return}
             self.lblDiaperDes.text = "今日共换尿布\(t)次(便尿\(bAntN)次,便\(b)次,尿\(n)次)"
