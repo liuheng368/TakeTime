@@ -281,9 +281,9 @@
 		02A6E353233545FB00B70277 /* TakeTime */ = {
 			isa = PBXGroup;
 			children = (
-				026F92872373B9DF003E51D3 /* RecordList */,
 				026DD882236BCE4200B6C866 /* MainVC */,
 				02CE0E31236EE24500330E77 /* OperationViewController */,
+				026F92872373B9DF003E51D3 /* RecordList */,
 				028C397823698BB200E299D3 /* Common */,
 				0230D47423618B3B00327ABA /* Librarys */,
 				022073C923387FC100C967E2 /* TakeTime.entitlements */,

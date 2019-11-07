@@ -15,6 +15,9 @@ class RecordListViewController: UITableViewController {
     
     private var vcStatus : Int = 1  //1全部 2精简
     private var arrRandomColor : [UIColor] = []
+    private var currentPage : Int = 1
+    private var pageSize : Int = 10
+    private var totalPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +43,7 @@ class RecordListViewController: UITableViewController {
             for _ in 0..<self.listVM.arrDate.count {
                 self.arrRandomColor.append(UIColor(red: CGFloat.random(in: 0...255) / 255, green: CGFloat.random(in: 0...255) / 255, blue: CGFloat.random(in: 0...255) / 255, alpha: 1.0))
             }
-            
+            self.totalPage = self.listVM.arrDate.count / self.pageSize + (self.listVM.arrDate.count % self.pageSize > 0 ? 1 : 0)
             self.tableView.reloadData()
         }
         
@@ -50,6 +53,15 @@ class RecordListViewController: UITableViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.sectionFooterHeight = 0.1
         tableView.separatorStyle = .none
+        tableView.mj_footer = MJRefreshAutoNormalFooter(refreshingBlock: {[weak self] in
+            guard let `self` = self else{return}
+            self.currentPage += 1
+            if self.totalPage == self.currentPage {
+                self.tableView.mj_footer.isHidden = true
+            }
+            self.tableView.reloadData()
+            self.tableView.mj_footer.endRefreshing()
+        })
     }
     
     @objc func dismissVC() {
@@ -86,7 +98,11 @@ class RecordListViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return listVM.arrDate.count
+        if listVM.arrDate.count < currentPage * pageSize{
+            return listVM.arrDate.count
+        }else{
+            return currentPage * pageSize
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
