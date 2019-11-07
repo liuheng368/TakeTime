@@ -25,7 +25,6 @@ PODS:
 DEPENDENCIES:
   - IQKeyboardManagerSwift
   - LeanCloud (~> 17.0)
-  - LeanCloud/Foundation (~> 17.0)
   - Masonry
   - MJRefresh
   - SDWebImage (~> 5.2.3)
@@ -53,6 +52,6 @@ SPEC CHECKSUMS:
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftProtobuf: 4fd9645e69b72cbae6ec8da5be0cdd20ca6565dd
 
-PODFILE CHECKSUM: 4b13f604c2867a78a395497beb257ca61a2ec17d
+PODFILE CHECKSUM: 15fc7dd40b24291634e6d094d436dfa85f2e1dcb
 
 COCOAPODS: 1.8.4

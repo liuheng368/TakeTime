@@ -13,5 +13,5 @@ target "TakeTime" do
 end
 
 target "TakeTimeToday" do
-   pod 'LeanCloud/Foundation', '~> 17.0'
+   pod 'LeanCloud', '~> 17.0'
 end
