@@ -106,11 +106,11 @@ class TimeFomatChange {
     
     /// 获取从当天开始指定日期的字符串 (yyyy-MM-dd)
     /// - Parameter day: 指定天数 ，默认为0
-    class func getAppointDayString(_ day:Int = 0) -> String {
+    class func getAppointDayString(_ day:Int = 0,_ formStr:String = "yyyyMMdd") -> String {
         let calendar = Calendar.current
         let date = calendar.date(byAdding: .day, value: day, to: Date())!
         let dateFor = DateFormatter()
-        dateFor.dateFormat = "yyyyMMdd"
+        dateFor.dateFormat = formStr
         return dateFor.string(from: date)
     }
 }

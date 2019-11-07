@@ -41,6 +41,7 @@ class MainViewController: UIViewController {
         feedVc.finishBlock = {[weak self] in
             guard let `self` = self else{return}
             self.fetchFeedData()
+            self.totalAdd()
         }
         self.present(feedVc, animated: true, completion: nil)
     }
@@ -51,6 +52,7 @@ class MainViewController: UIViewController {
         diaperVC.finishBlock = {[weak self] in
             guard let `self` = self else{return}
             self.fetchDiaperData()
+            self.totalAdd()
         }
         self.present(diaperVC, animated: true, completion: nil)
     }
@@ -61,6 +63,7 @@ class MainViewController: UIViewController {
         sleepVC.finishBlock = {[weak self] in
             guard let `self` = self else{return}
             self.fetchSleepData()
+            self.totalAdd()
         }
         if dataViewModel.arrSleep.first?.sleepEndTime?.value == nil {
             sleepVC.currentModel = dataViewModel.arrSleep.first
@@ -74,15 +77,23 @@ class MainViewController: UIViewController {
         pumpMilkVC.finishBlock = {[weak self] in
             guard let `self` = self else{return}
             self.fetchPumpMilkData()
+            self.totalAdd()
         }
         pumpMilkVC.arrPump = dataViewModel.arrPump
         self.present(pumpMilkVC, animated: true, completion: nil)
     }
     
+    private func totalAdd() {
+        if let iTotal = Int(btnRecord.currentTitle?.replacingOccurrences(of: "今日共产生", with: "").replacingOccurrences(of: "条记录", with: "") ?? "0"){
+            btnRecord.setTitle("今日共产生\(iTotal+1)条记录", for: .normal)
+        }
+    }
+    
     @IBAction func didPressRecord(_ sender: Any) {
-        let vc = RecordListViewController(nibName: "RecordListViewController", bundle: nil)
-        vc.modalPresentationStyle = .fullScreen
-        self.present(vc, animated: true, completion: nil)
+        let recordVc = RecordListViewController(style: .grouped)
+        let nav = UINavigationController(rootViewController: recordVc)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true, completion: nil)
     }
     
     @IBAction func didPressClock(_ sender: Any) {

@@ -24,7 +24,7 @@ class LeanCloudLogin {
         _ = LCUser.logIn(username: "liuheng368", password: "dashu365") { result in
             switch result {
             case .success(object: let user):
-                print(user)
+                print(user.username ?? "")
             case .failure(error: let error):
                 print(error)
             }

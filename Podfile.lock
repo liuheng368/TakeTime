@@ -15,6 +15,7 @@ PODS:
     - Starscream (~> 3.1)
     - SwiftProtobuf (~> 1.7.0)
   - Masonry (1.1.0)
+  - MJRefresh (3.2.0)
   - SDWebImage (5.2.5):
     - SDWebImage/Core (= 5.2.5)
   - SDWebImage/Core (5.2.5)
@@ -26,6 +27,7 @@ DEPENDENCIES:
   - LeanCloud (~> 17.0)
   - LeanCloud/Foundation (~> 17.0)
   - Masonry
+  - MJRefresh
   - SDWebImage (~> 5.2.3)
 
 SPEC REPOS:
@@ -35,6 +37,7 @@ SPEC REPOS:
     - IQKeyboardManagerSwift
     - LeanCloud
     - Masonry
+    - MJRefresh
     - SDWebImage
     - Starscream
     - SwiftProtobuf
@@ -45,10 +48,11 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: c75366f1f19590e8caeae45fcd5815c9289d6099
   LeanCloud: fc275505a7b505a7ea938a8dc50c6c4d54c114d4
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  MJRefresh: ed450d6eb9d3346a2cb033ab7eb6de090aeef437
   SDWebImage: 4eabf2fa6695c95c47724214417a9c036c965e4a
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
   SwiftProtobuf: 4fd9645e69b72cbae6ec8da5be0cdd20ca6565dd
 
-PODFILE CHECKSUM: 41f540a82a1e782eae0e6bdc8f0e36c9981787b1
+PODFILE CHECKSUM: 4b13f604c2867a78a395497beb257ca61a2ec17d
 
 COCOAPODS: 1.8.4

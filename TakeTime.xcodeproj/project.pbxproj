@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		020FF92B233BC0FE0046A1DD /* TimeFomatChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB123368D890063A2F8 /* TimeFomatChange.swift */; };
-		022073B123375DEC00C967E2 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022073B023375DEC00C967E2 /* EventTableViewController.swift */; };
 		022073B92337CD3A00C967E2 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 022073B82337CD3A00C967E2 /* NotificationCenter.framework */; };
 		022073BC2337CD3A00C967E2 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022073BB2337CD3A00C967E2 /* TodayViewController.swift */; };
 		022073BF2337CD3A00C967E2 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 022073BD2337CD3A00C967E2 /* MainInterface.storyboard */; };
@@ -23,6 +22,10 @@
 		0230D47E2361901000327ABA /* HeWeather_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */; };
 		0256E9F02372AB240030B4CC /* TotalDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256E9EF2372AB240030B4CC /* TotalDataViewModel.swift */; };
 		026DD881236BCE3600B6C866 /* MainVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DD880236BCE3600B6C866 /* MainVCViewModel.swift */; };
+		026F92852373B9D5003E51D3 /* RecordListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F92832373B9D5003E51D3 /* RecordListCell.swift */; };
+		026F92862373B9D5003E51D3 /* RecordListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026F92842373B9D5003E51D3 /* RecordListCell.xib */; };
+		026F928A2373CA33003E51D3 /* RecordListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F92892373CA33003E51D3 /* RecordListHeaderView.swift */; };
+		026F928C2373CA4A003E51D3 /* RecordListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 026F928B2373CA4A003E51D3 /* RecordListHeaderView.xib */; };
 		02787B4D23704C7000947DD6 /* titLeftButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02787B4C23704C7000947DD6 /* titLeftButton.swift */; };
 		02787B5323710DAD00947DD6 /* DatePickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02787B5223710DAD00947DD6 /* DatePickView.swift */; };
 		02787B5523710DB600947DD6 /* DatePickView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02787B5423710DB600947DD6 /* DatePickView.xib */; };
@@ -51,7 +54,6 @@
 		02EFBD1F2367DD390006F767 /* LeanCloudDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD1E2367DD390006F767 /* LeanCloudDataViewModel.swift */; };
 		02EFBD212367E29C0006F767 /* LeanCloudDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02EFBD202367E29C0006F767 /* LeanCloudDataModel.swift */; };
 		02F16FCC2372771300069CF8 /* RecordListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02F16FCA2372771300069CF8 /* RecordListViewController.swift */; };
-		02F16FCD2372771300069CF8 /* RecordListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02F16FCB2372771300069CF8 /* RecordListViewController.xib */; };
 		02FD1D91236A802A00CEE875 /* headBG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 02FD1D90236A802A00CEE875 /* headBG.jpg */; };
 		27E4139567AE9A02982EAA6D /* Pods_TakeTimeToday.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26C5CAA1593376D85BB84785 /* Pods_TakeTimeToday.framework */; };
 		3A2D455CA808ABEF6F830EF5 /* Pods_TakeTime.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE6D8A7BCF9897C9E49FB0F /* Pods_TakeTime.framework */; };
@@ -82,7 +84,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		022073B023375DEC00C967E2 /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		022073B62337CD3A00C967E2 /* TakeTimeToday.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TakeTimeToday.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		022073B82337CD3A00C967E2 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		022073BB2337CD3A00C967E2 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +103,10 @@
 		02325F99233F4F650044A000 /* TakeTimeToday-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTimeToday-Bridging-Header.h"; sourceTree = "<group>"; };
 		0256E9EF2372AB240030B4CC /* TotalDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalDataViewModel.swift; sourceTree = "<group>"; };
 		026DD880236BCE3600B6C866 /* MainVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCViewModel.swift; sourceTree = "<group>"; };
+		026F92832373B9D5003E51D3 /* RecordListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListCell.swift; sourceTree = "<group>"; };
+		026F92842373B9D5003E51D3 /* RecordListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordListCell.xib; sourceTree = "<group>"; };
+		026F92892373CA33003E51D3 /* RecordListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListHeaderView.swift; sourceTree = "<group>"; };
+		026F928B2373CA4A003E51D3 /* RecordListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordListHeaderView.xib; sourceTree = "<group>"; };
 		02787B4C23704C7000947DD6 /* titLeftButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = titLeftButton.swift; sourceTree = "<group>"; };
 		02787B5223710DAD00947DD6 /* DatePickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickView.swift; sourceTree = "<group>"; };
 		02787B5423710DB600947DD6 /* DatePickView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickView.xib; sourceTree = "<group>"; };
@@ -130,7 +135,6 @@
 		02EFBD1E2367DD390006F767 /* LeanCloudDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanCloudDataViewModel.swift; sourceTree = "<group>"; };
 		02EFBD202367E29C0006F767 /* LeanCloudDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeanCloudDataModel.swift; sourceTree = "<group>"; };
 		02F16FCA2372771300069CF8 /* RecordListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListViewController.swift; sourceTree = "<group>"; };
-		02F16FCB2372771300069CF8 /* RecordListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordListViewController.xib; sourceTree = "<group>"; };
 		02FD1D90236A802A00CEE875 /* headBG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = headBG.jpg; sourceTree = "<group>"; };
 		23C5C6DC53B296087693AD16 /* Pods-TakeTimeToday.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TakeTimeToday.debug.xcconfig"; path = "Target Support Files/Pods-TakeTimeToday/Pods-TakeTimeToday.debug.xcconfig"; sourceTree = "<group>"; };
 		26C5CAA1593376D85BB84785 /* Pods_TakeTimeToday.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TakeTimeToday.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -214,7 +218,6 @@
 			isa = PBXGroup;
 			children = (
 				026DD880236BCE3600B6C866 /* MainVCViewModel.swift */,
-				0256E9EF2372AB240030B4CC /* TotalDataViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -225,11 +228,29 @@
 				026DD87F236BCE1F00B6C866 /* ViewModel */,
 				02A6E356233545FB00B70277 /* MainViewController.swift */,
 				02A6E358233545FB00B70277 /* Main.storyboard */,
-				02F16FCA2372771300069CF8 /* RecordListViewController.swift */,
-				02F16FCB2372771300069CF8 /* RecordListViewController.xib */,
-				022073B023375DEC00C967E2 /* EventTableViewController.swift */,
 			);
 			path = MainVC;
+			sourceTree = "<group>";
+		};
+		026F92872373B9DF003E51D3 /* RecordList */ = {
+			isa = PBXGroup;
+			children = (
+				026F92882373B9EE003E51D3 /* ViewModel */,
+				02F16FCA2372771300069CF8 /* RecordListViewController.swift */,
+				026F92892373CA33003E51D3 /* RecordListHeaderView.swift */,
+				026F928B2373CA4A003E51D3 /* RecordListHeaderView.xib */,
+				026F92832373B9D5003E51D3 /* RecordListCell.swift */,
+				026F92842373B9D5003E51D3 /* RecordListCell.xib */,
+			);
+			path = RecordList;
+			sourceTree = "<group>";
+		};
+		026F92882373B9EE003E51D3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0256E9EF2372AB240030B4CC /* TotalDataViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		028C397823698BB200E299D3 /* Common */ = {
@@ -270,6 +291,7 @@
 		02A6E353233545FB00B70277 /* TakeTime */ = {
 			isa = PBXGroup;
 			children = (
+				026F92872373B9DF003E51D3 /* RecordList */,
 				026DD882236BCE4200B6C866 /* MainVC */,
 				02CE0E31236EE24500330E77 /* OperationViewController */,
 				028C397823698BB200E299D3 /* Common */,
@@ -429,12 +451,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				026F928C2373CA4A003E51D3 /* RecordListHeaderView.xib in Resources */,
 				02787B6123714EF000947DD6 /* PumpMilkAppendViewController.xib in Resources */,
 				02A6E362233545FB00B70277 /* LaunchScreen.storyboard in Resources */,
 				02787B5523710DB600947DD6 /* DatePickView.xib in Resources */,
 				02A6E35F233545FB00B70277 /* Assets.xcassets in Resources */,
 				02787B5923714E1900947DD6 /* DiaperAppendViewController.xib in Resources */,
-				02F16FCD2372771300069CF8 /* RecordListViewController.xib in Resources */,
+				026F92862373B9D5003E51D3 /* RecordListCell.xib in Resources */,
 				02A6E35A233545FB00B70277 /* Main.storyboard in Resources */,
 				02FD1D91236A802A00CEE875 /* headBG.jpg in Resources */,
 				02787B5D23714EDD00947DD6 /* SleepAppendViewController.xib in Resources */,
@@ -536,9 +559,9 @@
 				02EFBD1A2366DFFE0006F767 /* LeanCloudLogin.swift in Sources */,
 				02EFBD1C2366F79D0006F767 /* LeanCloudGlobal.swift in Sources */,
 				02787B4D23704C7000947DD6 /* titLeftButton.swift in Sources */,
+				026F92852373B9D5003E51D3 /* RecordListCell.swift in Sources */,
 				02228CB023368A2C0063A2F8 /* MineGCDTimer.swift in Sources */,
 				02A6E357233545FB00B70277 /* MainViewController.swift in Sources */,
-				022073B123375DEC00C967E2 /* EventTableViewController.swift in Sources */,
 				026DD881236BCE3600B6C866 /* MainVCViewModel.swift in Sources */,
 				02CE0E34236EE28300330E77 /* FeedAppendViewController.swift in Sources */,
 				02787B5C23714EDD00947DD6 /* SleepAppendViewController.swift in Sources */,
@@ -547,6 +570,7 @@
 				02787B5323710DAD00947DD6 /* DatePickView.swift in Sources */,
 				02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */,
 				0256E9F02372AB240030B4CC /* TotalDataViewModel.swift in Sources */,
+				026F928A2373CA33003E51D3 /* RecordListHeaderView.swift in Sources */,
 				02A6E355233545FB00B70277 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,12 +9,13 @@
 import UIKit
 import LeanCloud
 
+typealias OneDayTotalModel = [EventType:[EventSuperModel]]
 class TotalDataViewModel: NSObject {
-    typealias OneDayTotalModel = [EventType:[EventSuperModel]]
+    var arrDate : [OneDayTotalModel] = []
+    var arrSequence : [[EventSuperModel]] = []
     
-    func fetchTotalData(_ success: @escaping ([OneDayTotalModel])->Void) {
+    func fetchTotalData(_ success: @escaping ()->Void) {
         var arrTotal : [EventSuperModel] = []
-        NSLog("df")
         DataBaseViewModel.fetchModel(.feed) { (a) in
             arrTotal += a
             DataBaseViewModel.fetchModel(.diaper) { (ar) in
@@ -31,9 +32,8 @@ class TotalDataViewModel: NSObject {
         }
     }
     
-    func dateHandle(_ arr:[EventSuperModel],_ success: @escaping ([OneDayTotalModel])->Void) {
+    func dateHandle(_ arr:[EventSuperModel],_ success: @escaping ()->Void) {
         if arr.count <= 0 {return}
-        NSLog("df")
         DispatchQueue.global().async {
             var arrOld = arr
             var arrNew : [[EventSuperModel]] = []
@@ -44,9 +44,9 @@ class TotalDataViewModel: NSObject {
                     arrOld = arrOld.filter { $0.currentDateDes?.value != dateDes}
                 }
             }
-            var arrFinsh : [OneDayTotalModel] = []
             arrNew.forEach { (a) in
                 var dic : OneDayTotalModel = OneDayTotalModel()
+                var arrSeq : [EventSuperModel] = []
                 a.forEach { (model) in
                     if model is FeedEventModel {
                         if let _ = dic[.feed] {}else{
@@ -69,12 +69,14 @@ class TotalDataViewModel: NSObject {
                         }
                         dic[.pumpMilk]?.append(model as! PumpMilkEventModel)
                     }
+                    arrSeq.append(model)
                 }
-                arrFinsh.append(dic)
+                arrSeq.sort { $0.eventTime!.value < $1.eventTime!.value }
+                self.arrSequence.append(arrSeq)
+                self.arrDate.append(dic)
             }
             DispatchQueue.main.async {
-                NSLog("df")
-                success(arrFinsh)
+                success()
             }
         }
     }

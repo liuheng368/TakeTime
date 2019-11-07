@@ -9,6 +9,7 @@ target "TakeTime" do
     pod 'Masonry'
     pod 'SDWebImage', '~> 5.2.3'
     pod 'IQKeyboardManagerSwift'
+    pod 'MJRefresh'
 end
 
 target "TakeTimeToday" do
