@@ -25,8 +25,8 @@ class MainVCViewModel: NSObject {
             guard let `self` = self else{return}
             if let arr = arr as? [FeedEventModel] {
                 self.arrFeed = arr
+                var left = 0,right = 0
                 let res = arr.reduce((0,0,0)) { (r, model) -> (Int,Int,Int) in
-                    var left = 0,right = 0
                     if model.feedOri == 1 {
                         left = r.1 + 1
                     }else if model.feedOri == 2 {
@@ -44,8 +44,8 @@ class MainVCViewModel: NSObject {
             guard let `self` = self else{return}
             if let arr = arr as? [DiaperEventModel] {
                 self.arrDiaper = arr
+                var bAndn = 0,bian = 0,niao = 0,gan = 0
                 let res = arr.reduce((0,0,0,0,0)) { (r, model) -> (Int,Int,Int,Int,Int) in
-                    var bAndn = 0,bian = 0,niao = 0,gan = 0
                     if model.diaperStatus == 1 {
                         bAndn = r.1 + 1
                     }else if model.diaperStatus == 2 {
@@ -63,13 +63,15 @@ class MainVCViewModel: NSObject {
     }
     
     func fetchSleepModel(_ success: @escaping (_ total:Int?,_ sleeping:String?)->Void ) {
-        DataBaseViewModel.fetchModel(.sleep, currentDateStr) {[weak self] (arr) in
+        DataBaseViewModel.fetchModel(.sleep) { [weak self] (arr) in
             guard let `self` = self else{return}
             if let arr = arr as? [SleepEventModel] {
                 self.arrSleep = arr
                 if let first = arr.first {
                     if let _ = first.sleepEndTime {
-                        let res = arr.reduce(0) { (r, model) -> Int in
+                        let arrNew = arr.filter {TimeFomatChange.getDateString($0.sleepEndTime!.value) == TimeFomatChange.getDateString(Date())
+                        }
+                        let res = arrNew.reduce(0) { (r, model) -> Int in
                             if let startTime = model.eventTime?.value,
                                 let endTime = model.sleepEndTime?.value {
                                 return (TimeFomatChange.timeInterval(startTime, currentDate: endTime) + r)

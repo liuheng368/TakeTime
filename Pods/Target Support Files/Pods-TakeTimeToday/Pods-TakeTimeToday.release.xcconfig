@@ -1,8 +1,8 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" "${PODS_CONFIGURATION_BUILD_DIR}/GRDB.swift" "${PODS_CONFIGURATION_BUILD_DIR}/LeanCloud" "${PODS_CONFIGURATION_BUILD_DIR}/Starscream" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftProtobuf"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" "${PODS_CONFIGURATION_BUILD_DIR}/LeanCloud-Foundation"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/GRDB.swift/GRDB.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/LeanCloud/LeanCloud.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Starscream/Starscream.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SwiftProtobuf/SwiftProtobuf.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/LeanCloud-Foundation/LeanCloud.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks' '@executable_path/../../Frameworks'
-OTHER_LDFLAGS = $(inherited) -l"sqlite3" -framework "Alamofire" -framework "CFNetwork" -framework "Foundation" -framework "GRDB" -framework "LeanCloud" -framework "Starscream" -framework "SwiftProtobuf"
+OTHER_LDFLAGS = $(inherited) -framework "Alamofire" -framework "CFNetwork" -framework "LeanCloud"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

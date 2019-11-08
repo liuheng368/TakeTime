@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SleepAppendViewController" customModule="TakeTime" customModuleProvider="target">
             <connections>
                 <outlet property="btnE" destination="vLv-aF-UH3" id="8cF-Ki-erY"/>
+                <outlet property="btnEnDateClean" destination="Vn3-Ob-rqs" id="V5O-nL-uoq"/>
                 <outlet property="btnEndDate" destination="iPM-9Z-StG" id="5FF-Ke-eE5"/>
                 <outlet property="btnJX" destination="Mux-yj-1hV" id="Joy-G3-gCu"/>
                 <outlet property="btnStartDate" destination="spc-Pz-Q3P" id="i3x-Z1-yrf"/>
@@ -29,8 +30,8 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfY-m8-PbL">
                     <rect key="frame" x="0.0" y="94" width="414" height="802"/>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="换尿布" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUQ-x7-Efz">
-                    <rect key="frame" x="173.5" y="52.5" width="67" height="26.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="睡眠" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUQ-x7-Efz">
+                    <rect key="frame" x="184.5" y="52.5" width="45" height="26.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="22"/>
                     <color key="textColor" red="0.20784313730000001" green="0.20784313730000001" blue="0.20784313730000001" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
@@ -45,7 +46,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spc-Pz-Q3P">
-                            <rect key="frame" x="175.5" y="142.5" width="194.5" height="39"/>
+                            <rect key="frame" x="165.5" y="142.5" width="204.5" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="2019.09.17 07:00">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,7 +56,7 @@
                             </connections>
                         </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bVy-QM-bTb">
-                            <rect key="frame" x="177.5" y="180.5" width="192.5" height="1"/>
+                            <rect key="frame" x="167.5" y="180.5" width="202.5" height="1"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="g4Q-VF-agC"/>
@@ -90,7 +91,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPM-9Z-StG">
-                            <rect key="frame" x="175.5" y="216.5" width="194.5" height="39"/>
+                            <rect key="frame" x="165.5" y="216.5" width="204.5" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="还没醒">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -99,8 +100,15 @@
                                 <action selector="didPressEnd:" destination="-1" eventType="touchUpInside" id="Pik-FX-Exe"/>
                             </connections>
                         </button>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vn3-Ob-rqs">
+                            <rect key="frame" x="338" y="216.5" width="32" height="39"/>
+                            <state key="normal" image="close"/>
+                            <connections>
+                                <action selector="DidPressEndDateClean:" destination="-1" eventType="touchUpInside" id="KPn-I2-oCI"/>
+                            </connections>
+                        </button>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXf-MX-A8J">
-                            <rect key="frame" x="177.5" y="254.5" width="192.5" height="1"/>
+                            <rect key="frame" x="167.5" y="254.5" width="202.5" height="1"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="fpP-Sg-sBB"/>
@@ -113,7 +121,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X0d-2F-uML">
-                            <rect key="frame" x="175.5" y="422.5" width="194.5" height="39"/>
+                            <rect key="frame" x="165.5" y="422.5" width="204.5" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="惊醒">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -123,7 +131,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mux-yj-1hV">
-                            <rect key="frame" x="175.5" y="378.5" width="194.5" height="39"/>
+                            <rect key="frame" x="165.5" y="378.5" width="204.5" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="叫醒">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -133,7 +141,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLv-aF-UH3">
-                            <rect key="frame" x="175.5" y="290.5" width="194.5" height="39"/>
+                            <rect key="frame" x="165.5" y="290.5" width="204.5" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="饿醒">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -143,7 +151,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n1b-gp-D30">
-                            <rect key="frame" x="175.5" y="334.5" width="194.5" height="39"/>
+                            <rect key="frame" x="165.5" y="334.5" width="204.5" height="39"/>
                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
                             <state key="normal" title="自然醒">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -173,8 +181,10 @@
                         <constraint firstItem="vLv-aF-UH3" firstAttribute="leading" secondItem="n1b-gp-D30" secondAttribute="leading" id="PPw-SG-5xe"/>
                         <constraint firstItem="bVy-QM-bTb" firstAttribute="leading" secondItem="spc-Pz-Q3P" secondAttribute="leading" constant="2" id="RSt-oB-b8g"/>
                         <constraint firstItem="sXf-MX-A8J" firstAttribute="leading" secondItem="iPM-9Z-StG" secondAttribute="leading" constant="2" id="Ui4-i9-FkY"/>
+                        <constraint firstItem="Vn3-Ob-rqs" firstAttribute="top" secondItem="iPM-9Z-StG" secondAttribute="top" id="Vhr-Vy-8tv"/>
                         <constraint firstItem="vLv-aF-UH3" firstAttribute="trailing" secondItem="n1b-gp-D30" secondAttribute="trailing" id="WPa-42-rsR"/>
                         <constraint firstItem="iPM-9Z-StG" firstAttribute="centerY" secondItem="TAS-vq-0dH" secondAttribute="centerY" id="a4Y-HK-Nxz"/>
+                        <constraint firstItem="Vn3-Ob-rqs" firstAttribute="bottom" secondItem="iPM-9Z-StG" secondAttribute="bottom" id="aNt-93-whf"/>
                         <constraint firstItem="X0d-2F-uML" firstAttribute="trailing" secondItem="iPM-9Z-StG" secondAttribute="trailing" id="anK-hx-S2v"/>
                         <constraint firstAttribute="trailing" secondItem="spc-Pz-Q3P" secondAttribute="trailing" constant="44" id="bUs-ov-yad"/>
                         <constraint firstAttribute="trailing" secondItem="iPM-9Z-StG" secondAttribute="trailing" constant="44" id="e2R-Mz-t9p"/>
@@ -191,8 +201,9 @@
                         <constraint firstItem="bVy-QM-bTb" firstAttribute="trailing" secondItem="spc-Pz-Q3P" secondAttribute="trailing" id="rCu-2Z-7Rj"/>
                         <constraint firstItem="TAS-vq-0dH" firstAttribute="top" secondItem="WlB-Of-UDM" secondAttribute="bottom" constant="50" id="rYD-SP-YPJ"/>
                         <constraint firstItem="TAS-vq-0dH" firstAttribute="leading" secondItem="WlB-Of-UDM" secondAttribute="leading" id="xoN-uF-Sxe"/>
-                        <constraint firstItem="spc-Pz-Q3P" firstAttribute="leading" secondItem="WlB-Of-UDM" secondAttribute="trailing" constant="70" id="y8c-42-zRm"/>
+                        <constraint firstItem="spc-Pz-Q3P" firstAttribute="leading" secondItem="WlB-Of-UDM" secondAttribute="trailing" constant="60" id="y8c-42-zRm"/>
                         <constraint firstItem="WlB-Of-UDM" firstAttribute="top" secondItem="UL6-iE-vmS" secondAttribute="top" constant="150" id="yTp-9v-sCa"/>
+                        <constraint firstItem="Vn3-Ob-rqs" firstAttribute="trailing" secondItem="iPM-9Z-StG" secondAttribute="trailing" id="yYa-GA-Gpb"/>
                         <constraint firstItem="n1b-gp-D30" firstAttribute="trailing" secondItem="iPM-9Z-StG" secondAttribute="trailing" id="yxG-in-JrX"/>
                     </constraints>
                 </view>

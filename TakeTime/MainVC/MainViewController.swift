@@ -83,7 +83,7 @@ class MainViewController: UIViewController {
             self.fetchSleepData()
             self.totalAdd()
         }
-        if dataViewModel.arrSleep.first?.sleepEndTime?.value == nil {
+        if dataViewModel.arrSleep.first?.sleepEndTime == nil{
             sleepVC.currentModel = dataViewModel.arrSleep.first
         }
         self.present(sleepVC, animated: true, completion: nil)

@@ -33,9 +33,13 @@ class RecordListCell: UITableViewCell {
                 }
                 if let obj = d as? SleepEventModel {
                     lblDesc.textColor = sleepStartBGcolor
-                    let start = obj.eventTime!.value, end = obj.sleepEndTime!.value
-                    let total = TimeFomatChange.timeInterval(start, currentDate: end)
-                    lblDesc.text = "本次睡觉从\(TimeFomatChange.getDateString(start, "HH:mm"))到\(TimeFomatChange.getDateString(end, "HH:mm")),共\(total / 3600)小时\(total % 3600 / 60)分钟;因为\(SleepEventEnum(rawValue: Int(obj.wakeUpStatus!.value))![])"
+                    let start = obj.eventTime!.value
+                    if let end = obj.sleepEndTime?.value {
+                        let total = TimeFomatChange.timeInterval(start, currentDate: end)
+                        lblDesc.text = "本次睡觉从\(TimeFomatChange.getDateString(start, "HH:mm"))到\(TimeFomatChange.getDateString(end, "HH:mm")),共\(total / 3600)小时\(total % 3600 / 60)分钟;因为\(SleepEventEnum(rawValue: Int(obj.wakeUpStatus!.value))![])"
+                    }else{
+                        lblDesc.text = "本次睡觉从\(TimeFomatChange.getDateString(start, "HH:mm"))开始，未标记睡醒时间"
+                    }
                 }
                 if let obj = d as? PumpMilkEventModel {
                     lblDesc.textColor = pumpMilkStartBGcolor

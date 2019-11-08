@@ -57,12 +57,17 @@ class SleepAppendViewController: UIViewController {
         }
     }
     
+    deinit {
+        currentModel?.sleepEndTime = nil
+    }
+    
     private func wakeHidden(_ hide:Bool) {
         btnE.isHidden = hide
         btnZR.isHidden = hide
         btnJX.isHidden = hide
         btnXX.isHidden = hide
         lblWakeStatus.isHidden = hide
+        btnEnDateClean.isHidden = hide
     }
 
     @IBOutlet weak var vBG: UIView!
@@ -72,6 +77,7 @@ class SleepAppendViewController: UIViewController {
     @IBOutlet weak var btnZR: UIButton!
     @IBOutlet weak var btnJX: UIButton!
     @IBOutlet weak var btnXX: UIButton!
+    @IBOutlet weak var btnEnDateClean: UIButton!
     @IBOutlet weak var lblWakeStatus: UILabel!
     
     @IBAction func didPressStart(_ sender: Any) {
@@ -133,6 +139,16 @@ class SleepAppendViewController: UIViewController {
         btnJX.layer.borderWidth = 0
         btnXX.layer.borderWidth = 0
         btn.layer.borderWidth = 2
+    }
+    
+    @IBAction func DidPressEndDateClean(_ sender: Any) {
+        if let _ = currentModel {
+            currentModel?.sleepEndTime = nil
+        }else{
+            pickEndDate = nil
+        }
+        self.btnEndDate.setTitle("还没醒", for: .normal)
+        self.wakeHidden(true)
     }
     
     @IBAction func didPressCancle(_ sender: Any) {
