@@ -71,7 +71,7 @@ class TotalDataViewModel: NSObject {
                     }
                     arrSeq.append(model)
                 }
-                arrSeq.sort { $0.eventTime!.value < $1.eventTime!.value }
+                arrSeq.sort { $0.eventTime!.value > $1.eventTime!.value }
                 self.arrSequence.append(arrSeq)
                 self.arrDate.append(dic)
             }
