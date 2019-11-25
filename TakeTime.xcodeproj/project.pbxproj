@@ -16,6 +16,7 @@
 		02228CB223368D890063A2F8 /* TimeFomatChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02228CB123368D890063A2F8 /* TimeFomatChange.swift */; };
 		022CEC89236AB3B0001B40A0 /* GradientBGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022CEC88236AB3B0001B40A0 /* GradientBGColor.swift */; };
 		0230D47E2361901000327ABA /* HeWeather_Plugin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */; };
+		0244D476238BAA3A0003FD8F /* LocationNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0244D475238BAA3A0003FD8F /* LocationNotification.swift */; };
 		0256E9F02372AB240030B4CC /* TotalDataViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0256E9EF2372AB240030B4CC /* TotalDataViewModel.swift */; };
 		026DD881236BCE3600B6C866 /* MainVCViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026DD880236BCE3600B6C866 /* MainVCViewModel.swift */; };
 		026F92852373B9D5003E51D3 /* RecordListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026F92832373B9D5003E51D3 /* RecordListCell.swift */; };
@@ -95,6 +96,7 @@
 		0230D47D2361900F00327ABA /* HeWeather_Plugin.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HeWeather_Plugin.framework; sourceTree = "<group>"; };
 		02325F95233F4D860044A000 /* TakeTime-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTime-Bridging-Header.h"; sourceTree = "<group>"; };
 		02325F99233F4F650044A000 /* TakeTimeToday-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TakeTimeToday-Bridging-Header.h"; sourceTree = "<group>"; };
+		0244D475238BAA3A0003FD8F /* LocationNotification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationNotification.swift; sourceTree = "<group>"; };
 		0256E9EF2372AB240030B4CC /* TotalDataViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalDataViewModel.swift; sourceTree = "<group>"; };
 		026DD880236BCE3600B6C866 /* MainVCViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCViewModel.swift; sourceTree = "<group>"; };
 		026F92832373B9D5003E51D3 /* RecordListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordListCell.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 		028C397823698BB200E299D3 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				0244D475238BAA3A0003FD8F /* LocationNotification.swift */,
 				02228CAF23368A2C0063A2F8 /* MineGCDTimer.swift */,
 				02228CB123368D890063A2F8 /* TimeFomatChange.swift */,
 				022CEC88236AB3B0001B40A0 /* GradientBGColor.swift */,
@@ -540,6 +543,7 @@
 			files = (
 				02EFBD212367E29C0006F767 /* LeanCloudDataModel.swift in Sources */,
 				02F16FCC2372771300069CF8 /* RecordListViewController.swift in Sources */,
+				0244D476238BAA3A0003FD8F /* LocationNotification.swift in Sources */,
 				02EFBD1F2367DD390006F767 /* LeanCloudDataViewModel.swift in Sources */,
 				02CE0E2F236EE1E000330E77 /* HYBBaseTransition.m in Sources */,
 				022CEC89236AB3B0001B40A0 /* GradientBGColor.swift in Sources */,

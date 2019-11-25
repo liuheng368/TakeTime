@@ -43,10 +43,10 @@ class FeedAppendViewController: UIViewController {
     }
 
     @IBAction func didPressDatePick(_ sender: Any) {
-        _ = DatePickView {[weak self] (date) in
+        _ = DatePickView {[weak self] (vDate) in
             guard let `self` = self else{return}
-            self.pickDate = date
-            self.btnDate.setTitle(TimeFomatChange.getDateString(date, "MM月dd日 HH:mm"), for: .normal)
+            self.pickDate = vDate.date
+            self.btnDate.setTitle(TimeFomatChange.getDateString(vDate.date, "MM月dd日 HH:mm"), for: .normal)
         }
     }
     
@@ -74,6 +74,7 @@ class FeedAppendViewController: UIViewController {
             guard let `self` = self else{return}
             if let block = finishBlock {
                 block()
+                LocationNotification.addNotification()
                 self.dismiss(animated: true, completion: nil)
             }
         }

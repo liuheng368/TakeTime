@@ -24,6 +24,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
+        //本地推送注册
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert,.sound]) { (status, err) in
+            if let _ = err {
+                print(err!)
+            }
+        }
         return true
     }
     

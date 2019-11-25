@@ -117,7 +117,11 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func didPressClock(_ sender: Any) {
-        
+        let vdata = DatePickView { (vDate) in
+            UserDefaults.standard.set(vDate.countDownDuration, forKey: FeedLocationNotificationSecond)
+        }
+        vdata.vDatePick.datePickerMode = .countDownTimer
+        vdata.lblTips.text = "喂奶计时器"
     }
     
     @IBOutlet weak var lblBirthday: UILabel!

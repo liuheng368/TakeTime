@@ -81,19 +81,19 @@ class SleepAppendViewController: UIViewController {
     @IBOutlet weak var lblWakeStatus: UILabel!
     
     @IBAction func didPressStart(_ sender: Any) {
-        _ = DatePickView {[weak self] (date) in
+        _ = DatePickView {[weak self] (vDate) in
             guard let `self` = self else{return}
             if let _ = self.currentModel {
-                self.currentModel?.eventTime = LCDate(date)
+                self.currentModel?.eventTime = LCDate(vDate.date)
             }else{
-                self.pickStartDate = date
+                self.pickStartDate = vDate.date
             }
-            if TimeFomatChange.timeOneMinute(date) {
-                self.btnStartDate.setTitle(TimeFomatChange.getDateString(date, "MM月dd日 HH:mm"), for: .normal)
+            if TimeFomatChange.timeOneMinute(vDate.date) {
+                self.btnStartDate.setTitle(TimeFomatChange.getDateString(vDate.date, "MM月dd日 HH:mm"), for: .normal)
                 self.btnEndDate.setTitle("还没醒", for: .normal)
                 self.wakeHidden(true)
             }else{
-                self.btnStartDate.setTitle(TimeFomatChange.getDateString(date, "MM月dd日 HH:mm"), for: .normal)
+                self.btnStartDate.setTitle(TimeFomatChange.getDateString(vDate.date, "MM月dd日 HH:mm"), for: .normal)
                 self.btnEndDate.setTitle(TimeFomatChange.getDateString(Date(), "MM月dd日 HH:mm"), for: .normal)
                 if let _ = self.currentModel {
                     self.currentModel?.sleepEndTime = LCDate(Date())
@@ -106,18 +106,18 @@ class SleepAppendViewController: UIViewController {
     }
     
     @IBAction func didPressEnd(_ sender: Any) {
-        _ = DatePickView {[weak self] (date) in
+        _ = DatePickView {[weak self] (vDate) in
             guard let `self` = self else{return}
             var startDate : Date
             if let _ = self.currentModel {
-                self.currentModel?.sleepEndTime = LCDate(date)
+                self.currentModel?.sleepEndTime = LCDate(vDate.date)
                 startDate = (self.currentModel?.eventTime?.value)!
             }else{
-                self.pickEndDate = date
+                self.pickEndDate = vDate.date
                 startDate = self.pickStartDate
             }
-            if TimeFomatChange.timeInterval(startDate, currentDate: date) > 60 {
-                self.btnEndDate.setTitle(TimeFomatChange.getDateString(date, "MM月dd日 HH:mm"), for: .normal)
+            if TimeFomatChange.timeInterval(startDate, currentDate: vDate.date) > 60 {
+                self.btnEndDate.setTitle(TimeFomatChange.getDateString(vDate.date, "MM月dd日 HH:mm"), for: .normal)
                 self.wakeHidden(false)
             }else{
                 self.btnEndDate.setTitle("还没醒", for: .normal)

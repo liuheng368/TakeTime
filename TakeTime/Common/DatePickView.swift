@@ -10,7 +10,7 @@ import UIKit
 
 class DatePickView: UIView {
     
-    public init(_ blockAction_:@escaping ((Date)->Void)) {
+    public init(_ blockAction_:@escaping ((UIDatePicker)->Void)) {
         self.blockAction = blockAction_
         super.init(frame: CGRect.zero)
         initFromXib()
@@ -51,13 +51,14 @@ class DatePickView: UIView {
         window?.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[self(\(250))]|", options: NSLayoutConstraint.FormatOptions(rawValue: 0), metrics: nil, views: dicWinIcon))
     }
     
+    @IBOutlet weak var lblTips: UILabel!
     private var mainView : UIView?
     private var myMaskView : UIView?
-    private var blockAction : ((Date)->Void)
+    private var blockAction : ((UIDatePicker)->Void)
     @IBOutlet weak var vDatePick: UIDatePicker!
     
     @IBAction func didPressSure(_ sender: Any) {
-        blockAction(vDatePick.date)
+        blockAction(vDatePick)
         hide()
     }
     
@@ -69,7 +70,7 @@ class DatePickView: UIView {
     }
     
     @objc func hide() {
-        blockAction(vDatePick.date)
+        blockAction(vDatePick)
         self.removeFromSuperview()
         myMaskView?.removeFromSuperview()
         myMaskView = nil
