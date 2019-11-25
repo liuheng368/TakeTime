@@ -21,12 +21,14 @@ class MainVCViewModel: NSObject {
     }
     
     func fetchFeedModel(_ success: @escaping (_ total:Int,_ left:Int,_ right:Int)->Void ) {
-        DataBaseViewModel.fetchModel(.feed, currentDateStr) {[weak self] (arr) in
+        DataBaseViewModel.fetchModel(.feed) {[weak self] (arr) in
             guard let `self` = self else{return}
             if let arr = arr as? [FeedEventModel] {
                 self.arrFeed = arr
                 var left = 0,right = 0
-                let res = arr.reduce((0,0,0)) { (r, model) -> (Int,Int,Int) in
+                let res = arr
+                    .filter { $0.currentDateDes?.value == self.currentDateStr}
+                    .reduce((0,0,0)) { (r, model) -> (Int,Int,Int) in
                     if model.feedOri == 1 {
                         left = r.1 + 1
                     }else if model.feedOri == 2 {
@@ -40,12 +42,14 @@ class MainVCViewModel: NSObject {
     }
     
     func fetchDiaperModel(_ success: @escaping (_ total:Int,_ bAndN:Int,_ bian:Int,_ niao:Int,_ gan:Int)->Void ) {
-        DataBaseViewModel.fetchModel(.diaper, currentDateStr) {[weak self] (arr) in
+        DataBaseViewModel.fetchModel(.diaper) {[weak self] (arr) in
             guard let `self` = self else{return}
             if let arr = arr as? [DiaperEventModel] {
                 self.arrDiaper = arr
                 var bAndn = 0,bian = 0,niao = 0,gan = 0
-                let res = arr.reduce((0,0,0,0,0)) { (r, model) -> (Int,Int,Int,Int,Int) in
+                let res = arr
+                    .filter { $0.currentDateDes?.value == self.currentDateStr}
+                    .reduce((0,0,0,0,0)) { (r, model) -> (Int,Int,Int,Int,Int) in
                     if model.diaperStatus == 1 {
                         bAndn = r.1 + 1
                     }else if model.diaperStatus == 2 {
@@ -94,11 +98,13 @@ class MainVCViewModel: NSObject {
     }
     
     func fetchPumpMilk(_ success: @escaping (Int)->Void) {
-        DataBaseViewModel.fetchModel(.pumpMilk, currentDateStr) {[weak self] (arr) in
+        DataBaseViewModel.fetchModel(.pumpMilk) {[weak self] (arr) in
             guard let `self` = self else{return}
             if let arr = arr as? [PumpMilkEventModel]{
                 self.arrPump = arr                                                            
-                let res = arr.reduce(0) { (r, model) -> Double in
+                let res = arr
+                    .filter { $0.currentDateDes?.value == self.currentDateStr}
+                    .reduce(0) { (r, model) -> Double in
                     if let t = model.totalAmout?.value {
                         return (r + t)
                     }

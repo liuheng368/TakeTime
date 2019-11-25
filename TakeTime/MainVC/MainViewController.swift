@@ -52,6 +52,8 @@ class MainViewController: UIViewController {
         }
     }
     
+    
+    
     //MARK: Point Event
     @IBAction func didPressFeed(_ sender: Any) {
         let feedVc = FeedAppendViewController(nibName: "FeedAppendViewController", bundle: nil)
@@ -178,6 +180,7 @@ extension MainViewController{
             let date = model.eventTime?.value{
             lblFeedTime.text = TimeFomatChange.getDateTimeFormat(TimeFomatChange.timeInterval(date))
         }else{
+            
             lblFeedTime.text = "00:00"
         }
         if let model = dataViewModel.arrPump.first,
